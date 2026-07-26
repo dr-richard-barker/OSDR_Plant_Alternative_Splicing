@@ -1,0 +1,11 @@
+event_id,event_type,nmd_prediction,nmd_reason,frameshift
+SE_chr4_-_15021702-15021781-15020414-15021211-15021878-15021977,SE,NMD_sensitive,exon_length_79_not_divisible_by_3_frameshift_likely,yes
+SE_chr1_-_2258749-2258845-2258538-2258602-2259002-2259152,SE,NMD_insensitive,exon_length_96_divisible_by_3_no_frameshift,no
+SE_chr5_-_5691550-5691612-5691073-5691388-5691698-5691810,SE,NMD_sensitive,exon_length_62_not_divisible_by_3_frameshift_likely,yes
+SE_chr3_-_607088-607132-606284-606901-607217-607275,SE,NMD_sensitive,exon_length_44_not_divisible_by_3_frameshift_likely,yes
+A5SS_chr5_-_5691550-5691810-5691698-5691810-5691073-5691388,A5SS,NMD_sensitive,length_diff_148_not_divisible_by_3_frameshift,yes
+MXE_chr1_+_1730958-1731008-1731293-1731385-1730241-1730332-1731466-1731547,MXE,NMD_insensitive,exon_length_diff_42_divisible_by_3,no
+MXE_chr1_-_29116165-29116392-29116471-29116589-29115834-29116068-29116956-29117344,MXE,NMD_sensitive,exon_length_diff_109_not_divisible_by_3_frameshift,yes
+RI_chr4_-_11399611-11400376-11399611-11399768-11399837-11400376,RI,NMD_sensitive,retained_intron_likely_contains_PTC,likely
+RI_chr5_-_7736517-7737205-7736517-7736994-7737073-7737205,RI,NMD_sensitive,retained_intron_likely_contains_PTC,likely
+RI_chr2_-_18904323-18904832-18904323-18904624-18904716-18904832,RI,NMD_sensitive,retained_intron_likely_contains_PTC,likely
