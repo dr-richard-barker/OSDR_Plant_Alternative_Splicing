@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "Differential alternative splicing in plant spaceflight transcriptomes"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Barker
+    given-names: Richard
+    affiliation: "NASA GeneLab / OSDR"
+version: "1.0.0"
+date-released: "2026-07-26"
+license: MIT
+repository-code: "https://github.com/[user]/plant-spaceflight-as"
+keywords:
+  - alternative splicing
+  - plant biology
+  - spaceflight
+  - RNA-seq
+  - rMATS
+  - NASA OSDR
+preferred-citation:
+  type: article
+  title: "Differential alternative splicing in plant spaceflight transcriptomes: a multi-study rMATS analysis with machine learning and ontology integration"
+  authors:
+    - family-names: Barker
+      given-names: Richard
+  journal: "npj Microgravity"
+  year: 2026

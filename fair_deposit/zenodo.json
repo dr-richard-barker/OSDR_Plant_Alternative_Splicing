@@ -1,0 +1,49 @@
+{
+  "title": "Differential alternative splicing in plant spaceflight transcriptomes: rMATS analysis of NASA OSDR RNA-seq data with machine learning and ontology integration",
+  "description": "This deposit contains the complete analysis pipeline and results for differential alternative splicing (AS) analysis of plant RNA-seq studies from the NASA Open Science Data Repository (OSDR). We analyzed 8 proof-of-concept studies (7 Arabidopsis thaliana, 1 Brassica rapa) covering spaceflight, microgravity, Mars gravity, fractional gravity, simulated GCR radiation, and lunar regolith conditions. Across 199 samples and ~100,000 total splicing events, retained intron events dominated (57-67%) with 79-86% NMD sensitivity. Cross-study recurrence identified 93 genes significant in >=2 studies, with AT4G17310 significant in 4 studies spanning gravity, radiation, and regolith stressors. Differential splicing was quantified with rMATS-turbo v4.3.0 (FDR<0.05, |dPSI|>0.1). Machine learning (7-study LOSOCV classification, nested k-fold CV, UMAP clustering, SHAP feature importance) was applied to a 199-sample x 9,875-gene PSI feature matrix. Functional annotation used GO and MapMan bins. NMD susceptibility was predicted for all significant events. SpliceGrapher v0.2.7 was used for splice graph visualization.",
+  "creators": [
+    {
+      "name": "Barker, Richard",
+      "affiliation": "NASA GeneLab / OSDR"
+    }
+  ],
+  "keywords": [
+    "alternative splicing",
+    "plant biology",
+    "spaceflight",
+    "microgravity",
+    "Arabidopsis thaliana",
+    "Brassica rapa",
+    "RNA-seq",
+    "rMATS",
+    "NASA OSDR",
+    "GeneLab",
+    "machine learning",
+    "differential splicing",
+    "PSI",
+    "plant ontology",
+    "Gene Ontology",
+    "MapMan",
+    "NMD prediction",
+    "space biology"
+  ],
+  "license": "MIT",
+  "communities": [
+    {
+      "identifier": "nasa-geneLab"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://osdr.nasa.gov/biodata/api/",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset",
+      "scheme": "url"
+    }
+  ],
+  "version": "1.0.0",
+  "publication_type": "software",
+  "upload_type": "software",
+  "access_right": "open",
+  "prereserve_doi": true
+}

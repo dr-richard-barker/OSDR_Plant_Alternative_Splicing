@@ -1,0 +1,228 @@
+{
+  "description": "Data dictionary for plant spaceflight AS analysis outputs",
+  "files": {
+    "event_catalog.csv": {
+      "description": "Deduplicated catalog of all AS events detected across studies",
+      "columns": {
+        "event_id": "Unique event identifier (type_chr_strand_coordinates)",
+        "GeneID": "Ensembl gene ID",
+        "geneSymbol": "Gene symbol",
+        "event_type": "SE/A5SS/A3SS/MXE/RI",
+        "chr": "Chromosome",
+        "strand": "+/-",
+        "FDR": "False discovery rate",
+        "dPSI": "Delta PSI (IncLevelDifference)",
+        "n_studies": "Number of studies with this event",
+        "studies_with_event": "Comma-separated OSD IDs"
+      }
+    },
+    "significant_events.csv": {
+      "description": "Events passing significance thresholds (FDR<0.05, |dPSI|>0.1)",
+      "columns": "Same as event_catalog.csv"
+    },
+    "psi_matrix.csv": {
+      "description": "PSI matrix (events x samples)",
+      "columns": "event_id, gene_id, event_type, osd_id, then one column per sample with PSI values"
+    },
+    "study_summary.csv": {
+      "description": "Per-study summary of event counts",
+      "columns": "osd_id, total_events, significant_events, SE, A5SS, A3SS, MXE, RI"
+    },
+    "nmd_predictions.csv": {
+      "description": "NMD susceptibility predictions for significant events",
+      "columns": "event_id, event_type, nmd_prediction, nmd_reason, frameshift"
+    },
+    "domain_overlap.csv": {
+      "description": "Protein domain overlap classification",
+      "columns": "event_id, gene_id, event_type, domain_overlap_class, domain_names, domain_count"
+    },
+    "go_enrichment.csv": {
+      "description": "GO over-representation analysis results",
+      "columns": "go_id, go_name, namespace, n_genes_test, n_genes_background, fold_enrichment, pvalue, fdr_bh, genes"
+    },
+    "po_enrichment.csv": {
+      "description": "Plant Ontology ORA results",
+      "columns": "po_id, po_name, n_genes_test, n_genes_background, fold_enrichment, pvalue, fdr_bh, genes"
+    },
+    "to_enrichment.csv": {
+      "description": "Trait Ontology ORA results",
+      "columns": "to_id, to_name, n_genes_test, n_genes_background, fold_enrichment, pvalue, fdr_bh, genes"
+    },
+    "mapman_enrichment.csv": {
+      "description": "MapMan bin ORA results",
+      "columns": "bin_code, bin_name, n_genes_test, n_genes_background, fold_enrichment, pvalue, fdr_bh, genes"
+    },
+    "ml_results/losocv_rf_per_study.csv": {
+      "description": "LOSOCV per-study classification results (Random Forest)",
+      "columns": "held_out_study, n_train, n_test, auc, f1, accuracy, n_features_selected"
+    },
+    "ml_results/losocv_rf_top_features.csv": {
+      "description": "Top features by mean importance across LOSOCV folds",
+      "columns": "rank, event_id, gene_id, event_type, importance"
+    },
+    "ml_results/umap_clustering.csv": {
+      "description": "UMAP embedding and cluster assignments",
+      "columns": "umap_x, umap_y, cluster, condition, osd_id, tissue, genotype, sample_name"
+    },
+    "multi_study_analysis_v2/feature_matrix.npy": {
+      "description": "3-study unified PSI feature matrix (109 samples x 8913 genes)",
+      "format": "NumPy binary, float32, shape (109, 8913)"
+    },
+    "multi_study_analysis_v2/labels_flight.npy": {
+      "description": "Binary flight labels (1=flight, 0=ground) for 109 samples",
+      "format": "NumPy binary, int32, shape (109,)"
+    },
+    "multi_study_analysis_v2/study_ids.npy": {
+      "description": "Study ID strings for 109 samples (OSD-314, OSD-120, OSD-37)",
+      "format": "NumPy binary string array, shape (109,), allow_pickle=True"
+    },
+    "multi_study_analysis_v2/losocv_results.tsv": {
+      "description": "3-study LOSOCV results (train on 2, test on 1) for RF/GBM/XGBoost",
+      "columns": "test_study, n_train, n_test, auc, accuracy, f1, model"
+    },
+    "multi_study_analysis_v2/nested_kfold_results.tsv": {
+      "description": "Nested 5-fold CV results (pooled 3 studies, RF with hyperparameter tuning)",
+      "columns": "fold, auc, model"
+    },
+    "multi_study_analysis_v2/umap_clustering.tsv": {
+      "description": "3-study UMAP embedding with study/condition/cluster labels",
+      "columns": "sample_name, study_id, condition, is_flight, UMAP1, UMAP2, cluster"
+    },
+    "multi_study_analysis_v2/shap_importance.tsv": {
+      "description": "SHAP feature importance (mean absolute SHAP) for 3-study RF model",
+      "columns": "gene, mean_abs_shap"
+    },
+    "multi_study_analysis_v2/sample_metadata.tsv": {
+      "description": "Sample metadata for 109 samples across 3 studies",
+      "columns": "sample_name, study_id, condition, tissue, genotype, light, replicate, is_flight"
+    },
+    "multi_study_analysis_v2/feature_genes.tsv": {
+      "description": "Gene names for the 8913 features in the feature matrix",
+      "columns": "gene"
+    },
+    "osd37_analysis/OSD-37_all_events.tsv": {
+      "description": "All 20,590 rMATS events for OSD-37 (56 paired-end BAMs)",
+      "columns": "Standard rMATS columns + event_type, dPSI, event_id"
+    },
+    "osd37_analysis/OSD-37_significant_events.tsv": {
+      "description": "10 significant OSD-37 events (FDR<0.05 AND |dPSI|>0.1)",
+      "columns": "Standard rMATS columns + event_type, dPSI, event_id"
+    },
+    "osd37_analysis/OSD-37_nmd_predictions.tsv": {
+      "description": "NMD predictions for OSD-37 significant events (8 NMD-sensitive, 2 insensitive)",
+      "columns": "event_id, event_type, nmd_prediction, nmd_reason, frameshift"
+    },
+    "osd37_analysis/OSD-37_go_enrichment.tsv": {
+      "description": "GO ORA results for OSD-37 (46 terms p<0.05, 29 FDR<0.25)",
+      "columns": "go_id, go_name, namespace, n_genes_test, n_genes_background, fold_enrichment, pvalue, fdr_bh, genes"
+    },
+    "osd37_analysis/OSD-37_psi_matrix.tsv": {
+      "description": "PSI matrix for OSD-37 (20,590 events x 56 samples)",
+      "columns": "event_id, gene_id, event_type, then one column per sample"
+    },
+    "osd658_analysis/OSD-658_all_events.tsv": {
+      "description": "All 9,932 rMATS events for OSD-658 (14 paired-end BAMs: 8 GCR-irradiated vs 6 control)",
+      "columns": "Standard rMATS columns + event_type, dPSI, event_id"
+    },
+    "osd658_analysis/OSD-658_significant_events.tsv": {
+      "description": "43 significant OSD-658 events (FDR<0.05 AND |dPSI|>0.1); RI=25, A3SS=9, A5SS=7, SE=2",
+      "columns": "Standard rMATS columns + event_type, dPSI, event_id"
+    },
+    "osd658_analysis/OSD-658_nmd_predictions.tsv": {
+      "description": "NMD predictions for OSD-658 significant events (34 NMD-sensitive, 9 insensitive; 79%)",
+      "columns": "event_id, event_type, nmd_prediction, nmd_reason, frameshift"
+    },
+    "osd658_analysis/OSD-658_go_enrichment.tsv": {
+      "description": "GO ORA results for OSD-658 (81 terms p<0.05, 115 FDR<0.25); top: response to herbicide (FDR=0.009, FE=180x), phospholipid metabolic process (FDR=0.013, FE=104x)",
+      "columns": "go_id, go_name, namespace, n_genes_test, n_genes_background, fold_enrichment, pvalue, fdr_bh, genes"
+    },
+    "osd658_analysis/OSD-658_psi_matrix.tsv": {
+      "description": "PSI matrix for OSD-658 (9,932 events x 14 samples)",
+      "columns": "event_id, gene_id, event_type, then one column per sample"
+    },
+    "osd476_analysis/OSD-476_all_events.tsv": {
+      "description": "All 14,766 rMATS events for OSD-476 (20 paired-end BAMs: 12 Apollo lunar regolith vs 8 JSC-1A control)",
+      "columns": "Standard rMATS columns + event_type, dPSI, event_id"
+    },
+    "osd476_analysis/OSD-476_significant_events.tsv": {
+      "description": "306 significant OSD-476 events (FDR<0.05 AND |dPSI|>0.1) — LARGEST significant event count; RI=177, A3SS=64, SE=33, A5SS=30, MXE=2",
+      "columns": "Standard rMATS columns + event_type, dPSI, event_id"
+    },
+    "osd476_analysis/OSD-476_nmd_predictions.tsv": {
+      "description": "NMD predictions for OSD-476 significant events (263 NMD-sensitive, 43 insensitive; 86%)",
+      "columns": "event_id, event_type, nmd_prediction, nmd_reason, frameshift"
+    },
+    "osd476_analysis/OSD-476_go_enrichment.tsv": {
+      "description": "GO ORA results for OSD-476 (114 terms p<0.05, 181 FDR<0.25); top: blue light photoreceptor (FDR=0.138, FE=33x), photosynthesis regulation, cell cycle, telomeric region",
+      "columns": "go_id, go_name, namespace, n_genes_test, n_genes_background, fold_enrichment, pvalue, fdr_bh, genes"
+    },
+    "osd476_analysis/OSD-476_psi_matrix.tsv": {
+      "description": "PSI matrix for OSD-476 (14,766 events x 20 samples)",
+      "columns": "event_id, gene_id, event_type, then one column per sample"
+    },
+    "osd251_analysis/OSD-251_all_events.tsv": {
+      "description": "All 15,220 rMATS events for OSD-251 (20 paired-end BAMs: 17 altered gravity [uG/0.09G/0.18G/0.36G/0.57G] vs 3 in-flight 1G control)",
+      "columns": "Standard rMATS columns + event_type, dPSI, event_id"
+    },
+    "osd251_analysis/OSD-251_significant_events.tsv": {
+      "description": "86 significant OSD-251 events (FDR<0.05 AND |dPSI|>0.1); RI=49, A5SS=15, A3SS=13, SE=9",
+      "columns": "Standard rMATS columns + event_type, dPSI, event_id"
+    },
+    "osd251_analysis/OSD-251_nmd_predictions.tsv": {
+      "description": "NMD predictions for OSD-251 significant events (73 NMD-sensitive, 13 insensitive; 85%)",
+      "columns": "event_id, event_type, nmd_prediction, nmd_reason, frameshift"
+    },
+    "osd251_analysis/OSD-251_go_enrichment.tsv": {
+      "description": "GO ORA results for OSD-251 (93 terms p<0.05, 170 FDR<0.25); top: response to superoxide (FDR=0.001, FE=488x) — strongest single GO term across all 7 studies",
+      "columns": "go_id, go_name, namespace, n_genes_test, n_genes_background, fold_enrichment, pvalue, fdr_bh, genes"
+    },
+    "osd251_analysis/OSD-251_psi_matrix.tsv": {
+      "description": "PSI matrix for OSD-251 (15,220 events x 20 samples)",
+      "columns": "event_id, gene_id, event_type, then one column per sample"
+    },
+    "multi_study_analysis_v4/feature_matrix.npy": {
+      "description": "7-study unified PSI feature matrix (199 samples x 9,875 genes, gene-level mean PSI, filtered >=10 samples, mean-imputed)",
+      "format": "NumPy binary, float32, shape (199, 9875)"
+    },
+    "multi_study_analysis_v4/labels_flight.npy": {
+      "description": "Binary treatment labels (1=treatment, 0=control) for 199 samples; 112 treatment, 87 control",
+      "format": "NumPy binary, int32, shape (199,)"
+    },
+    "multi_study_analysis_v4/study_ids.npy": {
+      "description": "Study ID strings for 199 samples (OSD-314, OSD-120, OSD-37, OSD-678, OSD-658, OSD-476, OSD-251)",
+      "format": "NumPy binary string array, shape (199,), allow_pickle=True"
+    },
+    "multi_study_analysis_v4/feature_genes.tsv": {
+      "description": "Gene names for the 9,875 features in the 7-study feature matrix",
+      "columns": "gene"
+    },
+    "multi_study_analysis_v4/sample_metadata.tsv": {
+      "description": "Sample metadata for 199 samples across 7 studies",
+      "columns": "sample_name, study_id, condition, tissue, genotype, light, replicate, is_flight"
+    },
+    "multi_study_analysis_v4/losocv_results.tsv": {
+      "description": "7-study LOSOCV results (train on 6, test on 1) for RF/GBM/XGBoost; all near-random (mean AUC=0.412)",
+      "columns": "test_study, n_train, n_test, auc, accuracy, f1, model"
+    },
+    "multi_study_analysis_v4/nested_kfold_results.tsv": {
+      "description": "Nested 5-fold CV results (pooled 7 studies, RF with hyperparameter tuning); AUC=0.598±0.084",
+      "columns": "fold, auc, model"
+    },
+    "multi_study_analysis_v4/umap_clustering.tsv": {
+      "description": "7-study UMAP embedding with study/condition/cluster labels; ARI(study)=0.995, ARI(treatment)=-0.002",
+      "columns": "sample_name, study_id, condition, is_flight, UMAP1, UMAP2, cluster"
+    },
+    "multi_study_analysis_v4/shap_importance.tsv": {
+      "description": "SHAP feature importance (mean absolute SHAP) for 7-study RF model; top: AT1G56220, AT5G01770, AT1G48360",
+      "columns": "gene, mean_abs_shap"
+    },
+    "multi_study_analysis_v4/recurrent_genes.tsv": {
+      "description": "93 recurrent genes significant in >=2 of 7 studies; AT4G17310 in 4 studies, 8 genes in 3 studies",
+      "columns": "gene, n_studies, studies"
+    },
+    "multi_study_analysis_v4/cross_study_recurrence.tsv": {
+      "description": "Pairwise cross-study gene overlap counts for 7 Arabidopsis studies; largest: OSD-678∩OSD-476=26, OSD-314∩OSD-476=22",
+      "columns": "study1, study2, shared_genes"
+    }
+  }
+}

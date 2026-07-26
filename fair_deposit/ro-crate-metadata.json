@@ -1,0 +1,2652 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Plant spaceflight alternative splicing analysis",
+      "description": "rMATS-based differential splicing analysis of NASA OSDR plant RNA-seq data with ML and ontology integration. 7 Arabidopsis thaliana studies (OSD-314, OSD-120, OSD-37, OSD-678, OSD-658, OSD-476, OSD-251) + 1 Brassica rapa study (OSD-59). 199 samples, ~100,000 events, 93 recurrent genes, AT4G17310 in 4 studies.",
+      "datePublished": "2026-07-26",
+      "license": "MIT",
+      "author": {
+        "@id": "#richard-barker"
+      },
+      "hasPart": [
+        {
+          "@id": "multi_study_analysis/feature_genes.tsv"
+        },
+        {
+          "@id": "multi_study_analysis/feature_matrix.npy"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_cross_study_event_types.png"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_cross_study_event_types.svg"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_cross_study_recurrence.png"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_cross_study_recurrence.svg"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_event_type_comparison.png"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_event_type_comparison.svg"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_losocv_results.png"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_losocv_results.svg"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_nested_kfold.png"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_nested_kfold.svg"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_osd120_go_enrichment.png"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_osd120_go_enrichment.svg"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_osd120_nmd_summary.png"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_osd120_nmd_summary.svg"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_osd120_volcano.png"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_osd120_volcano.svg"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_shap_importance.png"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_shap_importance.svg"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_umap_multi_study.png"
+        },
+        {
+          "@id": "multi_study_analysis/figures/fig_umap_multi_study.svg"
+        },
+        {
+          "@id": "multi_study_analysis/labels_flight.npy"
+        },
+        {
+          "@id": "multi_study_analysis/losocv_results.tsv"
+        },
+        {
+          "@id": "multi_study_analysis/nested_kfold_results.tsv"
+        },
+        {
+          "@id": "multi_study_analysis/sample_metadata.tsv"
+        },
+        {
+          "@id": "multi_study_analysis/shap_importance.tsv"
+        },
+        {
+          "@id": "multi_study_analysis/study_ids.npy"
+        },
+        {
+          "@id": "multi_study_analysis/umap_clustering.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v2/feature_genes.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v2/feature_matrix.npy"
+        },
+        {
+          "@id": "multi_study_analysis_v2/figures/fig_cross_study_event_types_v2.png"
+        },
+        {
+          "@id": "multi_study_analysis_v2/figures/fig_cross_study_event_types_v2.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v2/figures/fig_cross_study_recurrence_v2.png"
+        },
+        {
+          "@id": "multi_study_analysis_v2/figures/fig_cross_study_recurrence_v2.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v2/figures/fig_losocv_v2.png"
+        },
+        {
+          "@id": "multi_study_analysis_v2/figures/fig_losocv_v2.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v2/figures/fig_nested_kfold_v2.png"
+        },
+        {
+          "@id": "multi_study_analysis_v2/figures/fig_nested_kfold_v2.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v2/figures/fig_shap_v2.png"
+        },
+        {
+          "@id": "multi_study_analysis_v2/figures/fig_shap_v2.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v2/figures/fig_umap_v2.png"
+        },
+        {
+          "@id": "multi_study_analysis_v2/figures/fig_umap_v2.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v2/labels_flight.npy"
+        },
+        {
+          "@id": "multi_study_analysis_v2/losocv_results.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v2/nested_kfold_results.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v2/sample_metadata.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v2/shap_importance.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v2/study_ids.npy"
+        },
+        {
+          "@id": "multi_study_analysis_v2/umap_clustering.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v3/feature_genes.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v3/feature_matrix.npy"
+        },
+        {
+          "@id": "multi_study_analysis_v3/figures/fig_cross_study_event_types_v3.png"
+        },
+        {
+          "@id": "multi_study_analysis_v3/figures/fig_cross_study_event_types_v3.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v3/figures/fig_cross_study_recurrence_v3.png"
+        },
+        {
+          "@id": "multi_study_analysis_v3/figures/fig_cross_study_recurrence_v3.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v3/figures/fig_losocv_v3.png"
+        },
+        {
+          "@id": "multi_study_analysis_v3/figures/fig_losocv_v3.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v3/figures/fig_nested_kfold_v3.png"
+        },
+        {
+          "@id": "multi_study_analysis_v3/figures/fig_nested_kfold_v3.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v3/figures/fig_shap_v3.png"
+        },
+        {
+          "@id": "multi_study_analysis_v3/figures/fig_shap_v3.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v3/figures/fig_umap_v3.png"
+        },
+        {
+          "@id": "multi_study_analysis_v3/figures/fig_umap_v3.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v3/labels_flight.npy"
+        },
+        {
+          "@id": "multi_study_analysis_v3/losocv_results.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v3/nested_kfold_results.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v3/sample_metadata.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v3/shap_importance.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v3/study_ids.npy"
+        },
+        {
+          "@id": "multi_study_analysis_v3/umap_clustering.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v4/cross_study_recurrence.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v4/feature_genes.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v4/feature_matrix.npy"
+        },
+        {
+          "@id": "multi_study_analysis_v4/figures/fig_cross_study_event_types_v4.png"
+        },
+        {
+          "@id": "multi_study_analysis_v4/figures/fig_cross_study_event_types_v4.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v4/figures/fig_cross_study_recurrence_v4.png"
+        },
+        {
+          "@id": "multi_study_analysis_v4/figures/fig_cross_study_recurrence_v4.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v4/figures/fig_losocv_v4.png"
+        },
+        {
+          "@id": "multi_study_analysis_v4/figures/fig_losocv_v4.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v4/figures/fig_nested_kfold_v4.png"
+        },
+        {
+          "@id": "multi_study_analysis_v4/figures/fig_nested_kfold_v4.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v4/figures/fig_shap_v4.png"
+        },
+        {
+          "@id": "multi_study_analysis_v4/figures/fig_shap_v4.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v4/figures/fig_umap_v4.png"
+        },
+        {
+          "@id": "multi_study_analysis_v4/figures/fig_umap_v4.svg"
+        },
+        {
+          "@id": "multi_study_analysis_v4/labels_flight.npy"
+        },
+        {
+          "@id": "multi_study_analysis_v4/losocv_results.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v4/nested_kfold_results.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v4/recurrent_genes.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v4/sample_metadata.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v4/shap_importance.tsv"
+        },
+        {
+          "@id": "multi_study_analysis_v4/study_ids.npy"
+        },
+        {
+          "@id": "multi_study_analysis_v4/umap_clustering.tsv"
+        },
+        {
+          "@id": "npj_manuscript.md"
+        },
+        {
+          "@id": "npj_manuscript.tex"
+        },
+        {
+          "@id": "osd120_analysis/OSD-120_all_events.tsv"
+        },
+        {
+          "@id": "osd120_analysis/OSD-120_go_enrichment.tsv"
+        },
+        {
+          "@id": "osd120_analysis/OSD-120_mapman_enrichment.tsv"
+        },
+        {
+          "@id": "osd120_analysis/OSD-120_nmd_predictions.tsv"
+        },
+        {
+          "@id": "osd120_analysis/OSD-120_psi_matrix.tsv"
+        },
+        {
+          "@id": "osd120_analysis/OSD-120_significant_events.tsv"
+        },
+        {
+          "@id": "osd120_analysis/figures/splicegraph_AT1G73930.png"
+        },
+        {
+          "@id": "osd120_analysis/figures/splicegraph_AT1G73930.svg"
+        },
+        {
+          "@id": "osd120_analysis/figures/splicegraph_AT3G20810.png"
+        },
+        {
+          "@id": "osd120_analysis/figures/splicegraph_AT3G20810.svg"
+        },
+        {
+          "@id": "osd120_analysis/figures/splicegraph_AT4G12790.png"
+        },
+        {
+          "@id": "osd120_analysis/figures/splicegraph_AT4G12790.svg"
+        },
+        {
+          "@id": "osd120_analysis/figures/splicegraph_AT4G26600.png"
+        },
+        {
+          "@id": "osd120_analysis/figures/splicegraph_AT4G26600.svg"
+        },
+        {
+          "@id": "osd120_analysis/figures/splicegraph_AT5G06950.png"
+        },
+        {
+          "@id": "osd120_analysis/figures/splicegraph_AT5G06950.svg"
+        },
+        {
+          "@id": "osd120_analysis/figures/splicegraph_AT5G42900.png"
+        },
+        {
+          "@id": "osd120_analysis/figures/splicegraph_AT5G42900.svg"
+        },
+        {
+          "@id": "osd120_analysis/figures/splicegraph_AT5G60120.png"
+        },
+        {
+          "@id": "osd120_analysis/figures/splicegraph_AT5G60120.svg"
+        },
+        {
+          "@id": "osd251_analysis/OSD-251_all_events.tsv"
+        },
+        {
+          "@id": "osd251_analysis/OSD-251_go_enrichment.tsv"
+        },
+        {
+          "@id": "osd251_analysis/OSD-251_nmd_predictions.tsv"
+        },
+        {
+          "@id": "osd251_analysis/OSD-251_psi_matrix.tsv"
+        },
+        {
+          "@id": "osd251_analysis/OSD-251_significant_events.tsv"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT1G10240.png"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT1G10240.svg"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT2G05440.png"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT2G05440.svg"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT2G16940.png"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT2G16940.svg"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT2G33815.png"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT2G33815.svg"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT2G38920.png"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT2G38920.svg"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT3G09370.png"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT3G09370.svg"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT3G20270.png"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT3G20270.svg"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT5G57565.png"
+        },
+        {
+          "@id": "osd251_analysis/figures/splicegraph_AT5G57565.svg"
+        },
+        {
+          "@id": "osd314_analysis/OSD-314_all_events.tsv"
+        },
+        {
+          "@id": "osd314_analysis/OSD-314_go_enrichment.tsv"
+        },
+        {
+          "@id": "osd314_analysis/OSD-314_mapman_enrichment.tsv"
+        },
+        {
+          "@id": "osd314_analysis/OSD-314_nmd_predictions.tsv"
+        },
+        {
+          "@id": "osd314_analysis/OSD-314_psi_matrix.tsv"
+        },
+        {
+          "@id": "osd314_analysis/OSD-314_significant_events.tsv"
+        },
+        {
+          "@id": "osd314_analysis/OSD-314_umap_clustering.tsv"
+        },
+        {
+          "@id": "osd314_analysis/figures/fig01_event_type_distribution.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/fig01_event_type_distribution.svg"
+        },
+        {
+          "@id": "osd314_analysis/figures/fig02_volcano_plots.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/fig02_volcano_plots.svg"
+        },
+        {
+          "@id": "osd314_analysis/figures/fig03_psi_heatmap.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/fig03_psi_heatmap.svg"
+        },
+        {
+          "@id": "osd314_analysis/figures/fig04_umap_clustering.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/fig04_umap_clustering.svg"
+        },
+        {
+          "@id": "osd314_analysis/figures/fig07_nmd_summary.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/fig07_nmd_summary.svg"
+        },
+        {
+          "@id": "osd314_analysis/figures/fig09_go_enrichment.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/fig09_go_enrichment.svg"
+        },
+        {
+          "@id": "osd314_analysis/figures/fig11_splice_graph_RI_chr3_+_4182994-4183975-4182994-4183207-4183293-4183975.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/fig11_splice_graph_RI_chr3_+_4182994-4183975-4182994-4183207-4183293-4183975.svg"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT1G07940.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT1G07940.svg"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT3G13060.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT3G13060.svg"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT3G27990.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT3G27990.svg"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT4G26600.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT4G26600.svg"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT5G14610.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT5G14610.svg"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT5G51460.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT5G51460.svg"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT5G63160.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT5G63160.svg"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT5G66210.png"
+        },
+        {
+          "@id": "osd314_analysis/figures/splicegrapher_AT5G66210.svg"
+        },
+        {
+          "@id": "osd37_analysis/OSD-37_all_events.tsv"
+        },
+        {
+          "@id": "osd37_analysis/OSD-37_go_enrichment.tsv"
+        },
+        {
+          "@id": "osd37_analysis/OSD-37_mapman_enrichment.tsv"
+        },
+        {
+          "@id": "osd37_analysis/OSD-37_nmd_predictions.tsv"
+        },
+        {
+          "@id": "osd37_analysis/OSD-37_psi_matrix.tsv"
+        },
+        {
+          "@id": "osd37_analysis/OSD-37_significant_events.tsv"
+        },
+        {
+          "@id": "osd37_analysis/figures/splicegraph_AT1G07350.png"
+        },
+        {
+          "@id": "osd37_analysis/figures/splicegraph_AT1G07350.svg"
+        },
+        {
+          "@id": "osd37_analysis/figures/splicegraph_AT2G45950.png"
+        },
+        {
+          "@id": "osd37_analysis/figures/splicegraph_AT2G45950.svg"
+        },
+        {
+          "@id": "osd37_analysis/figures/splicegraph_AT3G02800.png"
+        },
+        {
+          "@id": "osd37_analysis/figures/splicegraph_AT3G02800.svg"
+        },
+        {
+          "@id": "osd37_analysis/figures/splicegraph_AT4G21400.png"
+        },
+        {
+          "@id": "osd37_analysis/figures/splicegraph_AT4G21400.svg"
+        },
+        {
+          "@id": "osd37_analysis/figures/splicegraph_AT4G30850.png"
+        },
+        {
+          "@id": "osd37_analysis/figures/splicegraph_AT4G30850.svg"
+        },
+        {
+          "@id": "osd37_analysis/figures/splicegraph_AT5G17300.png"
+        },
+        {
+          "@id": "osd37_analysis/figures/splicegraph_AT5G17300.svg"
+        },
+        {
+          "@id": "osd37_analysis/figures/splicegraph_AT5G23060.png"
+        },
+        {
+          "@id": "osd37_analysis/figures/splicegraph_AT5G23060.svg"
+        },
+        {
+          "@id": "osd476_analysis/OSD-476_all_events.tsv"
+        },
+        {
+          "@id": "osd476_analysis/OSD-476_go_enrichment.tsv"
+        },
+        {
+          "@id": "osd476_analysis/OSD-476_nmd_predictions.tsv"
+        },
+        {
+          "@id": "osd476_analysis/OSD-476_psi_matrix.tsv"
+        },
+        {
+          "@id": "osd476_analysis/OSD-476_significant_events.tsv"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT1G06710.png"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT1G06710.svg"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT1G62610.png"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT1G62610.svg"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT2G30370.png"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT2G30370.svg"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT2G47020.png"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT2G47020.svg"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT3G01980.png"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT3G01980.svg"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT3G03970.png"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT3G03970.svg"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT3G16120.png"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT3G16120.svg"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT3G44340.png"
+        },
+        {
+          "@id": "osd476_analysis/figures/splicegraph_AT3G44340.svg"
+        },
+        {
+          "@id": "osd658_analysis/OSD-658_all_events.tsv"
+        },
+        {
+          "@id": "osd658_analysis/OSD-658_go_enrichment.tsv"
+        },
+        {
+          "@id": "osd658_analysis/OSD-658_nmd_predictions.tsv"
+        },
+        {
+          "@id": "osd658_analysis/OSD-658_psi_matrix.tsv"
+        },
+        {
+          "@id": "osd658_analysis/OSD-658_significant_events.tsv"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT2G17970.png"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT2G17970.svg"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT3G02600.png"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT3G02600.svg"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT3G59410.png"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT3G59410.svg"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT4G17310.png"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT4G17310.svg"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT4G25990.png"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT4G25990.svg"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT5G11630.png"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT5G11630.svg"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT5G13790.png"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT5G13790.svg"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT5G37370.png"
+        },
+        {
+          "@id": "osd658_analysis/figures/splicegraph_AT5G37370.svg"
+        },
+        {
+          "@id": "osd678_analysis/OSD-678_all_events.tsv"
+        },
+        {
+          "@id": "osd678_analysis/OSD-678_go_enrichment.tsv"
+        },
+        {
+          "@id": "osd678_analysis/OSD-678_mapman_enrichment.tsv"
+        },
+        {
+          "@id": "osd678_analysis/OSD-678_nmd_predictions.tsv"
+        },
+        {
+          "@id": "osd678_analysis/OSD-678_psi_matrix.tsv"
+        },
+        {
+          "@id": "osd678_analysis/OSD-678_significant_events.tsv"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT1G01060.png"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT1G01060.svg"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT1G09140.png"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT1G09140.svg"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT1G28330.png"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT1G28330.svg"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT1G72855.png"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT1G72855.svg"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT2G43760.png"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT2G43760.svg"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT2G46270.png"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT2G46270.svg"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT3G13060.png"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT3G13060.svg"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT3G49430.png"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT3G49430.svg"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT5G19210.png"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT5G19210.svg"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT5G52040.png"
+        },
+        {
+          "@id": "osd678_analysis/figures/splicegraph_AT5G52040.svg"
+        }
+      ]
+    },
+    {
+      "@id": "#richard-barker",
+      "@type": "Person",
+      "name": "Richard Barker",
+      "affiliation": "NASA GeneLab / OSDR"
+    },
+    {
+      "@id": "multi_study_analysis/feature_genes.tsv",
+      "@type": "File",
+      "name": "feature_genes.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Gene names for feature matrix columns"
+    },
+    {
+      "@id": "multi_study_analysis/feature_matrix.npy",
+      "@type": "File",
+      "name": "feature_matrix.npy",
+      "encodingFormat": "application/x-numpy",
+      "description": "Unified PSI feature matrix (samples x genes)"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_cross_study_event_types.png",
+      "@type": "File",
+      "name": "fig_cross_study_event_types.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_cross_study_event_types.svg",
+      "@type": "File",
+      "name": "fig_cross_study_event_types.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_cross_study_recurrence.png",
+      "@type": "File",
+      "name": "fig_cross_study_recurrence.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_cross_study_recurrence.svg",
+      "@type": "File",
+      "name": "fig_cross_study_recurrence.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_event_type_comparison.png",
+      "@type": "File",
+      "name": "fig_event_type_comparison.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_event_type_comparison.svg",
+      "@type": "File",
+      "name": "fig_event_type_comparison.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_losocv_results.png",
+      "@type": "File",
+      "name": "fig_losocv_results.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_losocv_results.svg",
+      "@type": "File",
+      "name": "fig_losocv_results.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_nested_kfold.png",
+      "@type": "File",
+      "name": "fig_nested_kfold.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_nested_kfold.svg",
+      "@type": "File",
+      "name": "fig_nested_kfold.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_osd120_go_enrichment.png",
+      "@type": "File",
+      "name": "fig_osd120_go_enrichment.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_osd120_go_enrichment.svg",
+      "@type": "File",
+      "name": "fig_osd120_go_enrichment.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_osd120_nmd_summary.png",
+      "@type": "File",
+      "name": "fig_osd120_nmd_summary.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_osd120_nmd_summary.svg",
+      "@type": "File",
+      "name": "fig_osd120_nmd_summary.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_osd120_volcano.png",
+      "@type": "File",
+      "name": "fig_osd120_volcano.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_osd120_volcano.svg",
+      "@type": "File",
+      "name": "fig_osd120_volcano.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_shap_importance.png",
+      "@type": "File",
+      "name": "fig_shap_importance.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_shap_importance.svg",
+      "@type": "File",
+      "name": "fig_shap_importance.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_umap_multi_study.png",
+      "@type": "File",
+      "name": "fig_umap_multi_study.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/figures/fig_umap_multi_study.svg",
+      "@type": "File",
+      "name": "fig_umap_multi_study.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis/labels_flight.npy",
+      "@type": "File",
+      "name": "labels_flight.npy",
+      "encodingFormat": "application/x-numpy",
+      "description": "Binary treatment/control labels"
+    },
+    {
+      "@id": "multi_study_analysis/losocv_results.tsv",
+      "@type": "File",
+      "name": "losocv_results.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Leave-one-study-out CV classification results"
+    },
+    {
+      "@id": "multi_study_analysis/nested_kfold_results.tsv",
+      "@type": "File",
+      "name": "nested_kfold_results.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Nested k-fold CV results"
+    },
+    {
+      "@id": "multi_study_analysis/sample_metadata.tsv",
+      "@type": "File",
+      "name": "sample_metadata.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Sample metadata across studies"
+    },
+    {
+      "@id": "multi_study_analysis/shap_importance.tsv",
+      "@type": "File",
+      "name": "shap_importance.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "SHAP feature importance values"
+    },
+    {
+      "@id": "multi_study_analysis/study_ids.npy",
+      "@type": "File",
+      "name": "study_ids.npy",
+      "encodingFormat": "application/x-numpy",
+      "description": "Study ID strings per sample"
+    },
+    {
+      "@id": "multi_study_analysis/umap_clustering.tsv",
+      "@type": "File",
+      "name": "umap_clustering.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "UMAP embedding with cluster labels"
+    },
+    {
+      "@id": "multi_study_analysis_v2/feature_genes.tsv",
+      "@type": "File",
+      "name": "feature_genes.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Gene names for feature matrix columns"
+    },
+    {
+      "@id": "multi_study_analysis_v2/feature_matrix.npy",
+      "@type": "File",
+      "name": "feature_matrix.npy",
+      "encodingFormat": "application/x-numpy",
+      "description": "Unified PSI feature matrix (samples x genes)"
+    },
+    {
+      "@id": "multi_study_analysis_v2/figures/fig_cross_study_event_types_v2.png",
+      "@type": "File",
+      "name": "fig_cross_study_event_types_v2.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v2/figures/fig_cross_study_event_types_v2.svg",
+      "@type": "File",
+      "name": "fig_cross_study_event_types_v2.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v2/figures/fig_cross_study_recurrence_v2.png",
+      "@type": "File",
+      "name": "fig_cross_study_recurrence_v2.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v2/figures/fig_cross_study_recurrence_v2.svg",
+      "@type": "File",
+      "name": "fig_cross_study_recurrence_v2.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v2/figures/fig_losocv_v2.png",
+      "@type": "File",
+      "name": "fig_losocv_v2.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v2/figures/fig_losocv_v2.svg",
+      "@type": "File",
+      "name": "fig_losocv_v2.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v2/figures/fig_nested_kfold_v2.png",
+      "@type": "File",
+      "name": "fig_nested_kfold_v2.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v2/figures/fig_nested_kfold_v2.svg",
+      "@type": "File",
+      "name": "fig_nested_kfold_v2.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v2/figures/fig_shap_v2.png",
+      "@type": "File",
+      "name": "fig_shap_v2.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v2/figures/fig_shap_v2.svg",
+      "@type": "File",
+      "name": "fig_shap_v2.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v2/figures/fig_umap_v2.png",
+      "@type": "File",
+      "name": "fig_umap_v2.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v2/figures/fig_umap_v2.svg",
+      "@type": "File",
+      "name": "fig_umap_v2.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v2/labels_flight.npy",
+      "@type": "File",
+      "name": "labels_flight.npy",
+      "encodingFormat": "application/x-numpy",
+      "description": "Binary treatment/control labels"
+    },
+    {
+      "@id": "multi_study_analysis_v2/losocv_results.tsv",
+      "@type": "File",
+      "name": "losocv_results.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Leave-one-study-out CV classification results"
+    },
+    {
+      "@id": "multi_study_analysis_v2/nested_kfold_results.tsv",
+      "@type": "File",
+      "name": "nested_kfold_results.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Nested k-fold CV results"
+    },
+    {
+      "@id": "multi_study_analysis_v2/sample_metadata.tsv",
+      "@type": "File",
+      "name": "sample_metadata.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Sample metadata across studies"
+    },
+    {
+      "@id": "multi_study_analysis_v2/shap_importance.tsv",
+      "@type": "File",
+      "name": "shap_importance.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "SHAP feature importance values"
+    },
+    {
+      "@id": "multi_study_analysis_v2/study_ids.npy",
+      "@type": "File",
+      "name": "study_ids.npy",
+      "encodingFormat": "application/x-numpy",
+      "description": "Study ID strings per sample"
+    },
+    {
+      "@id": "multi_study_analysis_v2/umap_clustering.tsv",
+      "@type": "File",
+      "name": "umap_clustering.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "UMAP embedding with cluster labels"
+    },
+    {
+      "@id": "multi_study_analysis_v3/feature_genes.tsv",
+      "@type": "File",
+      "name": "feature_genes.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Gene names for feature matrix columns"
+    },
+    {
+      "@id": "multi_study_analysis_v3/feature_matrix.npy",
+      "@type": "File",
+      "name": "feature_matrix.npy",
+      "encodingFormat": "application/x-numpy",
+      "description": "Unified PSI feature matrix (samples x genes)"
+    },
+    {
+      "@id": "multi_study_analysis_v3/figures/fig_cross_study_event_types_v3.png",
+      "@type": "File",
+      "name": "fig_cross_study_event_types_v3.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v3/figures/fig_cross_study_event_types_v3.svg",
+      "@type": "File",
+      "name": "fig_cross_study_event_types_v3.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v3/figures/fig_cross_study_recurrence_v3.png",
+      "@type": "File",
+      "name": "fig_cross_study_recurrence_v3.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v3/figures/fig_cross_study_recurrence_v3.svg",
+      "@type": "File",
+      "name": "fig_cross_study_recurrence_v3.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v3/figures/fig_losocv_v3.png",
+      "@type": "File",
+      "name": "fig_losocv_v3.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v3/figures/fig_losocv_v3.svg",
+      "@type": "File",
+      "name": "fig_losocv_v3.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v3/figures/fig_nested_kfold_v3.png",
+      "@type": "File",
+      "name": "fig_nested_kfold_v3.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v3/figures/fig_nested_kfold_v3.svg",
+      "@type": "File",
+      "name": "fig_nested_kfold_v3.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v3/figures/fig_shap_v3.png",
+      "@type": "File",
+      "name": "fig_shap_v3.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v3/figures/fig_shap_v3.svg",
+      "@type": "File",
+      "name": "fig_shap_v3.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v3/figures/fig_umap_v3.png",
+      "@type": "File",
+      "name": "fig_umap_v3.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v3/figures/fig_umap_v3.svg",
+      "@type": "File",
+      "name": "fig_umap_v3.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v3/labels_flight.npy",
+      "@type": "File",
+      "name": "labels_flight.npy",
+      "encodingFormat": "application/x-numpy",
+      "description": "Binary treatment/control labels"
+    },
+    {
+      "@id": "multi_study_analysis_v3/losocv_results.tsv",
+      "@type": "File",
+      "name": "losocv_results.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Leave-one-study-out CV classification results"
+    },
+    {
+      "@id": "multi_study_analysis_v3/nested_kfold_results.tsv",
+      "@type": "File",
+      "name": "nested_kfold_results.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Nested k-fold CV results"
+    },
+    {
+      "@id": "multi_study_analysis_v3/sample_metadata.tsv",
+      "@type": "File",
+      "name": "sample_metadata.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Sample metadata across studies"
+    },
+    {
+      "@id": "multi_study_analysis_v3/shap_importance.tsv",
+      "@type": "File",
+      "name": "shap_importance.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "SHAP feature importance values"
+    },
+    {
+      "@id": "multi_study_analysis_v3/study_ids.npy",
+      "@type": "File",
+      "name": "study_ids.npy",
+      "encodingFormat": "application/x-numpy",
+      "description": "Study ID strings per sample"
+    },
+    {
+      "@id": "multi_study_analysis_v3/umap_clustering.tsv",
+      "@type": "File",
+      "name": "umap_clustering.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "UMAP embedding with cluster labels"
+    },
+    {
+      "@id": "multi_study_analysis_v4/cross_study_recurrence.tsv",
+      "@type": "File",
+      "name": "cross_study_recurrence.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Pairwise cross-study gene overlap counts"
+    },
+    {
+      "@id": "multi_study_analysis_v4/feature_genes.tsv",
+      "@type": "File",
+      "name": "feature_genes.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Gene names for feature matrix columns"
+    },
+    {
+      "@id": "multi_study_analysis_v4/feature_matrix.npy",
+      "@type": "File",
+      "name": "feature_matrix.npy",
+      "encodingFormat": "application/x-numpy",
+      "description": "Unified PSI feature matrix (samples x genes)"
+    },
+    {
+      "@id": "multi_study_analysis_v4/figures/fig_cross_study_event_types_v4.png",
+      "@type": "File",
+      "name": "fig_cross_study_event_types_v4.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v4/figures/fig_cross_study_event_types_v4.svg",
+      "@type": "File",
+      "name": "fig_cross_study_event_types_v4.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v4/figures/fig_cross_study_recurrence_v4.png",
+      "@type": "File",
+      "name": "fig_cross_study_recurrence_v4.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v4/figures/fig_cross_study_recurrence_v4.svg",
+      "@type": "File",
+      "name": "fig_cross_study_recurrence_v4.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v4/figures/fig_losocv_v4.png",
+      "@type": "File",
+      "name": "fig_losocv_v4.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v4/figures/fig_losocv_v4.svg",
+      "@type": "File",
+      "name": "fig_losocv_v4.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v4/figures/fig_nested_kfold_v4.png",
+      "@type": "File",
+      "name": "fig_nested_kfold_v4.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v4/figures/fig_nested_kfold_v4.svg",
+      "@type": "File",
+      "name": "fig_nested_kfold_v4.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v4/figures/fig_shap_v4.png",
+      "@type": "File",
+      "name": "fig_shap_v4.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v4/figures/fig_shap_v4.svg",
+      "@type": "File",
+      "name": "fig_shap_v4.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v4/figures/fig_umap_v4.png",
+      "@type": "File",
+      "name": "fig_umap_v4.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v4/figures/fig_umap_v4.svg",
+      "@type": "File",
+      "name": "fig_umap_v4.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "multi_study_analysis_v4/labels_flight.npy",
+      "@type": "File",
+      "name": "labels_flight.npy",
+      "encodingFormat": "application/x-numpy",
+      "description": "Binary treatment/control labels"
+    },
+    {
+      "@id": "multi_study_analysis_v4/losocv_results.tsv",
+      "@type": "File",
+      "name": "losocv_results.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Leave-one-study-out CV classification results"
+    },
+    {
+      "@id": "multi_study_analysis_v4/nested_kfold_results.tsv",
+      "@type": "File",
+      "name": "nested_kfold_results.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Nested k-fold CV results"
+    },
+    {
+      "@id": "multi_study_analysis_v4/recurrent_genes.tsv",
+      "@type": "File",
+      "name": "recurrent_genes.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Genes significant in >=2 studies"
+    },
+    {
+      "@id": "multi_study_analysis_v4/sample_metadata.tsv",
+      "@type": "File",
+      "name": "sample_metadata.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Sample metadata across studies"
+    },
+    {
+      "@id": "multi_study_analysis_v4/shap_importance.tsv",
+      "@type": "File",
+      "name": "shap_importance.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "SHAP feature importance values"
+    },
+    {
+      "@id": "multi_study_analysis_v4/study_ids.npy",
+      "@type": "File",
+      "name": "study_ids.npy",
+      "encodingFormat": "application/x-numpy",
+      "description": "Study ID strings per sample"
+    },
+    {
+      "@id": "multi_study_analysis_v4/umap_clustering.tsv",
+      "@type": "File",
+      "name": "umap_clustering.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "UMAP embedding with cluster labels"
+    },
+    {
+      "@id": "npj_manuscript.md",
+      "@type": "File",
+      "name": "npj_manuscript.md",
+      "encodingFormat": "text/markdown",
+      "description": "npj Microgravity manuscript (Markdown)"
+    },
+    {
+      "@id": "npj_manuscript.tex",
+      "@type": "File",
+      "name": "npj_manuscript.tex",
+      "encodingFormat": "application/x-tex",
+      "description": "npj Microgravity manuscript (LaTeX)"
+    },
+    {
+      "@id": "osd120_analysis/OSD-120_all_events.tsv",
+      "@type": "File",
+      "name": "OSD-120_all_events.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "All rMATS events for osd120_analysis"
+    },
+    {
+      "@id": "osd120_analysis/OSD-120_go_enrichment.tsv",
+      "@type": "File",
+      "name": "OSD-120_go_enrichment.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "GO over-representation analysis for osd120_analysis"
+    },
+    {
+      "@id": "osd120_analysis/OSD-120_mapman_enrichment.tsv",
+      "@type": "File",
+      "name": "OSD-120_mapman_enrichment.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "MapMan bin enrichment for osd120_analysis"
+    },
+    {
+      "@id": "osd120_analysis/OSD-120_nmd_predictions.tsv",
+      "@type": "File",
+      "name": "OSD-120_nmd_predictions.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "NMD susceptibility predictions for osd120_analysis"
+    },
+    {
+      "@id": "osd120_analysis/OSD-120_psi_matrix.tsv",
+      "@type": "File",
+      "name": "OSD-120_psi_matrix.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "PSI matrix for osd120_analysis"
+    },
+    {
+      "@id": "osd120_analysis/OSD-120_significant_events.tsv",
+      "@type": "File",
+      "name": "OSD-120_significant_events.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Significant events (FDR<0.05, |dPSI|>0.1) for osd120_analysis"
+    },
+    {
+      "@id": "osd120_analysis/figures/splicegraph_AT1G73930.png",
+      "@type": "File",
+      "name": "splicegraph_AT1G73930.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT1G73930"
+    },
+    {
+      "@id": "osd120_analysis/figures/splicegraph_AT1G73930.svg",
+      "@type": "File",
+      "name": "splicegraph_AT1G73930.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT1G73930"
+    },
+    {
+      "@id": "osd120_analysis/figures/splicegraph_AT3G20810.png",
+      "@type": "File",
+      "name": "splicegraph_AT3G20810.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT3G20810"
+    },
+    {
+      "@id": "osd120_analysis/figures/splicegraph_AT3G20810.svg",
+      "@type": "File",
+      "name": "splicegraph_AT3G20810.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT3G20810"
+    },
+    {
+      "@id": "osd120_analysis/figures/splicegraph_AT4G12790.png",
+      "@type": "File",
+      "name": "splicegraph_AT4G12790.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT4G12790"
+    },
+    {
+      "@id": "osd120_analysis/figures/splicegraph_AT4G12790.svg",
+      "@type": "File",
+      "name": "splicegraph_AT4G12790.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT4G12790"
+    },
+    {
+      "@id": "osd120_analysis/figures/splicegraph_AT4G26600.png",
+      "@type": "File",
+      "name": "splicegraph_AT4G26600.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT4G26600"
+    },
+    {
+      "@id": "osd120_analysis/figures/splicegraph_AT4G26600.svg",
+      "@type": "File",
+      "name": "splicegraph_AT4G26600.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT4G26600"
+    },
+    {
+      "@id": "osd120_analysis/figures/splicegraph_AT5G06950.png",
+      "@type": "File",
+      "name": "splicegraph_AT5G06950.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G06950"
+    },
+    {
+      "@id": "osd120_analysis/figures/splicegraph_AT5G06950.svg",
+      "@type": "File",
+      "name": "splicegraph_AT5G06950.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G06950"
+    },
+    {
+      "@id": "osd120_analysis/figures/splicegraph_AT5G42900.png",
+      "@type": "File",
+      "name": "splicegraph_AT5G42900.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G42900"
+    },
+    {
+      "@id": "osd120_analysis/figures/splicegraph_AT5G42900.svg",
+      "@type": "File",
+      "name": "splicegraph_AT5G42900.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G42900"
+    },
+    {
+      "@id": "osd120_analysis/figures/splicegraph_AT5G60120.png",
+      "@type": "File",
+      "name": "splicegraph_AT5G60120.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G60120"
+    },
+    {
+      "@id": "osd120_analysis/figures/splicegraph_AT5G60120.svg",
+      "@type": "File",
+      "name": "splicegraph_AT5G60120.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G60120"
+    },
+    {
+      "@id": "osd251_analysis/OSD-251_all_events.tsv",
+      "@type": "File",
+      "name": "OSD-251_all_events.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "All rMATS events for osd251_analysis"
+    },
+    {
+      "@id": "osd251_analysis/OSD-251_go_enrichment.tsv",
+      "@type": "File",
+      "name": "OSD-251_go_enrichment.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "GO over-representation analysis for osd251_analysis"
+    },
+    {
+      "@id": "osd251_analysis/OSD-251_nmd_predictions.tsv",
+      "@type": "File",
+      "name": "OSD-251_nmd_predictions.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "NMD susceptibility predictions for osd251_analysis"
+    },
+    {
+      "@id": "osd251_analysis/OSD-251_psi_matrix.tsv",
+      "@type": "File",
+      "name": "OSD-251_psi_matrix.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "PSI matrix for osd251_analysis"
+    },
+    {
+      "@id": "osd251_analysis/OSD-251_significant_events.tsv",
+      "@type": "File",
+      "name": "OSD-251_significant_events.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Significant events (FDR<0.05, |dPSI|>0.1) for osd251_analysis"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT1G10240.png",
+      "@type": "File",
+      "name": "splicegraph_AT1G10240.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT1G10240"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT1G10240.svg",
+      "@type": "File",
+      "name": "splicegraph_AT1G10240.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT1G10240"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT2G05440.png",
+      "@type": "File",
+      "name": "splicegraph_AT2G05440.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT2G05440"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT2G05440.svg",
+      "@type": "File",
+      "name": "splicegraph_AT2G05440.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT2G05440"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT2G16940.png",
+      "@type": "File",
+      "name": "splicegraph_AT2G16940.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT2G16940"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT2G16940.svg",
+      "@type": "File",
+      "name": "splicegraph_AT2G16940.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT2G16940"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT2G33815.png",
+      "@type": "File",
+      "name": "splicegraph_AT2G33815.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT2G33815"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT2G33815.svg",
+      "@type": "File",
+      "name": "splicegraph_AT2G33815.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT2G33815"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT2G38920.png",
+      "@type": "File",
+      "name": "splicegraph_AT2G38920.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT2G38920"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT2G38920.svg",
+      "@type": "File",
+      "name": "splicegraph_AT2G38920.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT2G38920"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT3G09370.png",
+      "@type": "File",
+      "name": "splicegraph_AT3G09370.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT3G09370"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT3G09370.svg",
+      "@type": "File",
+      "name": "splicegraph_AT3G09370.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT3G09370"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT3G20270.png",
+      "@type": "File",
+      "name": "splicegraph_AT3G20270.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT3G20270"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT3G20270.svg",
+      "@type": "File",
+      "name": "splicegraph_AT3G20270.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT3G20270"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT5G57565.png",
+      "@type": "File",
+      "name": "splicegraph_AT5G57565.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G57565"
+    },
+    {
+      "@id": "osd251_analysis/figures/splicegraph_AT5G57565.svg",
+      "@type": "File",
+      "name": "splicegraph_AT5G57565.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G57565"
+    },
+    {
+      "@id": "osd314_analysis/OSD-314_all_events.tsv",
+      "@type": "File",
+      "name": "OSD-314_all_events.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "All rMATS events for osd314_analysis"
+    },
+    {
+      "@id": "osd314_analysis/OSD-314_go_enrichment.tsv",
+      "@type": "File",
+      "name": "OSD-314_go_enrichment.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "GO over-representation analysis for osd314_analysis"
+    },
+    {
+      "@id": "osd314_analysis/OSD-314_mapman_enrichment.tsv",
+      "@type": "File",
+      "name": "OSD-314_mapman_enrichment.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "MapMan bin enrichment for osd314_analysis"
+    },
+    {
+      "@id": "osd314_analysis/OSD-314_nmd_predictions.tsv",
+      "@type": "File",
+      "name": "OSD-314_nmd_predictions.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "NMD susceptibility predictions for osd314_analysis"
+    },
+    {
+      "@id": "osd314_analysis/OSD-314_psi_matrix.tsv",
+      "@type": "File",
+      "name": "OSD-314_psi_matrix.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "PSI matrix for osd314_analysis"
+    },
+    {
+      "@id": "osd314_analysis/OSD-314_significant_events.tsv",
+      "@type": "File",
+      "name": "OSD-314_significant_events.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Significant events (FDR<0.05, |dPSI|>0.1) for osd314_analysis"
+    },
+    {
+      "@id": "osd314_analysis/OSD-314_umap_clustering.tsv",
+      "@type": "File",
+      "name": "OSD-314_umap_clustering.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "UMAP embedding with cluster labels"
+    },
+    {
+      "@id": "osd314_analysis/figures/fig01_event_type_distribution.png",
+      "@type": "File",
+      "name": "fig01_event_type_distribution.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "osd314_analysis/figures/fig01_event_type_distribution.svg",
+      "@type": "File",
+      "name": "fig01_event_type_distribution.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "osd314_analysis/figures/fig02_volcano_plots.png",
+      "@type": "File",
+      "name": "fig02_volcano_plots.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "osd314_analysis/figures/fig02_volcano_plots.svg",
+      "@type": "File",
+      "name": "fig02_volcano_plots.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "osd314_analysis/figures/fig03_psi_heatmap.png",
+      "@type": "File",
+      "name": "fig03_psi_heatmap.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "osd314_analysis/figures/fig03_psi_heatmap.svg",
+      "@type": "File",
+      "name": "fig03_psi_heatmap.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "osd314_analysis/figures/fig04_umap_clustering.png",
+      "@type": "File",
+      "name": "fig04_umap_clustering.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "osd314_analysis/figures/fig04_umap_clustering.svg",
+      "@type": "File",
+      "name": "fig04_umap_clustering.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "osd314_analysis/figures/fig07_nmd_summary.png",
+      "@type": "File",
+      "name": "fig07_nmd_summary.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "osd314_analysis/figures/fig07_nmd_summary.svg",
+      "@type": "File",
+      "name": "fig07_nmd_summary.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "osd314_analysis/figures/fig09_go_enrichment.png",
+      "@type": "File",
+      "name": "fig09_go_enrichment.png",
+      "encodingFormat": "image/png",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "osd314_analysis/figures/fig09_go_enrichment.svg",
+      "@type": "File",
+      "name": "fig09_go_enrichment.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "Publication figure"
+    },
+    {
+      "@id": "osd314_analysis/figures/fig11_splice_graph_RI_chr3_+_4182994-4183975-4182994-4183207-4183293-4183975.png",
+      "@type": "File",
+      "name": "fig11_splice_graph_RI_chr3_+_4182994-4183975-4182994-4183207-4183293-4183975.png",
+      "encodingFormat": "image/png"
+    },
+    {
+      "@id": "osd314_analysis/figures/fig11_splice_graph_RI_chr3_+_4182994-4183975-4182994-4183207-4183293-4183975.svg",
+      "@type": "File",
+      "name": "fig11_splice_graph_RI_chr3_+_4182994-4183975-4182994-4183207-4183293-4183975.svg",
+      "encodingFormat": "image/svg+xml"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT1G07940.png",
+      "@type": "File",
+      "name": "splicegrapher_AT1G07940.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT1G07940"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT1G07940.svg",
+      "@type": "File",
+      "name": "splicegrapher_AT1G07940.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT1G07940"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT3G13060.png",
+      "@type": "File",
+      "name": "splicegrapher_AT3G13060.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT3G13060"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT3G13060.svg",
+      "@type": "File",
+      "name": "splicegrapher_AT3G13060.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT3G13060"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT3G27990.png",
+      "@type": "File",
+      "name": "splicegrapher_AT3G27990.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT3G27990"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT3G27990.svg",
+      "@type": "File",
+      "name": "splicegrapher_AT3G27990.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT3G27990"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT4G26600.png",
+      "@type": "File",
+      "name": "splicegrapher_AT4G26600.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT4G26600"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT4G26600.svg",
+      "@type": "File",
+      "name": "splicegrapher_AT4G26600.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT4G26600"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT5G14610.png",
+      "@type": "File",
+      "name": "splicegrapher_AT5G14610.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G14610"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT5G14610.svg",
+      "@type": "File",
+      "name": "splicegrapher_AT5G14610.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G14610"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT5G51460.png",
+      "@type": "File",
+      "name": "splicegrapher_AT5G51460.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G51460"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT5G51460.svg",
+      "@type": "File",
+      "name": "splicegrapher_AT5G51460.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G51460"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT5G63160.png",
+      "@type": "File",
+      "name": "splicegrapher_AT5G63160.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G63160"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT5G63160.svg",
+      "@type": "File",
+      "name": "splicegrapher_AT5G63160.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G63160"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT5G66210.png",
+      "@type": "File",
+      "name": "splicegrapher_AT5G66210.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G66210"
+    },
+    {
+      "@id": "osd314_analysis/figures/splicegrapher_AT5G66210.svg",
+      "@type": "File",
+      "name": "splicegrapher_AT5G66210.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G66210"
+    },
+    {
+      "@id": "osd37_analysis/OSD-37_all_events.tsv",
+      "@type": "File",
+      "name": "OSD-37_all_events.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "All rMATS events for osd37_analysis"
+    },
+    {
+      "@id": "osd37_analysis/OSD-37_go_enrichment.tsv",
+      "@type": "File",
+      "name": "OSD-37_go_enrichment.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "GO over-representation analysis for osd37_analysis"
+    },
+    {
+      "@id": "osd37_analysis/OSD-37_mapman_enrichment.tsv",
+      "@type": "File",
+      "name": "OSD-37_mapman_enrichment.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "MapMan bin enrichment for osd37_analysis"
+    },
+    {
+      "@id": "osd37_analysis/OSD-37_nmd_predictions.tsv",
+      "@type": "File",
+      "name": "OSD-37_nmd_predictions.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "NMD susceptibility predictions for osd37_analysis"
+    },
+    {
+      "@id": "osd37_analysis/OSD-37_psi_matrix.tsv",
+      "@type": "File",
+      "name": "OSD-37_psi_matrix.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "PSI matrix for osd37_analysis"
+    },
+    {
+      "@id": "osd37_analysis/OSD-37_significant_events.tsv",
+      "@type": "File",
+      "name": "OSD-37_significant_events.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Significant events (FDR<0.05, |dPSI|>0.1) for osd37_analysis"
+    },
+    {
+      "@id": "osd37_analysis/figures/splicegraph_AT1G07350.png",
+      "@type": "File",
+      "name": "splicegraph_AT1G07350.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT1G07350"
+    },
+    {
+      "@id": "osd37_analysis/figures/splicegraph_AT1G07350.svg",
+      "@type": "File",
+      "name": "splicegraph_AT1G07350.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT1G07350"
+    },
+    {
+      "@id": "osd37_analysis/figures/splicegraph_AT2G45950.png",
+      "@type": "File",
+      "name": "splicegraph_AT2G45950.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT2G45950"
+    },
+    {
+      "@id": "osd37_analysis/figures/splicegraph_AT2G45950.svg",
+      "@type": "File",
+      "name": "splicegraph_AT2G45950.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT2G45950"
+    },
+    {
+      "@id": "osd37_analysis/figures/splicegraph_AT3G02800.png",
+      "@type": "File",
+      "name": "splicegraph_AT3G02800.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT3G02800"
+    },
+    {
+      "@id": "osd37_analysis/figures/splicegraph_AT3G02800.svg",
+      "@type": "File",
+      "name": "splicegraph_AT3G02800.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT3G02800"
+    },
+    {
+      "@id": "osd37_analysis/figures/splicegraph_AT4G21400.png",
+      "@type": "File",
+      "name": "splicegraph_AT4G21400.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT4G21400"
+    },
+    {
+      "@id": "osd37_analysis/figures/splicegraph_AT4G21400.svg",
+      "@type": "File",
+      "name": "splicegraph_AT4G21400.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT4G21400"
+    },
+    {
+      "@id": "osd37_analysis/figures/splicegraph_AT4G30850.png",
+      "@type": "File",
+      "name": "splicegraph_AT4G30850.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT4G30850"
+    },
+    {
+      "@id": "osd37_analysis/figures/splicegraph_AT4G30850.svg",
+      "@type": "File",
+      "name": "splicegraph_AT4G30850.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT4G30850"
+    },
+    {
+      "@id": "osd37_analysis/figures/splicegraph_AT5G17300.png",
+      "@type": "File",
+      "name": "splicegraph_AT5G17300.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G17300"
+    },
+    {
+      "@id": "osd37_analysis/figures/splicegraph_AT5G17300.svg",
+      "@type": "File",
+      "name": "splicegraph_AT5G17300.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G17300"
+    },
+    {
+      "@id": "osd37_analysis/figures/splicegraph_AT5G23060.png",
+      "@type": "File",
+      "name": "splicegraph_AT5G23060.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G23060"
+    },
+    {
+      "@id": "osd37_analysis/figures/splicegraph_AT5G23060.svg",
+      "@type": "File",
+      "name": "splicegraph_AT5G23060.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G23060"
+    },
+    {
+      "@id": "osd476_analysis/OSD-476_all_events.tsv",
+      "@type": "File",
+      "name": "OSD-476_all_events.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "All rMATS events for osd476_analysis"
+    },
+    {
+      "@id": "osd476_analysis/OSD-476_go_enrichment.tsv",
+      "@type": "File",
+      "name": "OSD-476_go_enrichment.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "GO over-representation analysis for osd476_analysis"
+    },
+    {
+      "@id": "osd476_analysis/OSD-476_nmd_predictions.tsv",
+      "@type": "File",
+      "name": "OSD-476_nmd_predictions.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "NMD susceptibility predictions for osd476_analysis"
+    },
+    {
+      "@id": "osd476_analysis/OSD-476_psi_matrix.tsv",
+      "@type": "File",
+      "name": "OSD-476_psi_matrix.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "PSI matrix for osd476_analysis"
+    },
+    {
+      "@id": "osd476_analysis/OSD-476_significant_events.tsv",
+      "@type": "File",
+      "name": "OSD-476_significant_events.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Significant events (FDR<0.05, |dPSI|>0.1) for osd476_analysis"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT1G06710.png",
+      "@type": "File",
+      "name": "splicegraph_AT1G06710.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT1G06710"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT1G06710.svg",
+      "@type": "File",
+      "name": "splicegraph_AT1G06710.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT1G06710"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT1G62610.png",
+      "@type": "File",
+      "name": "splicegraph_AT1G62610.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT1G62610"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT1G62610.svg",
+      "@type": "File",
+      "name": "splicegraph_AT1G62610.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT1G62610"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT2G30370.png",
+      "@type": "File",
+      "name": "splicegraph_AT2G30370.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT2G30370"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT2G30370.svg",
+      "@type": "File",
+      "name": "splicegraph_AT2G30370.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT2G30370"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT2G47020.png",
+      "@type": "File",
+      "name": "splicegraph_AT2G47020.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT2G47020"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT2G47020.svg",
+      "@type": "File",
+      "name": "splicegraph_AT2G47020.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT2G47020"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT3G01980.png",
+      "@type": "File",
+      "name": "splicegraph_AT3G01980.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT3G01980"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT3G01980.svg",
+      "@type": "File",
+      "name": "splicegraph_AT3G01980.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT3G01980"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT3G03970.png",
+      "@type": "File",
+      "name": "splicegraph_AT3G03970.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT3G03970"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT3G03970.svg",
+      "@type": "File",
+      "name": "splicegraph_AT3G03970.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT3G03970"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT3G16120.png",
+      "@type": "File",
+      "name": "splicegraph_AT3G16120.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT3G16120"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT3G16120.svg",
+      "@type": "File",
+      "name": "splicegraph_AT3G16120.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT3G16120"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT3G44340.png",
+      "@type": "File",
+      "name": "splicegraph_AT3G44340.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT3G44340"
+    },
+    {
+      "@id": "osd476_analysis/figures/splicegraph_AT3G44340.svg",
+      "@type": "File",
+      "name": "splicegraph_AT3G44340.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT3G44340"
+    },
+    {
+      "@id": "osd658_analysis/OSD-658_all_events.tsv",
+      "@type": "File",
+      "name": "OSD-658_all_events.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "All rMATS events for osd658_analysis"
+    },
+    {
+      "@id": "osd658_analysis/OSD-658_go_enrichment.tsv",
+      "@type": "File",
+      "name": "OSD-658_go_enrichment.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "GO over-representation analysis for osd658_analysis"
+    },
+    {
+      "@id": "osd658_analysis/OSD-658_nmd_predictions.tsv",
+      "@type": "File",
+      "name": "OSD-658_nmd_predictions.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "NMD susceptibility predictions for osd658_analysis"
+    },
+    {
+      "@id": "osd658_analysis/OSD-658_psi_matrix.tsv",
+      "@type": "File",
+      "name": "OSD-658_psi_matrix.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "PSI matrix for osd658_analysis"
+    },
+    {
+      "@id": "osd658_analysis/OSD-658_significant_events.tsv",
+      "@type": "File",
+      "name": "OSD-658_significant_events.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Significant events (FDR<0.05, |dPSI|>0.1) for osd658_analysis"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT2G17970.png",
+      "@type": "File",
+      "name": "splicegraph_AT2G17970.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT2G17970"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT2G17970.svg",
+      "@type": "File",
+      "name": "splicegraph_AT2G17970.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT2G17970"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT3G02600.png",
+      "@type": "File",
+      "name": "splicegraph_AT3G02600.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT3G02600"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT3G02600.svg",
+      "@type": "File",
+      "name": "splicegraph_AT3G02600.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT3G02600"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT3G59410.png",
+      "@type": "File",
+      "name": "splicegraph_AT3G59410.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT3G59410"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT3G59410.svg",
+      "@type": "File",
+      "name": "splicegraph_AT3G59410.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT3G59410"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT4G17310.png",
+      "@type": "File",
+      "name": "splicegraph_AT4G17310.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT4G17310"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT4G17310.svg",
+      "@type": "File",
+      "name": "splicegraph_AT4G17310.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT4G17310"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT4G25990.png",
+      "@type": "File",
+      "name": "splicegraph_AT4G25990.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT4G25990"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT4G25990.svg",
+      "@type": "File",
+      "name": "splicegraph_AT4G25990.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT4G25990"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT5G11630.png",
+      "@type": "File",
+      "name": "splicegraph_AT5G11630.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G11630"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT5G11630.svg",
+      "@type": "File",
+      "name": "splicegraph_AT5G11630.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G11630"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT5G13790.png",
+      "@type": "File",
+      "name": "splicegraph_AT5G13790.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G13790"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT5G13790.svg",
+      "@type": "File",
+      "name": "splicegraph_AT5G13790.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G13790"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT5G37370.png",
+      "@type": "File",
+      "name": "splicegraph_AT5G37370.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G37370"
+    },
+    {
+      "@id": "osd658_analysis/figures/splicegraph_AT5G37370.svg",
+      "@type": "File",
+      "name": "splicegraph_AT5G37370.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G37370"
+    },
+    {
+      "@id": "osd678_analysis/OSD-678_all_events.tsv",
+      "@type": "File",
+      "name": "OSD-678_all_events.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "All rMATS events for osd678_analysis"
+    },
+    {
+      "@id": "osd678_analysis/OSD-678_go_enrichment.tsv",
+      "@type": "File",
+      "name": "OSD-678_go_enrichment.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "GO over-representation analysis for osd678_analysis"
+    },
+    {
+      "@id": "osd678_analysis/OSD-678_mapman_enrichment.tsv",
+      "@type": "File",
+      "name": "OSD-678_mapman_enrichment.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "MapMan bin enrichment for osd678_analysis"
+    },
+    {
+      "@id": "osd678_analysis/OSD-678_nmd_predictions.tsv",
+      "@type": "File",
+      "name": "OSD-678_nmd_predictions.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "NMD susceptibility predictions for osd678_analysis"
+    },
+    {
+      "@id": "osd678_analysis/OSD-678_psi_matrix.tsv",
+      "@type": "File",
+      "name": "OSD-678_psi_matrix.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "PSI matrix for osd678_analysis"
+    },
+    {
+      "@id": "osd678_analysis/OSD-678_significant_events.tsv",
+      "@type": "File",
+      "name": "OSD-678_significant_events.tsv",
+      "encodingFormat": "text/tab-separated-values",
+      "description": "Significant events (FDR<0.05, |dPSI|>0.1) for osd678_analysis"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT1G01060.png",
+      "@type": "File",
+      "name": "splicegraph_AT1G01060.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT1G01060"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT1G01060.svg",
+      "@type": "File",
+      "name": "splicegraph_AT1G01060.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT1G01060"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT1G09140.png",
+      "@type": "File",
+      "name": "splicegraph_AT1G09140.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT1G09140"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT1G09140.svg",
+      "@type": "File",
+      "name": "splicegraph_AT1G09140.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT1G09140"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT1G28330.png",
+      "@type": "File",
+      "name": "splicegraph_AT1G28330.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT1G28330"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT1G28330.svg",
+      "@type": "File",
+      "name": "splicegraph_AT1G28330.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT1G28330"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT1G72855.png",
+      "@type": "File",
+      "name": "splicegraph_AT1G72855.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT1G72855"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT1G72855.svg",
+      "@type": "File",
+      "name": "splicegraph_AT1G72855.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT1G72855"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT2G43760.png",
+      "@type": "File",
+      "name": "splicegraph_AT2G43760.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT2G43760"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT2G43760.svg",
+      "@type": "File",
+      "name": "splicegraph_AT2G43760.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT2G43760"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT2G46270.png",
+      "@type": "File",
+      "name": "splicegraph_AT2G46270.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT2G46270"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT2G46270.svg",
+      "@type": "File",
+      "name": "splicegraph_AT2G46270.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT2G46270"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT3G13060.png",
+      "@type": "File",
+      "name": "splicegraph_AT3G13060.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT3G13060"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT3G13060.svg",
+      "@type": "File",
+      "name": "splicegraph_AT3G13060.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT3G13060"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT3G49430.png",
+      "@type": "File",
+      "name": "splicegraph_AT3G49430.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT3G49430"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT3G49430.svg",
+      "@type": "File",
+      "name": "splicegraph_AT3G49430.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT3G49430"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT5G19210.png",
+      "@type": "File",
+      "name": "splicegraph_AT5G19210.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G19210"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT5G19210.svg",
+      "@type": "File",
+      "name": "splicegraph_AT5G19210.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G19210"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT5G52040.png",
+      "@type": "File",
+      "name": "splicegraph_AT5G52040.png",
+      "encodingFormat": "image/png",
+      "description": "SpliceGrapher visualization for AT5G52040"
+    },
+    {
+      "@id": "osd678_analysis/figures/splicegraph_AT5G52040.svg",
+      "@type": "File",
+      "name": "splicegraph_AT5G52040.svg",
+      "encodingFormat": "image/svg+xml",
+      "description": "SpliceGrapher visualization for AT5G52040"
+    }
+  ]
+}
