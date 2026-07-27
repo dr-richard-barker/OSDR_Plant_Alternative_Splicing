@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="789.019545pt" height="369.28375pt" viewBox="0 0 789.019545 369.28375" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2022-01-01T05:00:00+00:00</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.5, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 369.28375
+L 789.019545 369.28375
+L 789.019545 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 141.26 91.132
+C 129.19847 91.132 117.222906 93.16673 105.83823 97.150401
+C 94.453553 101.134072 83.822047 107.009898 74.391963 114.530139
+C 64.96188 122.05038 56.867641 131.107838 50.450521 141.320628
+C 44.0334 151.533417 39.384872 162.755959 36.70093 174.515081
+C 34.016988 186.274203 33.33589 198.402285 34.686354 210.387974
+C 36.036817 222.373663 39.399592 234.046109 44.632895 244.913172
+C 49.866197 255.780234 56.895429 265.687007 65.42422 274.215796
+C 73.95301 282.744584 83.859784 289.773814 94.726848 295.007114
+C 105.593911 300.240415 117.266358 303.603187 129.252048 304.953649
+C 141.237737 306.30411 153.365818 305.62301 165.12494 302.939065
+C 176.884062 300.255121 188.106602 295.60659 198.31939 289.189468
+C 208.532178 282.772346 217.589635 274.678105 225.109874 265.24802
+C 232.630113 255.817935 238.505937 245.186428 242.489606 233.80175
+C 246.473275 222.417073 248.508002 210.441508 248.508 198.379979
+C 248.507998 186.318449 246.473265 174.342885 242.489592 162.958209
+C 238.505919 151.573534 232.63009 140.942029 225.109848 131.511947
+L 141.26 198.38
+z
+" style="fill: #ff9400"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 225.109865 131.511966
+C 215.064641 118.91565 202.308922 108.743311 187.793149 101.752886
+C 173.277376 94.762461 157.371256 91.132 141.259964 91.132
+L 141.26 198.38
+z
+" style="fill: #ff9400"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2"/>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: end" x="90.073553" y="307.255773" transform="rotate(-0 90.073553 307.255773)">NMD_sensitive</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: middle" x="113.34012" y="258.942212" transform="rotate(-0 113.34012 258.942212)">85.7%</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: start" x="192.446412" y="94.676085" transform="rotate(-0 192.446412 94.676085)">NMD_insensitive</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: middle" x="169.179861" y="142.989654" transform="rotate(-0 169.179861 142.989654)">14.3%</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 12px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: middle" x="141.26" y="58.32" transform="rotate(-0 141.26 58.32)">NMD prediction</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_4">
+    <path d="M 378.138636 332.44
+L 781.819545 332.44
+L 781.819545 64.32
+L 378.138636 64.32
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 403.368693 332.44
+L 453.828807 332.44
+L 453.828807 296.974392
+L 403.368693 296.974392
+z
+" clip-path="url(#p9ca30a3ec8)" style="fill: #ff9400"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 504.28892 332.44
+L 554.749034 332.44
+L 554.749034 327.711252
+L 504.28892 327.711252
+z
+" clip-path="url(#p9ca30a3ec8)" style="fill: #ff9400"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 605.209148 332.44
+L 655.669261 332.44
+L 655.669261 332.44
+L 605.209148 332.44
+z
+" clip-path="url(#p9ca30a3ec8)" style="fill: #ff9400"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 706.129375 332.44
+L 756.589489 332.44
+L 756.589489 318.253757
+L 706.129375 318.253757
+z
+" clip-path="url(#p9ca30a3ec8)" style="fill: #ff9400"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 403.368693 296.974392
+L 453.828807 296.974392
+L 453.828807 256.780035
+L 403.368693 256.780035
+z
+" clip-path="url(#p9ca30a3ec8)" style="fill: #0279ee"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 504.28892 327.711252
+L 554.749034 327.711252
+L 554.749034 311.160635
+L 504.28892 311.160635
+z
+" clip-path="url(#p9ca30a3ec8)" style="fill: #0279ee"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 605.209148 332.44
+L 655.669261 332.44
+L 655.669261 77.087619
+L 605.209148 77.087619
+z
+" clip-path="url(#p9ca30a3ec8)" style="fill: #0279ee"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 706.129375 318.253757
+L 756.589489 318.253757
+L 756.589489 304.067513
+L 706.129375 304.067513
+z
+" clip-path="url(#p9ca30a3ec8)" style="fill: #0279ee"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m02dcd0bc18" d="M 0 0
+L 0 3.5
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m02dcd0bc18" x="428.59875" y="332.44" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: middle" x="428.59875" y="346.686875" transform="rotate(-0 428.59875 346.686875)">A3SS</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m02dcd0bc18" x="529.518977" y="332.44" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: middle" x="529.518977" y="346.686875" transform="rotate(-0 529.518977 346.686875)">A5SS</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m02dcd0bc18" x="630.439205" y="332.44" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: middle" x="630.439205" y="346.686875" transform="rotate(-0 630.439205 346.686875)">RI</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m02dcd0bc18" x="731.359432" y="332.44" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: middle" x="731.359432" y="346.686875" transform="rotate(-0 731.359432 346.686875)">SE</text>
+     </g>
+    </g>
+    <g id="text_10">
+     <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: middle" x="579.979091" y="360.00875" transform="rotate(-0 579.979091 360.00875)">Event type</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_1">
+     <g id="line2d_5">
+      <defs>
+       <path id="m165d50f2c5" d="M 0 0
+L -3.5 0
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m165d50f2c5" x="378.138636" y="332.44" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: end" x="371.138636" y="336.063438" transform="rotate(-0 371.138636 336.063438)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m165d50f2c5" x="378.138636" y="285.152522" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: end" x="371.138636" y="288.77596" transform="rotate(-0 371.138636 288.77596)">20</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m165d50f2c5" x="378.138636" y="237.865044" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: end" x="371.138636" y="241.488482" transform="rotate(-0 371.138636 241.488482)">40</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m165d50f2c5" x="378.138636" y="190.577566" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: end" x="371.138636" y="194.201004" transform="rotate(-0 371.138636 194.201004)">60</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m165d50f2c5" x="378.138636" y="143.290088" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: end" x="371.138636" y="146.913526" transform="rotate(-0 371.138636 146.913526)">80</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m165d50f2c5" x="378.138636" y="96.00261" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: end" x="371.138636" y="99.626048" transform="rotate(-0 371.138636 99.626048)">100</text>
+     </g>
+    </g>
+    <g id="text_17">
+     <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: middle" x="348.380824" y="198.38" transform="rotate(-90 348.380824 198.38)">Count</text>
+    </g>
+   </g>
+   <g id="patch_13">
+    <path d="M 378.138636 332.44
+L 378.138636 64.32
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 781.819545 332.44
+L 781.819545 64.32
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 378.138636 332.44
+L 781.819545 332.44
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 378.138636 64.32
+L 781.819545 64.32
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 12px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: middle" x="579.979091" y="58.32" transform="rotate(-0 579.979091 58.32)">NMD by event type</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_17">
+     <path d="M 690.602045 106.956875
+L 776.219545 106.956875
+Q 777.819545 106.956875 777.819545 105.356875
+L 777.819545 69.92
+Q 777.819545 68.32 776.219545 68.32
+L 690.602045 68.32
+Q 689.002045 68.32 689.002045 69.92
+L 689.002045 105.356875
+Q 689.002045 106.956875 690.602045 106.956875
+z
+" style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_19">
+     <text style="font-size: 10px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: start" x="722.024077" y="78.766875" transform="rotate(-0 722.024077 78.766875)">NMD</text>
+    </g>
+    <g id="patch_18">
+     <path d="M 692.202045 90.639375
+L 708.202045 90.639375
+L 708.202045 85.039375
+L 692.202045 85.039375
+z
+" style="fill: #ff9400"/>
+    </g>
+    <g id="text_20">
+     <text style="font-size: 8px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: start" x="714.602045" y="90.639375" transform="rotate(-0 714.602045 90.639375)">NMD_insensitive</text>
+    </g>
+    <g id="patch_19">
+     <path d="M 692.202045 102.096875
+L 708.202045 102.096875
+L 708.202045 96.496875
+L 692.202045 96.496875
+z
+" style="fill: #0279ee"/>
+    </g>
+    <g id="text_21">
+     <text style="font-size: 8px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: start" x="714.602045" y="102.096875" transform="rotate(-0 714.602045 102.096875)">NMD_sensitive</text>
+    </g>
+   </g>
+  </g>
+  <g id="text_22">
+   <text style="font-size: 14px; font-family: 'Liberation Sans', 'Arimo', 'DejaVu Sans'; text-anchor: middle" x="360.619545" y="17.345625" transform="rotate(-0 360.619545 17.345625)">Nonsense-mediated decay prediction for significant AS events</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p9ca30a3ec8">
+   <rect x="378.138636" y="64.32" width="403.680909" height="268.12"/>
+  </clipPath>
+ </defs>
+</svg>

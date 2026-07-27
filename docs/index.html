@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alternative Splicing in Plant Spaceflight Transcriptomes</title>
+<meta name="description" content="A multi-study rMATS and machine learning analysis of alternative splicing across plant spaceflight transcriptomes in the NASA Open Science Data Repository.">
+<link rel="stylesheet" href="assets/theme.css">
+<link rel="stylesheet" href="cose/theme.css">
+<style>
+  /* Extra adjustments for figure layouts */
+  .figure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .figure-grid figure {
+    margin: 0;
+  }
+</style>
+</head>
+<body data-site-id="plant-spaceflight-as" data-brand-logo="cose/cose-logo.png" data-brand-url="https://cosecloud.com/">
+<header>
+<div class="wrap">
+<p class="eyebrow">Plant Splicing · NASA OSDR</p>
+<h1>Alternative Splicing in Plant Spaceflight Transcriptomes</h1>
+<p class="lede">A coordinated multi-study alternative splicing (AS) analysis of plant spaceflight transcriptomes. By leveraging 199 samples from 7 Arabidopsis and 1 Brassica studies in the NASA Open Science Data Repository, we reveal post-transcriptional splicing networks responding dynamically to microgravity, cosmic radiation, and extraterrestrial substrates.</p>
+<p class="meta">Richard Barker · Plant Spaceflight Alternative Splicing Analysis · 199 samples · 8 NASA OSDR studies</p>
+<div class="btns">
+<a class="btn primary" href="https://github.com/[user]/plant-spaceflight-as">GitHub Code &amp; Data</a>
+<a class="btn" href="https://osdr.nasa.gov">NASA OSDR</a>
+</div>
+</div>
+</header>
+
+<section id="overview">
+<div class="wrap">
+<h2>Overview</h2>
+<p class="sub">Characterizing post-transcriptional regulation under spaceflight-relevant stresses.</p>
+<p>While transcriptional changes in spaceflight have been widely mapped, alternative splicing remains a major frontier. This pipeline leverages rMATS-turbo to quantify alternative splicing events, predicts nonsense-mediated decay (NMD) sensitivity, performs machine learning (UMAP, nested cross-validation, LOSOCV, and SHAP importance), and conducts multi-ontology enrichment analysis (GO, MapMan) to uncover the post-transcriptional footprint of space stress.</p>
+
+<div class="cards" style="margin-top:22px">
+<div class="card"><div class="stat">57–67%</div><h3>Retained Introns</h3>
+<p>Retained Intron (RI) events consistently dominate the significant splicing landscape across all studied environments.</p></div>
+<div class="card"><div class="stat">79–86%</div><h3>NMD Sensitivity</h3>
+<p>The vast majority of significant events are sensitive to Nonsense-Mediated Decay, acting as post-transcriptional switches.</p></div>
+<div class="card"><div class="stat">93 genes</div><h3>Recurrent Targets</h3>
+<p>93 genes are significantly spliced across multiple studies, indicating a conserved stress splicing program.</p></div>
+</div>
+</div>
+</section>
+
+<section id="splicing-landscape">
+<div class="wrap">
+<h2><span class="n">01</span>The Spaceflight Splicing Landscape</h2>
+<p class="sub">Retained introns and nonsense-mediated decay coordinate the stress response.</p>
+<p>Across spaceflight (ISS), altered gravity, simulated galactic cosmic ray (GCR) radiation, and growth in authentic Apollo lunar regolith, splicing regulation is highly active. Intriguingly, retained introns represent the single largest class of differentially spliced events. NMD predictions indicate that these intron-retention events introduce premature termination codons, acting as an unproductive splicing mechanism to downregulate transcript abundance post-transcriptionally.</p>
+<div class="figure-grid">
+<figure>
+<img src="assets/fig_cross_study_event_types_v4.png" alt="Distribution of alternative splicing classes across studies">
+<figcaption>Distribution of significant alternative splicing events across 7 Arabidopsis studies. Retained introns (RI) represent the dominant event type in all studies.</figcaption>
+</figure>
+<figure>
+<img src="assets/fig_cross_study_recurrence_v4.png" alt="Pairwise gene overlap and recurrence across studies">
+<figcaption>Pairwise overlap of differentially spliced genes between studies, highlighting core stress-responsive genes sharing splicing changes.</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section id="recurrent-genes">
+<div class="wrap">
+<h2><span class="n">02</span>Core Splicing Biomarkers: AT4G17310</h2>
+<p class="sub">Recurrence analysis identifies robust splicing targets across gravity, radiation, and lunar substrates.</p>
+<p>Comparing significant genes across all studies identified 93 genes significant in 2 or more studies. Most notably, <strong>AT4G17310</strong> is differentially spliced in 4 separate studies spanning fractional gravity, partial gravity, lunar regolith, and galactic cosmic ray radiation—making it the most robust plant spaceflight splicing target known to date. Other key recurrent genes include <strong>SOS4</strong> (pyridoxal kinase involved in salt stress) and <strong>CRK28</strong> (cysteine-rich receptor-like kinase involved in calcium signaling), both significant in three studies.</p>
+<div class="disc">
+<strong>AT4G17310 Splicing:</strong> This stress-responsive gene undergoes significant intron retention under multiple distinct extraterrestrial stress profiles, serving as a unified post-transcriptional marker of environmental stress in space biology.
+</div>
+</div>
+</section>
+
+<section id="machine-learning">
+<div class="wrap">
+<h2><span class="n">03</span>Machine Learning: Batch Effects &amp; Generalization</h2>
+<p class="sub">UMAP and tree-based classification reveal that study-specific batch effects dominate biological signals.</p>
+<p>Machine learning classification of the 199-sample × 9,875-gene Percent Spliced In (PSI) matrix achieves a pooled nested 5-fold CV AUC of 0.598 for predicting treatment (stress) versus control. However, 7-study Leave-One-Study-Out Cross-Validation (LOSOCV) performance drops to near-random (mean AUC ~0.41), showing poor cross-study generalization. Unsupervised UMAP embedding reveals that samples cluster almost perfectly by study identity (ARI = 0.995) rather than by treatment status (ARI = -0.002). This represents a critical methodological finding: batch effects overwhelmingly dominate the alternative splicing landscape in public space omics.</p>
+<div class="figure-grid">
+<figure>
+<img src="assets/fig_umap_v4.png" alt="UMAP clustering of splicing profiles">
+<figcaption>UMAP projection of splicing profiles across 199 samples. Perfect clustering by study identity (ARI = 0.995) demonstrates dominant batch effects.</figcaption>
+</figure>
+<figure>
+<img src="assets/fig_losocv_v4.png" alt="7-study leave-one-study-out classification performance">
+<figcaption>LOSOCV performance across multiple tree-based models (RF, GBM, XGBoost), demonstrating the challenges of cross-study generalizability.</figcaption>
+</figure>
+</div>
+<div class="figure-grid">
+<figure>
+<img src="assets/fig_nested_kfold_v4.png" alt="Nested k-fold cross-validation performance">
+<figcaption>ROC curve of nested 5-fold cross-validation pooled across studies, showing moderate within-cohort predictive signal (mean AUC = 0.598).</figcaption>
+</figure>
+<figure>
+<img src="assets/fig_shap_v4.png" alt="SHAP feature importance top genes">
+<figcaption>Top splicing biomarkers identified by SHAP importance (including AT1G56220, AT5G01770, AT1G48360) for classification models.</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section id="pathways">
+<div class="wrap">
+<h2><span class="n">04</span>Ontology &amp; Functional Convergence</h2>
+<p class="sub">Circadian clock splicing is disrupted across all ISS flight studies, while substrates activate stressor-specific pathways.</p>
+<p>Our multi-ontology enrichment analysis identified highly stressor-specific splicing adaptations:</p>
+<ul class="clean">
+  <li><strong>Circadian Clock Disruption:</strong> Regulation of circadian rhythm was enriched in all four flight studies (OSD-314, OSD-120, OSD-37 via <em>RVE1</em>, and OSD-678). This reveals a post-transcriptional layer to the known circadian dysregulation observed in space.</li>
+  <li><strong>Lunar Regolith (OSD-476):</strong> As the most splicing-responsive study (306 significant events), growth in lunar regolith induces extensive splicing alterations in photosynthesis light reactions, mitotic cell cycle, and telomeric regions.</li>
+  <li><strong>Fractional Gravity (OSD-251):</strong> Splicing changes are heavily enriched for superoxide response (FDR=0.001, 488x fold enrichment), reflecting oxidative stress under partial gravity.</li>
+  <li><strong>GCR Radiation (OSD-658):</strong> Enriches for phospholipid metabolism and stress-responsive translation pathways.</li>
+</ul>
+</div>
+</section>
+
+<section id="splicegraphs">
+<div class="wrap">
+<h2><span class="n">05</span>Splice Locus Visualizations</h2>
+<p class="sub">Exploring exon-intron structure and junction-level splicing metrics.</p>
+<p>Splice graph models were reconstructed for the top differentially spliced loci. In individual study directories, you can find complete splice graphs representing the transcript-level changes. For instance, click on any study subdirectory to view individual PNG and SVG splice models:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Study</th>
+      <th>Stressor</th>
+      <th>Samples</th>
+      <th>Key Differentially Spliced Loci</th>
+      <th>Sashimi &amp; Splice Graphs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>OSD-314</strong></td>
+      <td>Microgravity / Mars-g</td>
+      <td>17</td>
+      <td><em>ECT5</em> (AT3G13060), <em>CPK28</em> (AT5G66210), <em>TPPA</em> (AT5G51460)</td>
+      <td><a href="osd314_analysis/figures/">View Figures</a></td>
+    </tr>
+    <tr>
+      <td><strong>OSD-120</strong></td>
+      <td>Spaceflight (ISS)</td>
+      <td>36</td>
+      <td>AT1G73930, AT3G20810, AT4G26600, AT5G60120</td>
+      <td><a href="osd120_analysis/figures/">View Figures</a></td>
+    </tr>
+    <tr>
+      <td><strong>OSD-37</strong></td>
+      <td>ISS Splicing (4 ecotypes)</td>
+      <td>56</td>
+      <td><em>RVE1</em> (AT5G17300), <em>SR45A</em> (AT1G07350), <em>CAS</em> (AT5G23060), <em>CRK28</em> (AT4G21400)</td>
+      <td><a href="osd37_analysis/figures/">View Figures</a></td>
+    </tr>
+    <tr>
+      <td><strong>OSD-251</strong></td>
+      <td>Fractional Gravity (blue light)</td>
+      <td>20</td>
+      <td>AT2G16940, AT3G09370, AT1G10240, AT5G57565</td>
+      <td><a href="osd251_analysis/figures/">View Figures</a></td>
+    </tr>
+    <tr>
+      <td><strong>OSD-476</strong></td>
+      <td>Lunar Regolith</td>
+      <td>20</td>
+      <td>AT2G47020, AT1G06710, AT2G30370, AT3G16120</td>
+      <td><a href="osd476_analysis/figures/">View Figures</a></td>
+    </tr>
+    <tr>
+      <td><strong>OSD-658</strong></td>
+      <td>GCR Radiation</td>
+      <td>14</td>
+      <td>AT4G17310, AT5G13790, AT4G25990, AT3G02600</td>
+      <td><a href="osd658_analysis/figures/">View Figures</a></td>
+    </tr>
+    <tr>
+      <td><strong>OSD-678</strong></td>
+      <td>ISS (phyD photoreceptor)</td>
+      <td>36</td>
+      <td>AT1G01060, AT1G09140, AT1G28330, AT5G52040</td>
+      <td><a href="osd678_analysis/figures/">View Figures</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<p>Richard Barker · NASA GeneLab / OSDR. Code MIT Licensed. Data derived from NASA Open Science Data Repository (OSDR).</p>
+</div>
+</footer>
+
+<script src="cose/sites.js"></script>
+<script src="cose/theme.js"></script>
+</body>
+</html>
