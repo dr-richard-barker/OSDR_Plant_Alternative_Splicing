@@ -1,114 +1,59 @@
-# Plant Spaceflight Alternative Splicing Analysis
+# Plant Spaceflight Alternative Splicing Analysis — FAIR Zenodo Deposit Guide
 
-## Overview
+This directory contains the complete metadata, data dictionaries, and FAIR assets required for depositing our alternative splicing pipeline results and models to **Zenodo** and creating a peer-reviewed **RO-Crate** manifest.
 
-Differential alternative splicing (AS) analysis of plant RNA-seq studies from the
-NASA Open Science Data Repository (OSDR), using rMATS-turbo for event quantification,
-machine learning for pattern discovery, and multi-ontology functional annotation.
+## Deposit Packaged Contents
 
-## Contents
+- `CITATION.cff` — Citation File Format metadata, detailing preferred citation formats, contributors, and repository coordinates.
+- `LICENSE` — Software code and documentation are released under the open-source **MIT License**.
+- `zenodo.json` — Pre-reserved publication schema for the Zenodo REST API, including metadata keywords, author affiliations (NASA GeneLab / OSDR), description, and target community (`nasa-genelab`).
+- `ro-crate-metadata.json` — A lightweight, compliant **RO-Crate (v1.1)** metadata manifest linking all physical files in the repository (such as the pooled feature matrices, individual rMATS outputs, UMAP projections, GO over-representation tables, and splice graphs) with formal semantic schemas (W3C/DataCite/Schema.org).
+- `data_dictionary.json` — Fully annotated schemas mapping every metric, statistics column, and PSI matrix coordinate to precise mathematical and biological definitions.
 
-- `code/` - Complete analysis pipeline (Python)
-  - `osdr_retrieval/` - OSDR BDAPI client for study enumeration and BAM download
-  - `preprocessing/` - QC, strandedness detection, rMATS sample sheet builder
-  - `diff_splicing/` - rMATS runner, event merging, PSI matrix, NMD/domain prediction
-  - `ml/` - LOSOCV classifier, UMAP clustering, functional impact prediction
-  - `ontology/` - GO, Plant Ontology, Trait Ontology, MapMan enrichment
-  - `visualization/` - 12-figure publication suite
-  - `fair_deposit/` - Zenodo/RO-Crate package builder
-- `results/` - Analysis outputs
-  - `derived_data/` - Event catalogs, PSI matrices, ML results, enrichment tables
-  - `figures/` - Publication figures (SVG + PNG)
-- `config/` - Study catalog and PoC configuration
+---
 
-## Studies Analyzed (proof-of-concept)
+## Detailed Data Dictionary & Schema Mapping
 
-### Completed rMATS + Full Analysis
+The following specifications detail the core tables included in the Zenodo deposit and available in our repository:
 
-| OSD ID | Organism | Environment | Contrast | Samples | Total Events | Sig Events |
-|--------|----------|-------------|----------|---------|-------------|------------|
-| OSD-314 | Arabidopsis | Microgravity/Mars-g | altered gravity vs 1g | 17 | 10,532 | 161 |
-| OSD-120 | Arabidopsis | ISS spaceflight | flight vs ground | 36 | 13,570 | 32 |
-| OSD-37 | Arabidopsis | ISS spaceflight (4 accessions) | flight vs ground | 56 | 20,590 | 10 |
-| OSD-59 | Brassica rapa | ISS spaceflight | flight vs ground | 2 | 1,877 | 77 |
-| OSD-678 | Arabidopsis | ISS spaceflight (3 genotypes × 2 light) | flight vs ground | 36 | 15,255 | 190 |
-| OSD-658 | Arabidopsis | Simulated GCR radiation | irradiated vs control | 14 | 9,932 | 43 |
-| OSD-476 | Arabidopsis | Lunar regolith | Apollo regolith vs JSC-1A | 20 | 14,766 | 306 |
-| OSD-251 | Arabidopsis | Fractional gravity (blue light) | altered gravity vs 1g | 20 | 15,220 | 86 |
+### 1. Splicing Feature Matrix (`multi_study_analysis_v4/feature_matrix.npy` & `feature_genes.tsv`)
+- **feature_matrix.npy:** A binary float32 numpy array of dimension `199 × 9,875` representing the imputed **Percent Spliced In (PSI)** values.
+- **feature_genes.tsv:** A single-column text table mapping the 9,875 columns of the feature matrix to unique Arabidopsis locus identifiers (AGI codes).
 
-### Multi-Study Analysis (7 Arabidopsis studies)
+### 2. Sample Metadata (`multi_study_analysis_v4/sample_metadata.tsv`)
+- **Sample_ID:** Unique coordinate name of the sequencing library.
+- **OSD_ID:** Open Science Data Repository accession (e.g., `OSD-314`, `OSD-120`).
+- **Condition:** Categorical environment classification (`Treatment` for flight/altered gravity/irradiated/regolith vs `Control` for ground/1g/unirradiated/JSC-1A simulant).
+- **Tissue:** Sample tissue origin (e.g., `Root`, `Shoot`).
+- **Genotype:** Genetic background (e.g., `Col-0`, `Ws-2`, `phyD`).
 
-| Metric | Value |
-|--------|-------|
-| Total samples | 199 (112 treatment, 87 control) |
-| Feature matrix | 199 × 9,875 genes |
-| LOSOCV (7-study) | RF AUC=0.412±0.112, GBM AUC=0.412±0.133, XGBoost AUC=0.412±0.112 |
-| Nested 5-fold CV | RF AUC=0.598±0.084 |
-| UMAP ARI (study) | 0.995 (batch effect dominates) |
-| UMAP ARI (treatment) | -0.002 |
-| Cross-study recurrence | 93 genes in ≥2 studies; AT4G17310 in 4 studies; 8 genes in 3 studies |
-| SHAP top predictors | AT1G56220, AT5G01770, AT1G48360, AT3G15620, AT3G62190 |
+### 3. Significant Splicing Event Catalogs (`osd*_analysis/OSD-*_significant_events.tsv`)
+- **GeneID:** Araport11 gene identifier.
+- **geneSymbol:** Standard gene nomenclature.
+- **chr / strand / start / end:** Genomic coordinates of the alternative splicing event.
+- **FDR:** Benjamini-Hochberg false discovery rate from the rMATS-turbo likelihood ratio test.
+- **IncLevelDifference (ΔPSI):** Splicing change between Treatment and Control. Positive values denote increased splice inclusion in space stress, negative denotes decreased inclusion.
 
-## Key Results
+### 4. Nonsense-Mediated Decay Heuristics (`osd*_analysis/OSD-*_nmd_predictions.tsv`)
+- **Event_ID:** Coordinate-based unique event key.
+- **Frameshift_Heuristic:** Divisibility check of the alternative sequence length by 3.
+- **NMD_Sensitive:** Boolean field representing susceptibility to premature termination codons (PTC) leading to transcript decay.
 
-- **RI dominance**: Retained intron events constitute 57-67% of significant events across all 7 Arabidopsis studies
-- **NMD sensitivity**: 79-86% of significant events are NMD-sensitive across all 7 Arabidopsis studies (regulatory role)
-- **Circadian enrichment**: Circadian rhythm regulation enriched in ALL 4 ISS flight studies (OSD-314 FDR=0.032, OSD-120 FDR=0.097, OSD-37 via RVE1, OSD-678 FDR=0.008 FE=18.6x) — most robust finding within flight-study subset
-- **Stressor-specific GO profiles**: GCR radiation (OSD-658) → phospholipid metabolism; lunar regolith (OSD-476) → photosynthesis/cell cycle; fractional gravity (OSD-251) → superoxide response (FDR=0.001, FE=488x)
-- **Cross-study recurrence**: 93 genes significant in ≥2 studies; AT4G17310 in 4 studies (OSD-251, OSD-314, OSD-476, OSD-658) — most robust splicing target across gravity, radiation, and regolith; 8 genes in 3 studies (SOS4, CRK28, QWRF3, etc.)
-- **Largest pairwise overlaps**: OSD-678 ∩ OSD-476 = 26 genes; OSD-314 ∩ OSD-476 = 22 genes; OSD-314 ∩ OSD-678 = 18 genes
-- **Effect-size threshold importance**: OSD-37 (56 samples) detected 175 FDR-significant events but only 10 with |ΔPSI|>0.1 (median |ΔPSI|=0.025)
-- **ML classification**: Nested 5-fold CV AUC=0.598 (7-study pooled); 7-study LOSOCV near-random (RF/GBM/XGBoost=0.412)
-- **Batch effect dominance**: UMAP shows study identity almost perfectly separates samples (ARI=0.995) while treatment/control does not (ARI=-0.002)
-- **SHAP biomarkers**: AT1G56220, AT5G01770, AT1G48360, AT3G15620, AT3G62190 are top 7-study splicing-based predictors
-- **OSD-476 most splicing-responsive**: 306 significant events in 257 genes (largest of any study)
+---
 
-## Methods
+## Instructions for Uploading to Zenodo
 
-- **Differential splicing**: rMATS-turbo v4.3.0, FDR < 0.05, |dPSI| > 0.1
-- **Event types**: SE, A5SS, A3SS, MXE, RI
-- **Reference**: Ensembl Plants release 48 (TAIR10 for Arabidopsis, Brapa_1.0 for Brassica)
-- **ML**: LOSOCV (RF/GBM/XGBoost), UMAP clustering, SHAP feature importance
-- **Ontology**: GO (MF/BP/CC), Plant Ontology, Trait Ontology, MapMan bins
-- **Functional impact**: NMD susceptibility (frameshift heuristic), protein domain overlap
+To complete the peer-reviewed deposition of these FAIR assets:
 
-## Requirements
-
-- Python 3.10+
-- rMATS-turbo (conda: `conda create -n rmats -c bioconda -c conda-forge rmats python=3.10`)
-- Key packages: pandas, numpy, scipy, scikit-learn, xgboost, shap, umap-learn, pysam, seaborn, matplotlib
-
-## Usage
-
-```bash
-# 1. Enumerate OSDR plant studies
-python code/osdr_retrieval/osdr_client.py
-
-# 2. Download BAMs for a study
-python -c "from code.osdr_retrieval.osdr_client import download_bams; download_bams('OSD-314', 'data/OSD-314')"
-
-# 3. Run rMATS
-python code/diff_splicing/run_rmats.py --poc-config config/poc_studies.json
-
-# 4. Post-process events
-python code/diff_splicing/rmats_postprocess.py
-
-# 5. Run ML analysis
-python code/ml/analysis.py
-
-# 6. Generate figures
-python code/visualization/generate_figures.py
-```
-
-## License
-
-MIT License - see LICENSE file
-
-## Citation
-
-See CITATION.cff
-
-## Data Source
-
-All RNA-seq data was obtained from the NASA Open Science Data Repository (OSDR):
-https://osdr.nasa.gov/biodata/api/
+1. **Verify metadata formats:** Ensure `zenodo.json` has correct author affiliations and keyword schemas.
+2. **Compress analysis assets:** Create a unified archive containing `docs/`, `multi_study_analysis_v4/`, the `osd*_analysis/` directories, and the contents of this `fair_deposit/` folder.
+3. **Execute REST API Upload:**
+   ```bash
+   # Example shell command to upload through the Zenodo API using pre-reserved credentials
+   curl -H "Content-Type: application/json" \
+        -H "Authorization: Bearer $ZENODO_TOKEN" \
+        -X POST \
+        -d @fair_deposit/zenodo.json \
+        https://zenodo.org/api/deposit/depositions
+   ```
+4. **Publish & Link DOI:** Associate the newly generated Zenodo DOI with the GitHub Pages repository README badge.
