@@ -8,6 +8,26 @@ This repository is deployed to GitHub Pages using the **COSE theme/layout**.
 You can view the full interactive dashboard, including high-resolution figures, UMAP embeddings, cross-study overlap matrices, and reconstructed splice graphs here:
 👉 **[Interactive Landing Page](https://[user].github.io/plant-spaceflight-as/)** (hosted on GitHub Pages)
 
+### Deploying the Landing Page to GitHub Pages
+
+To deploy or update this website under your own GitHub account:
+
+#### Method A: Fully Automated GitHub Actions Deployment (Recommended)
+We have pre-configured a GitHub Pages Action in `.github/workflows/pages.yml`. When you push to the `main` or `master` branch:
+1. GitHub Actions automatically starts the workflow.
+2. It packages only the `docs/` folder.
+3. It deploys the compiled landing page styled with the **COSE theme** directly to GitHub Pages.
+*Note: Make sure to navigate to **Settings > Pages** in your GitHub repository, and under **Build and deployment**, set the **Source** to **GitHub Actions**.*
+
+#### Method B: Native Deploy via docs/ Folder
+If you prefer standard branch-based deployment:
+1. Navigate to your repository's **Settings > Pages**.
+2. Under **Build and deployment**, set the **Source** to **Deploy from a branch**.
+3. Select your active branch (e.g., `main` or `master`), and choose the `/docs` folder from the dropdown menu.
+4. Click **Save**.
+
+The `.nojekyll` files included in the root and `/docs` directories bypass default Jekyll compilation, ensuring all custom styling sheets, layout templates, and high-resolution assets render natively with optimal performance.
+
 ## Contents
 
 - `docs/` - Complete GitHub Pages static site (styled with the custom BARKER-COSE layout)
