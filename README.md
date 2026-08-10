@@ -6,7 +6,7 @@ A coordinated multi-study alternative splicing (AS) analysis of plant spacefligh
 
 This repository is deployed to GitHub Pages using the **COSE theme/layout**.
 You can view the full interactive dashboard, including high-resolution figures, UMAP embeddings, cross-study overlap matrices, and reconstructed splice graphs here:
-👉 **[OSDR_Plant_Alternative_Splicing]([https://dr-richard-barker.github.io/OSDR_Plant_Alternative_Splicing/])** (hosted on GitHub Pages)
+👉 **[Interactive Landing Page](https://dr-richard-barker.github.io/OSDR_Plant_Alternative_Splicing/)** (hosted on GitHub Pages)
 
 ## Contents
 

@@ -18,9 +18,361 @@
   .figure-grid figure {
     margin: 0;
   }
+  
+  /* Interactive Splice Explorer Styles */
+  .explorer-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--card);
+    overflow: hidden;
+    margin-top: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  }
+  
+  .explorer-header {
+    background: linear-gradient(180deg, rgba(59, 110, 165, 0.05), transparent);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .study-tabs-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    padding-bottom: 4px;
+  }
+  
+  .study-tab {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: all 0.2s ease;
+  }
+  
+  .study-tab:hover {
+    color: var(--fg);
+    border-color: var(--accent);
+  }
+  
+  .study-tab.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  
+  .explorer-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-bottom: 1px solid var(--line);
+  }
+  
+  @media (min-width: 768px) {
+    .explorer-body {
+      grid-template-columns: 320px 1fr;
+    }
+  }
+  
+  .gene-list-panel {
+    border-bottom: 1px solid var(--line);
+    max-height: 480px;
+    overflow-y: auto;
+    padding: 16px;
+  }
+  
+  @media (min-width: 768px) {
+    .gene-list-panel {
+      border-bottom: 0;
+      border-right: 1px solid var(--line);
+    }
+  }
+  
+  .gene-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .gene-item {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .gene-item:hover {
+    border-color: var(--accent);
+  }
+  
+  .gene-item.active {
+    border-color: var(--accent);
+    background: linear-gradient(90deg, rgba(59, 110, 165, 0.05), transparent);
+    box-shadow: inset 3px 0 0 var(--accent);
+  }
+  
+  .gene-id {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--muted);
+    font-family: monospace;
+  }
+  
+  .gene-item.active .gene-id {
+    color: var(--accent);
+  }
+  
+  .gene-symbol-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+  }
+  
+  .gene-symbol {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--fg);
+  }
+  
+  .badge-recurrent {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(63, 182, 168, 0.14);
+    color: var(--accent2);
+  }
+  
+  .viewer-panel {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    min-height: 400px;
+    position: relative;
+  }
+  
+  .viewer-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .viewer-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .viewer-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--fg);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none !important;
+  }
+  
+  .viewer-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  
+  .format-toggle {
+    display: flex;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .format-btn {
+    padding: 6px 10px;
+    border: 0;
+    background: var(--card);
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .format-btn.active {
+    background: var(--accent);
+    color: #fff;
+  }
+  
+  .viewer-viewport {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    min-height: 350px;
+  }
+  
+  .viewer-image-container {
+    cursor: grab;
+    transition: transform 0.1s ease-out;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .viewer-image-container:active {
+    cursor: grabbing;
+  }
+  
+  .viewer-image-container img {
+    max-width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+  
+  .explorer-footer {
+    padding: 16px 20px;
+    background: var(--card);
+    border-top: 1px solid var(--line);
+  }
+  
+  .gene-details-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    color: var(--fg);
+  }
+  
+  .gene-details-description {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 0 0 12px 0;
+  }
+  
+  .gene-details-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    font-size: 0.85rem;
+  }
+  
+  .meta-item {
+    color: var(--muted);
+  }
+  
+  .meta-item strong {
+    color: var(--fg);
+  }
+  
+  .meta-link {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  
+  .meta-link:hover {
+    color: var(--accent2);
+  }
+  
+  /* Lightbox styling */
+  .lightbox-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 15, 22, 0.95);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+  
+  .lightbox-modal.active {
+    display: flex;
+  }
+  
+  .lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: 0;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+  
+  .lightbox-caption {
+    color: #e6ebf2;
+    margin-top: 16px;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .loading-spinner {
+    position: absolute;
+    border: 3px solid var(--line);
+    border-top: 3px solid var(--accent);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    animation: spin 0.8s linear infinite;
+    display: none;
+    z-index: 5;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 </style>
 </head>
-<body data-site-id="plant-spaceflight-as" data-brand-logo="cose/cose-logo.png" data-brand-url="https://cosecloud.com/">
+<body data-site-id="OSDR_Plant_Alternative_Splicing" data-brand-logo="cose/cose-logo.png" data-brand-url="https://cosecloud.com/">
 <header>
 <div class="wrap">
 <p class="eyebrow">Plant Splicing · NASA OSDR</p>
@@ -28,7 +380,7 @@
 <p class="lede">A coordinated multi-study alternative splicing (AS) analysis of plant spaceflight transcriptomes. By leveraging 199 samples from 7 Arabidopsis and 1 Brassica studies in the NASA Open Science Data Repository, we reveal post-transcriptional splicing networks responding dynamically to microgravity, cosmic radiation, and extraterrestrial substrates.</p>
 <p class="meta">Richard Barker · Plant Spaceflight Alternative Splicing Analysis · 199 samples · 8 NASA OSDR studies</p>
 <div class="btns">
-<a class="btn primary" href="https://github.com/[user]/plant-spaceflight-as">GitHub Code &amp; Data</a>
+<a class="btn primary" href="https://github.com/dr-richard-barker/OSDR_Plant_Alternative_Splicing">GitHub Code &amp; Data</a>
 <a class="btn" href="https://osdr.nasa.gov">NASA OSDR</a>
 </div>
 </div>
@@ -125,72 +477,410 @@
 <section id="splicegraphs">
 <div class="wrap">
 <h2><span class="n">05</span>Splice Locus Visualizations</h2>
-<p class="sub">Exploring exon-intron structure and junction-level splicing metrics.</p>
-<p>Splice graph models were reconstructed for the top differentially spliced loci. In individual study directories, you can find complete splice graphs representing the transcript-level changes. For instance, click on any study subdirectory to view individual PNG and SVG splice models:</p>
-<table>
-  <thead>
-    <tr>
-      <th>Study</th>
-      <th>Stressor</th>
-      <th>Samples</th>
-      <th>Key Differentially Spliced Loci</th>
-      <th>Sashimi &amp; Splice Graphs</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>OSD-314</strong></td>
-      <td>Microgravity / Mars-g</td>
-      <td>17</td>
-      <td><em>ECT5</em> (AT3G13060), <em>CPK28</em> (AT5G66210), <em>TPPA</em> (AT5G51460)</td>
-      <td><a href="osd314_analysis/figures/">View Figures</a></td>
-    </tr>
-    <tr>
-      <td><strong>OSD-120</strong></td>
-      <td>Spaceflight (ISS)</td>
-      <td>36</td>
-      <td>AT1G73930, AT3G20810, AT4G26600, AT5G60120</td>
-      <td><a href="osd120_analysis/figures/">View Figures</a></td>
-    </tr>
-    <tr>
-      <td><strong>OSD-37</strong></td>
-      <td>ISS Splicing (4 ecotypes)</td>
-      <td>56</td>
-      <td><em>RVE1</em> (AT5G17300), <em>SR45A</em> (AT1G07350), <em>CAS</em> (AT5G23060), <em>CRK28</em> (AT4G21400)</td>
-      <td><a href="osd37_analysis/figures/">View Figures</a></td>
-    </tr>
-    <tr>
-      <td><strong>OSD-251</strong></td>
-      <td>Fractional Gravity (blue light)</td>
-      <td>20</td>
-      <td>AT2G16940, AT3G09370, AT1G10240, AT5G57565</td>
-      <td><a href="osd251_analysis/figures/">View Figures</a></td>
-    </tr>
-    <tr>
-      <td><strong>OSD-476</strong></td>
-      <td>Lunar Regolith</td>
-      <td>20</td>
-      <td>AT2G47020, AT1G06710, AT2G30370, AT3G16120</td>
-      <td><a href="osd476_analysis/figures/">View Figures</a></td>
-    </tr>
-    <tr>
-      <td><strong>OSD-658</strong></td>
-      <td>GCR Radiation</td>
-      <td>14</td>
-      <td>AT4G17310, AT5G13790, AT4G25990, AT3G02600</td>
-      <td><a href="osd658_analysis/figures/">View Figures</a></td>
-    </tr>
-    <tr>
-      <td><strong>OSD-678</strong></td>
-      <td>ISS (phyD photoreceptor)</td>
-      <td>36</td>
-      <td>AT1G01060, AT1G09140, AT1G28330, AT5G52040</td>
-      <td><a href="osd678_analysis/figures/">View Figures</a></td>
-    </tr>
-  </tbody>
-</table>
+<p class="sub">Exploring reconstructed splice graphs and junction-level splicing metrics.</p>
+<p>Splice graph models were reconstructed for the top differentially spliced loci. Use the interactive explorer below to select a study, browse key differentially spliced genes, inspect splicing patterns in vector (SVG) or raster (PNG) formats, and zoom/pan to view specific exon junctions:</p>
+
+<div class="explorer-container">
+  <div class="explorer-header">
+    <div class="study-tabs-container" id="study-tabs">
+      <!-- Tabs will be rendered here -->
+    </div>
+  </div>
+  
+  <div class="explorer-body">
+    <div class="gene-list-panel">
+      <h4 style="margin: 0 0 12px 0; font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em;">Genes in Study</h4>
+      <div class="gene-list" id="gene-list">
+        <!-- Genes will be rendered here -->
+      </div>
+    </div>
+    
+    <div class="viewer-panel">
+      <div class="viewer-toolbar">
+        <div style="font-size: 0.88rem; font-weight: 700; color: var(--fg);">
+          <span id="current-study-name">OSD-314</span> · <span id="current-study-stressor" style="font-weight: normal; color: var(--muted);">Stressor</span>
+        </div>
+        
+        <div class="viewer-controls">
+          <div class="format-toggle">
+            <button class="format-btn active" id="btn-svg" onclick="setFormat('svg')">SVG</button>
+            <button class="format-btn" id="btn-png" onclick="setFormat('png')">PNG</button>
+          </div>
+          
+          <button class="viewer-btn" onclick="zoomIn()" title="Zoom In">＋</button>
+          <button class="viewer-btn" onclick="zoomOut()" title="Zoom Out">－</button>
+          <button class="viewer-btn" onclick="resetZoomPan()" title="Reset Zoom">Reset</button>
+          <button class="viewer-btn" onclick="openLightbox()" title="View Fullscreen">Fullscreen</button>
+        </div>
+      </div>
+      
+      <div class="viewer-viewport" id="viewer-viewport">
+        <div class="loading-spinner" id="loading-spinner"></div>
+        <div class="viewer-image-container" id="viewer-img-container">
+          <img id="viewer-img" src="" alt="Splice Graph">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="explorer-footer">
+    <div class="gene-details-title" id="gene-details-title">Gene Symbol</div>
+    <p class="gene-details-description" id="gene-details-desc">Description of the gene locus</p>
+    <div class="gene-details-meta">
+      <span class="meta-item">Database Links: 
+        <a class="meta-link" id="link-tair" href="" target="_blank" rel="noopener">TAIR</a>
+        <a class="meta-link" id="link-ensembl" href="" target="_blank" rel="noopener">Ensembl Plants</a>
+      </span>
+      <span class="meta-item" style="margin-left: 16px;">Download: 
+        <a class="meta-link" id="download-svg" href="" download>SVG</a> · 
+        <a class="meta-link" id="download-png" href="" download>PNG</a>
+      </span>
+    </div>
+  </div>
+</div>
 </div>
 </section>
+
+<!-- Lightbox Modal -->
+<div class="lightbox-modal" id="lightbox-modal" onclick="closeLightbox()">
+  <div class="lightbox-content" onclick="event.stopPropagation()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img class="lightbox-image" id="lightbox-img" src="" alt="Splicing Graph Fullscreen">
+    <div class="lightbox-caption" id="lightbox-caption">Gene Caption</div>
+  </div>
+</div>
+
+<script>
+const STUDIES = [
+  {
+    id: "osd314",
+    name: "OSD-314",
+    stressor: "Altered Gravity (Micro-g / Mars-g)",
+    samples: 17,
+    genes: [
+      { id: "AT3G13060", symbol: "ECT5", filename: "splicegrapher_AT3G13060", description: "YTH domain-containing protein ECT5, reader of m6A RNA methylation, regulating development and stress responses.", recurrent: true },
+      { id: "AT5G66210", symbol: "CPK28", filename: "splicegrapher_AT5G66210", description: "Calcium-dependent protein kinase 28, coordinates growth-defense trade-offs and vascular development.", recurrent: true },
+      { id: "AT5G51460", symbol: "TPPA", filename: "splicegrapher_AT5G51460", description: "Trehalose-phosphate phosphatase A, regulates trehalose-6-phosphate levels and starch metabolism under abiotic stress.", recurrent: false },
+      { id: "AT1G07940", symbol: "YIP1A", filename: "splicegrapher_AT1G07940", description: "Yip1 domain family protein involved in COPII vesicle-mediated transport.", recurrent: false },
+      { id: "AT3G27990", symbol: "PPR", filename: "splicegrapher_AT3G27990", description: "Pentatricopeptide repeat (PPR) superfamily protein, involved in organellar RNA processing.", recurrent: false },
+      { id: "AT4G26600", symbol: "—", filename: "splicegrapher_AT4G26600", description: "Uncharacterized conserved protein of unknown function.", recurrent: false },
+      { id: "AT5G14610", symbol: "UGT", filename: "splicegrapher_AT5G14610", description: "UDP-glucosyl transferase superfamily protein involved in detoxification and secondary metabolism.", recurrent: false },
+      { id: "AT5G63160", symbol: "—", filename: "splicegrapher_AT5G63160", description: "Heavy metal-associated domain-containing protein involved in metal homeostasis.", recurrent: false },
+      { id: "chr3:4182994-4183975", symbol: "chr3 RI Locus", filename: "fig11_splice_graph_RI_chr3_+_4182994-4183975-4182994-4183207-4183293-4183975", description: "Reconstructed splice model of a key retained intron event on Chromosome 3.", recurrent: false }
+    ]
+  },
+  {
+    id: "osd120",
+    name: "OSD-120",
+    stressor: "Spaceflight (ISS Roots)",
+    samples: 36,
+    genes: [
+      { id: "AT5G06950", symbol: "PPR", filename: "splicegraph_AT5G06950", description: "Pentatricopeptide repeat (PPR) protein, localized to mitochondria/chloroplasts.", recurrent: false },
+      { id: "AT5G42900", symbol: "bHLH", filename: "splicegraph_AT5G42900", description: "Basic helix-loop-helix (bHLH) DNA-binding superfamily protein, transcription factor.", recurrent: false },
+      { id: "AT5G60120", symbol: "—", filename: "splicegraph_AT5G60120", description: "Uncharacterized space-responsive protein.", recurrent: false },
+      { id: "AT4G26600", symbol: "—", filename: "splicegraph_AT4G26600", description: "Uncharacterized conserved protein.", recurrent: false },
+      { id: "AT1G73930", symbol: "RING", filename: "splicegraph_AT1G73930", description: "RING-type ubiquitin ligase involved in protein degradation pathways under environmental stress.", recurrent: false },
+      { id: "AT4G12790", symbol: "—", filename: "splicegraph_AT4G12790", description: "Conserved protein of unknown function, responsive to gravity stress.", recurrent: false },
+      { id: "AT3G20810", symbol: "ZF", filename: "splicegraph_AT3G20810", description: "Zinc finger CCCH domain-containing protein, potential RNA-binding protein.", recurrent: false }
+    ]
+  },
+  {
+    id: "osd37",
+    name: "OSD-37",
+    stressor: "Spaceflight (ISS / 4 Ecotypes)",
+    samples: 56,
+    genes: [
+      { id: "AT5G17300", symbol: "RVE1", filename: "splicegraph_AT5G17300", description: "REVEILLE 1, MYB-like transcription factor that regulates the circadian clock and auxin levels.", recurrent: false },
+      { id: "AT1G07350", symbol: "SR45A", filename: "splicegraph_AT1G07350", description: "Serine/arginine-rich splicing factor 45A, key regulator of alternative splicing under salinity and radiation stress.", recurrent: false },
+      { id: "AT5G23060", symbol: "CAS", filename: "splicegraph_AT5G23060", description: "Calcium-sensing receptor targeting the chloroplast, mediates stomatal closure and stress signaling.", recurrent: false },
+      { id: "AT4G21400", symbol: "CRK28", filename: "splicegraph_AT4G21400", description: "Cysteine-rich receptor-like kinase 28, involved in stress sensing and calcium signalling.", recurrent: true },
+      { id: "AT2G45950", symbol: "GLR3.3", filename: "splicegraph_AT2G45950", description: "Glutamate receptor-like channel 3.3, involved in calcium signaling and systemic wound transmission.", recurrent: false },
+      { id: "AT3G02800", symbol: "PUB19", filename: "splicegraph_AT3G02800", description: "U-box domain-containing protein 19, acts as a negative regulator of ABA-mediated drought stress response.", recurrent: false },
+      { id: "AT4G30850", symbol: "LEA", filename: "splicegraph_AT4G30850", description: "Late embryogenesis abundant (LEA) family protein, protects proteins from denaturation under cellular dehydration.", recurrent: false }
+    ]
+  },
+  {
+    id: "osd251",
+    name: "OSD-251",
+    stressor: "Fractional Gravity & Blue Light",
+    samples: 20,
+    genes: [
+      { id: "AT1G10240", symbol: "SDG26", filename: "splicegraph_AT1G10240", description: "SET domain group 26, a histone H3 methyltransferase involved in epigenetic regulation.", recurrent: false },
+      { id: "AT2G05440", symbol: "TOM22", filename: "splicegraph_AT2G05440", description: "Translocase of outer mitochondrial membrane 22-like protein, imports nuclear-encoded proteins.", recurrent: false },
+      { id: "AT2G16940", symbol: "—", filename: "splicegraph_AT2G16940", description: "Uncharacterized protein, highly responsive to blue light and fractional gravity.", recurrent: false },
+      { id: "AT2G33815", symbol: "RING", filename: "splicegraph_AT2G33815", description: "RING/U-box superfamily protein involved in protein ubiquitination.", recurrent: false },
+      { id: "AT2G38920", symbol: "—", filename: "splicegraph_AT2G38920", description: "Uncharacterized conserved protein.", recurrent: false },
+      { id: "AT3G09370", symbol: "PLP-T", filename: "splicegraph_AT3G09370", description: "Pyridoxal phosphate (PLP)-dependent transferase superfamily protein.", recurrent: false },
+      { id: "AT3G20270", symbol: "RPL19B", filename: "splicegraph_AT3G20270", description: "60S ribosomal protein L19-2, essential constituent of the ribosome.", recurrent: false },
+      { id: "AT5G57565", symbol: "—", filename: "splicegraph_AT5G57565", description: "Recurrently spliced target across fractional gravity, partial gravity, and ISS studies.", recurrent: true }
+    ]
+  },
+  {
+    id: "osd476",
+    name: "OSD-476",
+    stressor: "Apollo Lunar Regolith",
+    samples: 20,
+    genes: [
+      { id: "AT2G30370", symbol: "ZF", filename: "splicegraph_AT2G30370", description: "C3H-type zinc finger family protein, plays a critical role in stress response.", recurrent: false },
+      { id: "AT1G06710", symbol: "F-box", filename: "splicegraph_AT1G06710", description: "F-box domain-containing protein involved in protein ubiquitination.", recurrent: false },
+      { id: "AT3G03970", symbol: "RCA", filename: "splicegraph_AT3G03970", description: "RuBisCO activase, regulates the activation state of RuBisCO in response to light.", recurrent: false },
+      { id: "AT3G16120", symbol: "Hsp70-2", filename: "splicegraph_AT3G16120", description: "Chloroplast heat shock protein 70-2, acts as a chaperone protecting chloroplast proteins.", recurrent: false },
+      { id: "AT1G62610", symbol: "CHLD", filename: "splicegraph_AT1G62610", description: "Magnesium-protoporphyrin IX monomethyl ester cyclase, subunit of Mg-chelatase in chlorophyll synthesis.", recurrent: false },
+      { id: "AT2G47020", symbol: "—", filename: "splicegraph_AT2G47020", description: "Uncharacterized protein of unknown function.", recurrent: false },
+      { id: "AT3G01980", symbol: "BSP", filename: "splicegraph_AT3G01980", description: "Basic secretory protein (BSP) family protein involved in stress adaptation.", recurrent: false },
+      { id: "AT3G44340", symbol: "IF", filename: "splicegraph_AT3G44340", description: "Chloroplast translation initiation factor, essential for protein synthesis.", recurrent: false }
+    ]
+  },
+  {
+    id: "osd658",
+    name: "OSD-658",
+    stressor: "GCR Cosmic Radiation",
+    samples: 14,
+    genes: [
+      { id: "AT4G17310", symbol: "Stress Biomarker", filename: "splicegraph_AT4G17310", description: "Universal spaceflight stress biomarker. Significantly spliced across 4 studies (OSD-251, 314, 476, 658) spanning gravity, regolith, and radiation.", recurrent: true },
+      { id: "AT5G13790", symbol: "PLP-D", filename: "splicegraph_AT5G13790", description: "Phospholipid metabolic enzyme, highly responsive to cosmic radiation.", recurrent: false },
+      { id: "AT4G25990", symbol: "—", filename: "splicegraph_AT4G25990", description: "Uncharacterized stress-responsive protein.", recurrent: false },
+      { id: "AT3G02600", symbol: "Hsp90.5", filename: "splicegraph_AT3G02600", description: "Heat shock protein 90.5, chloroplast molecular chaperone involved in translocation.", recurrent: false },
+      { id: "AT2G17970", symbol: "RBF1", filename: "splicegraph_AT2G17970", description: "Ribosome binding factor 1-like protein, crucial for chloroplast translation.", recurrent: false },
+      { id: "AT3G59410", symbol: "PPR", filename: "splicegraph_AT3G59410", description: "Pentatricopeptide repeat (PPR) superfamily protein.", recurrent: false },
+      { id: "AT5G11630", symbol: "RBP", filename: "splicegraph_AT5G11630", description: "RNA-binding glycine-rich protein, involved in cold and radiation stress response.", recurrent: false },
+      { id: "AT5G37370", symbol: "UBC", filename: "splicegraph_AT5G37370", description: "Ubiquitin-conjugating enzyme E2 family protein.", recurrent: false }
+    ]
+  },
+  {
+    id: "osd678",
+    name: "OSD-678",
+    stressor: "ISS Spaceflight (phyD Mutant)",
+    samples: 36,
+    genes: [
+      { id: "AT1G01060", symbol: "PHYD", filename: "splicegraph_AT1G01060", description: "Phytochrome D, photoreceptor regulating seed germination and flowering time.", recurrent: false },
+      { id: "AT1G09140", symbol: "CCA1-like", filename: "splicegraph_AT1G09140", description: "Circadian clock-regulated protein, similar to CCA1/LHY transcription factors.", recurrent: false },
+      { id: "AT1G28330", symbol: "MYB", filename: "splicegraph_AT1G28330", description: "MYB domain transcription factor involved in stress signaling.", recurrent: false },
+      { id: "AT5G52040", symbol: "Hsp70", filename: "splicegraph_AT5G52040", description: "Heat shock protein 70 family molecular chaperone.", recurrent: false },
+      { id: "AT1G72855", symbol: "ZF", filename: "splicegraph_AT1G72855", description: "Zinc finger CCCH domain-containing protein.", recurrent: false },
+      { id: "AT2G43760", symbol: "HSF", filename: "splicegraph_AT2G43760", description: "Heat shock transcription factor coordinating stress responses.", recurrent: false },
+      { id: "AT2G46270", symbol: "—", filename: "splicegraph_AT2G46270", description: "Splicing factor-related protein.", recurrent: false },
+      { id: "AT3G13060", symbol: "ECT5", filename: "splicegraph_AT3G13060", description: "YTH domain-containing protein ECT5, reader of m6A RNA methylation.", recurrent: true },
+      { id: "AT3G49430", symbol: "RPL19A", filename: "splicegraph_AT3G49430", description: "60S ribosomal protein L19-1, constituent of cytoplasmic ribosomes.", recurrent: false },
+      { id: "AT5G19210", symbol: "LHCB", filename: "splicegraph_AT5G19210", description: "Light-harvesting chlorophyll a/b binding protein.", recurrent: false }
+    ]
+  }
+];
+
+let currentStudyIndex = 0;
+let currentGeneIndex = 0;
+let currentFormat = 'svg';
+
+// Zoom/pan state
+let zoomScale = 1;
+let panX = 0;
+let panY = 0;
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+
+function renderTabs() {
+  const container = document.getElementById('study-tabs');
+  container.innerHTML = STUDIES.map((study, idx) => `
+    <button class="study-tab ${idx === currentStudyIndex ? 'active' : ''}" onclick="selectStudy(${idx})">
+      ${study.name}
+    </button>
+  `).join('');
+}
+
+function renderGeneList() {
+  const study = STUDIES[currentStudyIndex];
+  const container = document.getElementById('gene-list');
+  container.innerHTML = study.genes.map((gene, idx) => `
+    <div class="gene-item ${idx === currentGeneIndex ? 'active' : ''}" onclick="selectGene(${idx})">
+      <div class="gene-id">${gene.id}</div>
+      <div class="gene-symbol-row">
+        <span class="gene-symbol">${gene.symbol}</span>
+        ${gene.recurrent ? '<span class="badge-recurrent">Recurrent</span>' : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function updateViewer() {
+  const study = STUDIES[currentStudyIndex];
+  const gene = study.genes[currentGeneIndex];
+  
+  const imgPath = `${study.id}_analysis/figures/${gene.filename}.${currentFormat}`;
+  
+  const imgElement = document.getElementById('viewer-img');
+  const spinner = document.getElementById('loading-spinner');
+  
+  spinner.style.display = 'block';
+  imgElement.style.opacity = '0.3';
+  
+  imgElement.src = imgPath;
+  
+  imgElement.onload = () => {
+    spinner.style.display = 'none';
+    imgElement.style.opacity = '1';
+  };
+  
+  imgElement.onerror = () => {
+    spinner.style.display = 'none';
+    imgElement.style.opacity = '0.5';
+  };
+  
+  document.getElementById('download-svg').href = `${study.id}_analysis/figures/${gene.filename}.svg`;
+  document.getElementById('download-png').href = `${study.id}_analysis/figures/${gene.filename}.png`;
+  
+  document.getElementById('gene-details-title').innerHTML = `
+    ${gene.symbol !== '—' ? gene.symbol + ' (' + gene.id + ')' : gene.id}
+    ${gene.recurrent ? '<span class="badge-recurrent">Universal Splicing Target</span>' : ''}
+  `;
+  document.getElementById('gene-details-desc').textContent = gene.description;
+  
+  const isChrLocus = gene.id.startsWith('chr');
+  const tairLink = document.getElementById('link-tair');
+  const ensemblLink = document.getElementById('link-ensembl');
+  
+  if (isChrLocus) {
+    tairLink.style.display = 'none';
+    ensemblLink.style.display = 'none';
+  } else {
+    tairLink.style.display = 'inline-block';
+    tairLink.href = `https://www.arabidopsis.org/servlets/TairObject?type=locus&name=${gene.id}`;
+    ensemblLink.style.display = 'inline-block';
+    ensemblLink.href = `https://plants.ensembl.org/Arabidopsis_thaliana/Gene/Summary?g=${gene.id}`;
+  }
+  
+  document.getElementById('current-study-name').textContent = study.name;
+  document.getElementById('current-study-stressor').textContent = study.stressor;
+  
+  resetZoomPan();
+}
+
+function selectStudy(idx) {
+  currentStudyIndex = idx;
+  currentGeneIndex = 0;
+  renderTabs();
+  renderGeneList();
+  updateViewer();
+}
+
+function selectGene(idx) {
+  currentGeneIndex = idx;
+  renderGeneList();
+  updateViewer();
+}
+
+function setFormat(fmt) {
+  currentFormat = fmt;
+  document.getElementById('btn-svg').classList.toggle('active', fmt === 'svg');
+  document.getElementById('btn-png').classList.toggle('active', fmt === 'png');
+  updateViewer();
+}
+
+function updateTransform() {
+  const container = document.getElementById('viewer-img-container');
+  container.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomScale})`;
+}
+
+function zoomIn() {
+  const container = document.getElementById('viewer-img-container');
+  zoomScale = Math.min(5, zoomScale + 0.25);
+  container.style.transition = 'transform 0.2s ease-out';
+  updateTransform();
+}
+
+function zoomOut() {
+  const container = document.getElementById('viewer-img-container');
+  zoomScale = Math.max(0.5, zoomScale - 0.25);
+  container.style.transition = 'transform 0.2s ease-out';
+  updateTransform();
+}
+
+function resetZoomPan() {
+  const container = document.getElementById('viewer-img-container');
+  zoomScale = 1;
+  panX = 0;
+  panY = 0;
+  container.style.transition = 'transform 0.2s ease-out';
+  updateTransform();
+}
+
+function initZoomPan() {
+  const container = document.getElementById('viewer-img-container');
+  const viewport = document.getElementById('viewer-viewport');
+  
+  container.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX - panX;
+    startY = e.clientY - panY;
+    container.style.transition = 'none';
+    e.preventDefault();
+  });
+  
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    panX = e.clientX - startX;
+    panY = e.clientY - startY;
+    updateTransform();
+  });
+  
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+  
+  // Touch support
+  container.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+      isDragging = true;
+      startX = e.touches[0].clientX - panX;
+      startY = e.touches[0].clientY - panY;
+      container.style.transition = 'none';
+    }
+  }, { passive: true });
+  
+  container.addEventListener('touchmove', (e) => {
+    if (!isDragging || e.touches.length !== 1) return;
+    panX = e.touches[0].clientX - startX;
+    panY = e.touches[0].clientY - startY;
+    updateTransform();
+  }, { passive: true });
+  
+  container.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+  
+  viewport.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const zoomFactor = 0.1;
+    const delta = e.deltaY > 0 ? -zoomFactor : zoomFactor;
+    zoomScale = Math.max(0.5, Math.min(5, zoomScale + delta));
+    container.style.transition = 'transform 0.05s ease-out';
+    updateTransform();
+  }, { passive: false });
+}
+
+function openLightbox() {
+  const study = STUDIES[currentStudyIndex];
+  const gene = study.genes[currentGeneIndex];
+  const modal = document.getElementById('lightbox-modal');
+  const modalImg = document.getElementById('lightbox-img');
+  const caption = document.getElementById('lightbox-caption');
+  
+  modalImg.src = `${study.id}_analysis/figures/${gene.filename}.${currentFormat}`;
+  caption.textContent = `${gene.symbol !== '—' ? gene.symbol + ' (' + gene.id + ')' : gene.id} — ${study.name} Splice Graph`;
+  modal.classList.add('active');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox-modal').classList.remove('active');
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  renderTabs();
+  renderGeneList();
+  updateViewer();
+  initZoomPan();
+});
+</script>
 
 <footer>
 <div class="wrap">

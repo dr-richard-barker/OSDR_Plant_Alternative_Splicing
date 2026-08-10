@@ -35,6 +35,9 @@ window.BARKER_SITES = {
     {
       name: "Spaceflight Omics & Transcriptomics",
       items: [
+        { id:"OSDR_Plant_Alternative_Splicing", emoji:"🧬", title:"Plant Spaceflight Splicing",
+          desc:"Multi-study rMATS alternative splicing dashboard & transcript models",
+          url:"https://dr-richard-barker.github.io/OSDR_Plant_Alternative_Splicing/" },
         { id:"Tropism_autodecoder_2026", emoji:"🧭", title:"Tropism Autodecoder 2026",
           desc:"Auto-decoder atlas of plant tropism responses",
           url:"https://dr-richard-barker.github.io/Tropism_autodecoder_2026/" },
