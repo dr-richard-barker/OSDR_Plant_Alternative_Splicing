@@ -526,6 +526,17 @@
   <div class="explorer-footer">
     <div class="gene-details-title" id="gene-details-title">Gene Symbol</div>
     <p class="gene-details-description" id="gene-details-desc">Description of the gene locus</p>
+    
+    <!-- ARAPORT11 Comparison Card -->
+    <div class="araport-comparison" id="araport-comparison" style="margin-bottom: 16px; padding: 12px; border: 1px dashed var(--line); border-radius: 8px; background: var(--bg); display: none;">
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">ARAPORT11 Reference Comparison</div>
+      <div style="font-size: 0.88rem; margin-bottom: 6px;">
+        <strong>Canonical Isoform:</strong> <span id="araport-canonical">AT4G17310.3</span> · 
+        <strong>Total Reference Isoforms:</strong> <span id="araport-isoforms">17</span>
+      </div>
+      <div style="font-size: 0.85rem; color: var(--muted); line-height: 1.45;" id="araport-insight">Comparison insight details...</div>
+    </div>
+
     <div class="gene-details-meta">
       <span class="meta-item">Database Links: 
         <a class="meta-link" id="link-tair" href="" target="_blank" rel="noopener">TAIR</a>
@@ -551,6 +562,279 @@
 </div>
 
 <script>
+const ARAPORT_DETAILS = {
+  "AT1G01060": {
+    "canonical": "AT1G01060.7",
+    "isoforms": 8,
+    "description": "Homeodomain-like superfamily protein"
+  },
+  "AT1G06710": {
+    "canonical": "AT1G06710.2",
+    "isoforms": 19,
+    "description": "Tetratricopeptide repeat (TPR)-like superfamily protein"
+  },
+  "AT1G07350": {
+    "canonical": "AT1G07350.1",
+    "isoforms": 6,
+    "description": "RNA-binding (RRM/RBD/RNP motifs) family protein"
+  },
+  "AT1G07940": {
+    "canonical": "AT1G07940.3",
+    "isoforms": 4,
+    "description": "GTP binding Elongation factor Tu family protein"
+  },
+  "AT1G09140": {
+    "canonical": "AT1G09140.1",
+    "isoforms": 3,
+    "description": "SERINE-ARGININE PROTEIN 30"
+  },
+  "AT1G10240": {
+    "canonical": "AT1G10240.2",
+    "isoforms": 2,
+    "description": "FAR1-related sequence 11"
+  },
+  "AT1G28330": {
+    "canonical": "AT1G28330.3",
+    "isoforms": 6,
+    "description": "dormancy-associated protein-like 1"
+  },
+  "AT1G62610": {
+    "canonical": "AT1G62610.4",
+    "isoforms": 4,
+    "description": "NAD(P)-binding Rossmann-fold superfamily protein"
+  },
+  "AT1G72855": {
+    "canonical": "AT1G72855.2",
+    "isoforms": 4,
+    "description": "ncRNA"
+  },
+  "AT1G73930": {
+    "canonical": "AT1G73930.1",
+    "isoforms": 2,
+    "description": "polarity axis stabilization protein"
+  },
+  "AT2G05440": {
+    "canonical": "AT2G05440.2",
+    "isoforms": 9,
+    "description": "GLYCINE RICH PROTEIN 9"
+  },
+  "AT2G16940": {
+    "canonical": "AT2G16940.2",
+    "isoforms": 5,
+    "description": "Splicing factor, CC1-like protein"
+  },
+  "AT2G17970": {
+    "canonical": "AT2G17970.1",
+    "isoforms": 10,
+    "description": "2-oxoglutarate (2OG) and Fe(II)-dependent oxygenase superfamily protein"
+  },
+  "AT2G30370": {
+    "canonical": "AT2G30370.1",
+    "isoforms": 3,
+    "description": "allergen-like protein"
+  },
+  "AT2G33815": {
+    "canonical": "AT2G33815.2",
+    "isoforms": 2,
+    "description": "ncRNA"
+  },
+  "AT2G38920": {
+    "canonical": "AT2G38920.1",
+    "isoforms": 6,
+    "description": "SPX (SYG1/Pho81/XPR1) domain-containing protein / zinc finger (C3HC4-type RING finger) protein-like protein"
+  },
+  "AT2G43760": {
+    "canonical": "AT2G43760.1",
+    "isoforms": 3,
+    "description": "molybdopterin biosynthesis MoaE family protein"
+  },
+  "AT2G45950": {
+    "canonical": "AT2G45950.2",
+    "isoforms": 5,
+    "description": "SKP1-like 20"
+  },
+  "AT2G46270": {
+    "canonical": "AT2G46270.1",
+    "isoforms": 4,
+    "description": "G-box binding factor 3"
+  },
+  "AT2G47020": {
+    "canonical": "AT2G47020.3",
+    "isoforms": 5,
+    "description": "Peptide chain release factor 1"
+  },
+  "AT3G01980": {
+    "canonical": "AT3G01980.3",
+    "isoforms": 6,
+    "description": "NAD(P)-binding Rossmann-fold superfamily protein"
+  },
+  "AT3G02600": {
+    "canonical": "AT3G02600.1",
+    "isoforms": 12,
+    "description": "lipid phosphate phosphatase 3"
+  },
+  "AT3G02800": {
+    "canonical": "AT3G02800.1",
+    "isoforms": 1,
+    "description": "Tyrosine phosphatase family protein"
+  },
+  "AT3G03970": {
+    "canonical": "AT3G03970.6",
+    "isoforms": 6,
+    "description": "ARM repeat superfamily protein"
+  },
+  "AT3G09370": {
+    "canonical": "AT3G09370.3",
+    "isoforms": 3,
+    "description": "myb domain protein 3r-3"
+  },
+  "AT3G13060": {
+    "canonical": "AT3G13060.2",
+    "isoforms": 6,
+    "description": "evolutionarily conserved C-terminal region 5"
+  },
+  "AT3G16120": {
+    "canonical": "AT3G16120.1",
+    "isoforms": 2,
+    "description": "Dynein light chain type 1 family protein"
+  },
+  "AT3G20270": {
+    "canonical": "AT3G20270.3",
+    "isoforms": 6,
+    "description": "lipid-binding serum glycoprotein family protein"
+  },
+  "AT3G20810": {
+    "canonical": "AT3G20810.2",
+    "isoforms": 5,
+    "description": "2-oxoglutarate (2OG) and Fe(II)-dependent oxygenase superfamily protein"
+  },
+  "AT3G27990": {
+    "canonical": "AT3G27990.2",
+    "isoforms": 4,
+    "description": "ncRNA"
+  },
+  "AT3G44340": {
+    "canonical": "AT3G44340.3",
+    "isoforms": 5,
+    "description": "uncharacterized protein"
+  },
+  "AT3G49430": {
+    "canonical": "AT3G49430.4",
+    "isoforms": 7,
+    "description": "SER/ARG-rich protein 34A"
+  },
+  "AT3G59410": {
+    "canonical": "AT3G59410.2",
+    "isoforms": 5,
+    "description": "protein kinase family protein"
+  },
+  "AT4G12790": {
+    "canonical": "AT4G12790.6",
+    "isoforms": 6,
+    "description": "P-loop containing nucleoside triphosphate hydrolases superfamily protein"
+  },
+  "AT4G17310": {
+    "canonical": "AT4G17310.3",
+    "isoforms": 17,
+    "description": "uncharacterized protein"
+  },
+  "AT4G21400": {
+    "canonical": "AT4G21400.1",
+    "isoforms": 8,
+    "description": "cysteine-rich RLK (RECEPTOR-like protein kinase) 28"
+  },
+  "AT4G25990": {
+    "canonical": "AT4G25990.2",
+    "isoforms": 3,
+    "description": "CCT motif family protein"
+  },
+  "AT4G26600": {
+    "canonical": "AT4G26600.5",
+    "isoforms": 8,
+    "description": "S-adenosyl-L-methionine-dependent methyltransferases superfamily protein"
+  },
+  "AT4G30850": {
+    "canonical": "AT4G30850.2",
+    "isoforms": 2,
+    "description": "heptahelical transmembrane protein2"
+  },
+  "AT5G06950": {
+    "canonical": "AT5G06950.5",
+    "isoforms": 5,
+    "description": "bZIP transcription factor family protein"
+  },
+  "AT5G11630": {
+    "canonical": "AT5G11630.1",
+    "isoforms": 3,
+    "description": "uncharacterized protein"
+  },
+  "AT5G13790": {
+    "canonical": "AT5G13790.2",
+    "isoforms": 2,
+    "description": "AGAMOUS-like 15"
+  },
+  "AT5G14610": {
+    "canonical": "AT5G14610.1",
+    "isoforms": 7,
+    "description": "DEAD box RNA helicase family protein"
+  },
+  "AT5G17300": {
+    "canonical": "AT5G17300.1",
+    "isoforms": 2,
+    "description": "Homeodomain-like superfamily protein"
+  },
+  "AT5G19210": {
+    "canonical": "AT5G19210.2",
+    "isoforms": 3,
+    "description": "P-loop containing nucleoside triphosphate hydrolases superfamily protein"
+  },
+  "AT5G23060": {
+    "canonical": "AT5G23060.1",
+    "isoforms": 2,
+    "description": "calcium sensing receptor"
+  },
+  "AT5G37370": {
+    "canonical": "AT5G37370.1",
+    "isoforms": 12,
+    "description": "PRP38 family protein"
+  },
+  "AT5G42900": {
+    "canonical": "AT5G42900.2",
+    "isoforms": 3,
+    "description": "cold regulated protein 27"
+  },
+  "AT5G51460": {
+    "canonical": "AT5G51460.3",
+    "isoforms": 5,
+    "description": "Haloacid dehalogenase-like hydrolase (HAD) superfamily protein"
+  },
+  "AT5G52040": {
+    "canonical": "AT5G52040.2",
+    "isoforms": 7,
+    "description": "RNA-binding (RRM/RBD/RNP motifs) family protein"
+  },
+  "AT5G57565": {
+    "canonical": "AT5G57565.4",
+    "isoforms": 7,
+    "description": "Protein kinase superfamily protein"
+  },
+  "AT5G60120": {
+    "canonical": "AT5G60120.2",
+    "isoforms": 6,
+    "description": "target of early activation tagged (EAT) 2"
+  },
+  "AT5G63160": {
+    "canonical": "AT5G63160.1",
+    "isoforms": 3,
+    "description": "BTB and TAZ domain protein 1"
+  },
+  "AT5G66210": {
+    "canonical": "AT5G66210.1",
+    "isoforms": 6,
+    "description": "calcium-dependent protein kinase 28"
+  }
+};
+
 const STUDIES = [
   {
     id: "osd314",
@@ -734,6 +1018,39 @@ function updateViewer() {
     ${gene.recurrent ? '<span class="badge-recurrent">Universal Splicing Target</span>' : ''}
   `;
   document.getElementById('gene-details-desc').textContent = gene.description;
+  
+  // ARAPORT11 Comparison Card Lookup & Render
+  const details = ARAPORT_DETAILS[gene.id];
+  const araportComparisonDiv = document.getElementById('araport-comparison');
+  if (details) {
+    araportComparisonDiv.style.display = 'block';
+    document.getElementById('araport-canonical').textContent = details.canonical;
+    document.getElementById('araport-isoforms').textContent = details.isoforms;
+    
+    let insight = '';
+    if (gene.id === 'AT4G17310') {
+      insight = "<strong>Universal stress biomarker.</strong> Under normal conditions, a 211bp intron (chr4:9685455-9685665) is spliced out (producing coding transcripts like AT4G17310.12/4). Under spaceflight stresses, this intron is retained, introducing a premature termination codon (PTC) which triggers nonsense-mediated decay (NMD) to downregulate the transcripts post-transcriptionally.";
+    } else if (gene.id === 'AT1G07350') {
+      insight = "<strong>Splicing factor feedback.</strong> SR45a is a major regulator of splicing. Spaceflight-induced alternative splicing in its RRM RNA-binding domain alters its splicing activity, initiating a regulatory feedback cascade affecting many other genes.";
+    } else if (gene.id === 'AT5G17300') {
+      insight = "<strong>Circadian clock decoupling.</strong> Splicing alterations in REVEILLE 1 disrupt its homeodomain DNA-binding motif. This alters the plant's endogenous clock system, which is a key conserved response to ISS spaceflight stress.";
+    } else if (gene.id === 'AT5G66210') {
+      insight = "<strong>Calcium signaling disruption.</strong> Intron retention in CPK28 alters its EF-hand calcium-binding motifs. This disrupts calcium-dependent cell signaling cascades and alters developmental trade-offs under gravity changes.";
+    } else if (gene.id === 'AT4G21400') {
+      insight = "<strong>Receptor kinase regulation.</strong> Alternative splicing alters the extracellular domains of CRK28, which regulates stress-sensing receptor kinase activities at the cell membrane.";
+    } else if (gene.id === 'AT5G23060') {
+      insight = "<strong>Chloroplast calcium sensing.</strong> Splicing changes in CAS disrupt calcium sensing in the chloroplast membrane, affecting photosynthesis and stomatal regulation.";
+    } else if (gene.id === 'AT3G13060') {
+      insight = "<strong>RNA methylation reader.</strong> ECT5 reads m6A RNA methylation. Alternative splicing in spaceflight alters its YTH reader domain, affecting transcript stability of downstream target genes.";
+    } else if (gene.id === 'AT5G51460') {
+      insight = "<strong>Trehalose pathway regulation.</strong> Trehalose-phosphate phosphatase A regulates trehalose 6-phosphate (T6P). Splicing alterations affect HAD-like hydrolase domains, modulating starch accumulation during gravitational stress.";
+    } else {
+      insight = `In ARAPORT11, this gene is annotated as a <em>${details.description || 'protein coding gene'}</em>. Alternative splicing changes observed in spaceflight experiments modify the transcript models, typically introducing premature termination codons that alter expression via NMD.`;
+    }
+    document.getElementById('araport-insight').innerHTML = insight;
+  } else {
+    araportComparisonDiv.style.display = 'none';
+  }
   
   const isChrLocus = gene.id.startsWith('chr');
   const tairLink = document.getElementById('link-tair');
