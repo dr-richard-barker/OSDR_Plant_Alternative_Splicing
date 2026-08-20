@@ -32,6 +32,20 @@ Here we present a multi-study analysis of differential alternative splicing in p
 
 Plant RNA-seq studies were enumerated from the NASA OSDR Biological Data API (BDAPI v2, https://visualization.osdr.nasa.gov/biodata/api/v2). We identified 58 plant RNA-seq studies, of which 54 were Arabidopsis thaliana. For this proof-of-concept analysis, we selected 8 studies (7 Arabidopsis thaliana, 1 Brassica rapa) representing diverse spaceflight-relevant conditions (Table 1).
 
+**Table 1.** Proof-of-concept studies selected for analysis.
+
+| OSD ID | Organism | Environment | BAMs | Status |
+|--------|----------|-------------|------|--------|
+| OSD-314 | *A. thaliana* | Microgravity/Mars-g | 17 | Completed |
+| OSD-120 | *A. thaliana* | ISS spaceflight | 36 | Completed |
+| OSD-59 | *B. rapa* | ISS spaceflight | 2 | Completed |
+| OSD-37 | *A. thaliana* | ISS spaceflight (4 accessions) | 56 | Completed |
+| OSD-678 | *A. thaliana* | ISS spaceflight (3 genotypes × 2 light) | 36 | Completed |
+| OSD-658 | *A. thaliana* | Simulated GCR radiation | 14 | Completed |
+| OSD-476 | *A. thaliana* | Lunar regolith | 20 | Completed |
+| OSD-251 | *A. thaliana* | Fractional gravity (blue light) | 20 | Completed |
+
+
 All BAM files were aligned to Ensembl Plants release 48 references (TAIR10 for Arabidopsis, Brapa_1.0 for Brassica), matching the GeneLab RCP (GL-DPPD-7101-E) exactly, ensuring coordinate compatibility without re-alignment. A critical technical finding was that GeneLab coordinate-sorted BAMs, despite originating from paired-end sequencing, do not retain mate-pair flags (flag=16, is_paired=False). rMATS was therefore run with `-t single` mode, with read type auto-detected via pysam.
 
 ### Differential Splicing Analysis

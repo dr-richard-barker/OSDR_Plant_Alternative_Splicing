@@ -64,39 +64,39 @@
       "description": "UMAP embedding and cluster assignments",
       "columns": "umap_x, umap_y, cluster, condition, osd_id, tissue, genotype, sample_name"
     },
-    "multi_study_analysis_v2/feature_matrix.npy": {
+    "multi_study_analysis/feature_matrix.npy": {
       "description": "3-study unified PSI feature matrix (109 samples x 8913 genes)",
       "format": "NumPy binary, float32, shape (109, 8913)"
     },
-    "multi_study_analysis_v2/labels_flight.npy": {
+    "multi_study_analysis/labels_flight.npy": {
       "description": "Binary flight labels (1=flight, 0=ground) for 109 samples",
       "format": "NumPy binary, int32, shape (109,)"
     },
-    "multi_study_analysis_v2/study_ids.npy": {
+    "multi_study_analysis/study_ids.npy": {
       "description": "Study ID strings for 109 samples (OSD-314, OSD-120, OSD-37)",
       "format": "NumPy binary string array, shape (109,), allow_pickle=True"
     },
-    "multi_study_analysis_v2/losocv_results.tsv": {
+    "multi_study_analysis/losocv_results.tsv": {
       "description": "3-study LOSOCV results (train on 2, test on 1) for RF/GBM/XGBoost",
       "columns": "test_study, n_train, n_test, auc, accuracy, f1, model"
     },
-    "multi_study_analysis_v2/nested_kfold_results.tsv": {
+    "multi_study_analysis/nested_kfold_results.tsv": {
       "description": "Nested 5-fold CV results (pooled 3 studies, RF with hyperparameter tuning)",
       "columns": "fold, auc, model"
     },
-    "multi_study_analysis_v2/umap_clustering.tsv": {
+    "multi_study_analysis/umap_clustering.tsv": {
       "description": "3-study UMAP embedding with study/condition/cluster labels",
       "columns": "sample_name, study_id, condition, is_flight, UMAP1, UMAP2, cluster"
     },
-    "multi_study_analysis_v2/shap_importance.tsv": {
+    "multi_study_analysis/shap_importance.tsv": {
       "description": "SHAP feature importance (mean absolute SHAP) for 3-study RF model",
       "columns": "gene, mean_abs_shap"
     },
-    "multi_study_analysis_v2/sample_metadata.tsv": {
+    "multi_study_analysis/sample_metadata.tsv": {
       "description": "Sample metadata for 109 samples across 3 studies",
       "columns": "sample_name, study_id, condition, tissue, genotype, light, replicate, is_flight"
     },
-    "multi_study_analysis_v2/feature_genes.tsv": {
+    "multi_study_analysis/feature_genes.tsv": {
       "description": "Gene names for the 8913 features in the feature matrix",
       "columns": "gene"
     },
