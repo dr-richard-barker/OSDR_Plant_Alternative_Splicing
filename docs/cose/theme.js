@@ -15,7 +15,7 @@
   "use strict";
   var LS_OPEN = "barker.map.open", LS_PANEL = "barker.map.panel", LS_THEME = "barker.theme";
   var slug = document.body.getAttribute("data-site-id") || "";
-  var LOGO = document.body.getAttribute("data-brand-logo") || "assets/cose-logo.png";
+  var LOGO = document.body.getAttribute("data-brand-logo") || "assets/regolith-logo.png";
   var BRAND_URL = document.body.getAttribute("data-brand-url") || "https://cosecloud.com/";
 
   /* ---------- build DOM shell ---------- */
