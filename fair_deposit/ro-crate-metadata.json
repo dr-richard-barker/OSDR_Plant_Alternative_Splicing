@@ -15,7 +15,7 @@
       "@id": "./",
       "@type": "Dataset",
       "name": "Plant spaceflight alternative splicing analysis",
-      "description": "rMATS-based differential splicing analysis of NASA OSDR plant RNA-seq data with ML and ontology integration. 7 Arabidopsis thaliana studies (OSD-314, OSD-120, OSD-37, OSD-678, OSD-658, OSD-476, OSD-251) + 1 Brassica rapa study (OSD-59). 199 samples, ~100,000 events, 93 recurrent genes, AT4G17310 in 4 studies.",
+      "description": "rMATS-based differential splicing analysis of NASA OSDR plant RNA-seq data with ML and GO/MapMan enrichment. 7 Arabidopsis thaliana studies (OSD-314, OSD-120, OSD-37, OSD-678, OSD-658, OSD-476, OSD-251; 199 samples) + 1 Brassica rapa study (OSD-59, 2 samples; its outputs are not in this repository). ~100,000 events, 93 recurrent genes, AT4G17310 in 4 studies. TODO: the analysis code is not yet in the repository.",
       "datePublished": "2026-07-26",
       "license": "MIT",
       "author": {
@@ -681,6 +681,24 @@
         },
         {
           "@id": "osd678_analysis/figures/splicegraph_AT5G52040.svg"
+        },
+        {
+          "@id": "npj_manuscript_v2.tex"
+        },
+        {
+          "@id": "npj_manuscript_v2.md"
+        },
+        {
+          "@id": "docs/OSDR_Plant_Alternative_Splicing.pdf"
+        },
+        {
+          "@id": "tools/build_explorer_data.py"
+        },
+        {
+          "@id": "tools/build_data_dictionary.py"
+        },
+        {
+          "@id": "tools/ensembl_gene_lookup.json"
         }
       ]
     },
@@ -1059,14 +1077,14 @@
       "@type": "File",
       "name": "npj_manuscript.md",
       "encodingFormat": "text/markdown",
-      "description": "npj Microgravity manuscript (Markdown)"
+      "description": "Superseded v1 manuscript draft (Markdown); contains errors corrected in v2. Do not cite."
     },
     {
       "@id": "npj_manuscript.tex",
       "@type": "File",
       "name": "npj_manuscript.tex",
       "encodingFormat": "application/x-tex",
-      "description": "npj Microgravity manuscript (LaTeX)"
+      "description": "Superseded v1 manuscript draft (LaTeX); contains errors corrected in v2. Do not cite."
     },
     {
       "@id": "osd120_analysis/OSD-120_all_events.tsv",
@@ -1094,7 +1112,7 @@
       "@type": "File",
       "name": "OSD-120_nmd_predictions.tsv",
       "encodingFormat": "text/tab-separated-values",
-      "description": "NMD susceptibility predictions for osd120_analysis"
+      "description": "Heuristic NMD classification (every RI counted as NMD-sensitive) for osd120_analysis"
     },
     {
       "@id": "osd120_analysis/OSD-120_psi_matrix.tsv",
@@ -1227,7 +1245,7 @@
       "@type": "File",
       "name": "OSD-251_nmd_predictions.tsv",
       "encodingFormat": "text/tab-separated-values",
-      "description": "NMD susceptibility predictions for osd251_analysis"
+      "description": "Heuristic NMD classification (every RI counted as NMD-sensitive) for osd251_analysis"
     },
     {
       "@id": "osd251_analysis/OSD-251_psi_matrix.tsv",
@@ -1381,7 +1399,7 @@
       "@type": "File",
       "name": "OSD-314_nmd_predictions.tsv",
       "encodingFormat": "text/tab-separated-values",
-      "description": "NMD susceptibility predictions for osd314_analysis"
+      "description": "Heuristic NMD classification (every RI counted as NMD-sensitive) for osd314_analysis"
     },
     {
       "@id": "osd314_analysis/OSD-314_psi_matrix.tsv",
@@ -1638,7 +1656,7 @@
       "@type": "File",
       "name": "OSD-37_nmd_predictions.tsv",
       "encodingFormat": "text/tab-separated-values",
-      "description": "NMD susceptibility predictions for osd37_analysis"
+      "description": "Heuristic NMD classification (every RI counted as NMD-sensitive) for osd37_analysis"
     },
     {
       "@id": "osd37_analysis/OSD-37_psi_matrix.tsv",
@@ -1771,7 +1789,7 @@
       "@type": "File",
       "name": "OSD-476_nmd_predictions.tsv",
       "encodingFormat": "text/tab-separated-values",
-      "description": "NMD susceptibility predictions for osd476_analysis"
+      "description": "Heuristic NMD classification (every RI counted as NMD-sensitive) for osd476_analysis"
     },
     {
       "@id": "osd476_analysis/OSD-476_psi_matrix.tsv",
@@ -1918,7 +1936,7 @@
       "@type": "File",
       "name": "OSD-658_nmd_predictions.tsv",
       "encodingFormat": "text/tab-separated-values",
-      "description": "NMD susceptibility predictions for osd658_analysis"
+      "description": "Heuristic NMD classification (every RI counted as NMD-sensitive) for osd658_analysis"
     },
     {
       "@id": "osd658_analysis/OSD-658_psi_matrix.tsv",
@@ -2072,7 +2090,7 @@
       "@type": "File",
       "name": "OSD-678_nmd_predictions.tsv",
       "encodingFormat": "text/tab-separated-values",
-      "description": "NMD susceptibility predictions for osd678_analysis"
+      "description": "Heuristic NMD classification (every RI counted as NMD-sensitive) for osd678_analysis"
     },
     {
       "@id": "osd678_analysis/OSD-678_psi_matrix.tsv",
@@ -2227,6 +2245,48 @@
       "name": "splicegraph_AT5G52040.svg",
       "encodingFormat": "image/svg+xml",
       "description": "SpliceGrapher visualization for AT5G52040"
+    },
+    {
+      "@id": "npj_manuscript_v2.tex",
+      "@type": "File",
+      "name": "npj_manuscript_v2.tex",
+      "encodingFormat": "application/x-tex",
+      "description": "Current manuscript draft (LaTeX); items marked TODO are unresolved"
+    },
+    {
+      "@id": "npj_manuscript_v2.md",
+      "@type": "File",
+      "name": "npj_manuscript_v2.md",
+      "encodingFormat": "text/markdown",
+      "description": "Current manuscript draft (Markdown); items marked TODO are unresolved"
+    },
+    {
+      "@id": "docs/OSDR_Plant_Alternative_Splicing.pdf",
+      "@type": "File",
+      "name": "OSDR_Plant_Alternative_Splicing.pdf",
+      "encodingFormat": "application/pdf",
+      "description": "PDF compiled from npj_manuscript_v2.tex"
+    },
+    {
+      "@id": "tools/build_explorer_data.py",
+      "@type": "File",
+      "name": "build_explorer_data.py",
+      "encodingFormat": "text/x-python",
+      "description": "Regenerates the splice-explorer gene table in docs/index.html"
+    },
+    {
+      "@id": "tools/build_data_dictionary.py",
+      "@type": "File",
+      "name": "build_data_dictionary.py",
+      "encodingFormat": "text/x-python",
+      "description": "Regenerates fair_deposit/data_dictionary.json from the data files"
+    },
+    {
+      "@id": "tools/ensembl_gene_lookup.json",
+      "@type": "File",
+      "name": "ensembl_gene_lookup.json",
+      "encodingFormat": "application/json",
+      "description": "Ensembl Plants gene lookup (retrieved 2026-10-28) used by the explorer generator"
     }
   ]
 }

@@ -1,3 +1,5 @@
+> **SUPERSEDED by `npj_manuscript_v2.md` / `npj_manuscript_v2.tex`.** This v1 draft contains errors corrected in v2 (study tissues and design, retained-intron range, LOSOCV values, core-GO table, gene functions and references). Do not cite.
+
 # Differential Alternative Splicing in Plant Spaceflight Transcriptomes: A Multi-Study rMATS Analysis with Machine Learning and Ontology Integration
 
 **Authors:** Richard Barker

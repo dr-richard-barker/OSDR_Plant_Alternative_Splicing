@@ -379,8 +379,8 @@
 <div class="wrap">
 <p class="eyebrow">Plant Splicing · NASA OSDR</p>
 <h1>Alternative Splicing in Plant Spaceflight Transcriptomes</h1>
-<p class="lede">A coordinated multi-study alternative splicing (AS) analysis of plant spaceflight transcriptomes. By leveraging 199 samples from 7 Arabidopsis and 1 Brassica studies in the NASA Open Science Data Repository, we reveal post-transcriptional splicing networks responding dynamically to microgravity, cosmic radiation, and extraterrestrial substrates.</p>
-<p class="meta">Richard Barker · Plant Spaceflight Alternative Splicing Analysis · 199 samples · 8 NASA OSDR studies</p>
+<p class="lede">A coordinated multi-study alternative splicing (AS) analysis of plant spaceflight transcriptomes in the NASA Open Science Data Repository: 201 samples from 8 studies (199 samples from 7 <em>Arabidopsis</em> studies, plus 2 samples from 1 <em>Brassica rapa</em> study), spanning microgravity and partial gravity on the ISS, simulated cosmic radiation, and Apollo lunar regolith. All results on this page are from the 7 <em>Arabidopsis</em> studies.</p>
+<p class="meta">Richard Barker · Plant Spaceflight Alternative Splicing Analysis · 201 samples · 8 NASA OSDR studies</p>
 <div class="btns">
 <a class="btn primary" href="https://github.com/dr-richard-barker/OSDR_Plant_Alternative_Splicing">GitHub Code &amp; Data</a>
 <a class="btn" href="https://osdr.nasa.gov">NASA OSDR</a>
@@ -392,15 +392,15 @@
 <div class="wrap">
 <h2>Overview</h2>
 <p class="sub">Characterizing post-transcriptional regulation under spaceflight-relevant stresses.</p>
-<p>While transcriptional changes in spaceflight have been widely mapped, alternative splicing remains a major frontier. This pipeline leverages rMATS-turbo to quantify alternative splicing events, predicts nonsense-mediated decay (NMD) sensitivity, performs machine learning (UMAP, nested cross-validation, LOSOCV, and SHAP importance), and conducts multi-ontology enrichment analysis (GO, MapMan) to uncover the post-transcriptional footprint of space stress.</p>
+<p>While transcriptional changes in spaceflight have been widely mapped, alternative splicing remains a major frontier. This pipeline leverages rMATS-turbo to quantify alternative splicing events, classifies potential nonsense-mediated decay (NMD) sensitivity with a frameshift heuristic, performs machine learning (UMAP, nested cross-validation, LOSOCV, and SHAP importance), and conducts multi-ontology enrichment analysis (GO, MapMan) to uncover the post-transcriptional footprint of space stress.</p>
 
 <div class="cards" style="margin-top:22px">
-<div class="card"><div class="stat">57–67%</div><h3>Retained Introns</h3>
-<p>Retained Intron (RI) events consistently dominate the significant splicing landscape across all studied environments.</p></div>
-<div class="card"><div class="stat">79–86%</div><h3>NMD Sensitivity</h3>
-<p>The vast majority of significant events are sensitive to Nonsense-Mediated Decay, acting as post-transcriptional switches.</p></div>
+<div class="card"><div class="stat">51–72%</div><h3>Retained Introns</h3>
+<p>Retained Intron (RI) events are the largest class of significant events in 6 of 7 studies (51–72% of significant events). The exception is OSD-37, where only 10 events were significant (SE 4, RI 3).</p></div>
+<div class="card"><div class="stat">79–86%</div><h3>Heuristic NMD class</h3>
+<p>Share of significant events classified as potentially NMD-sensitive by a frameshift heuristic that counts every RI event as NMD-sensitive. It mostly reflects the RI share; NMD itself was not measured.</p></div>
 <div class="card"><div class="stat">93 genes</div><h3>Recurrent Targets</h3>
-<p>93 genes are significantly spliced across multiple studies, indicating a conserved stress splicing program.</p></div>
+<p>93 genes are significant in 2 or more of the 7 studies (85 in two, 7 in three, 1 in four).</p></div>
 </div>
 </div>
 </section>
@@ -408,12 +408,12 @@
 <section id="splicing-landscape">
 <div class="wrap">
 <h2><span class="n">01</span>The Spaceflight Splicing Landscape</h2>
-<p class="sub">Retained introns and nonsense-mediated decay coordinate the stress response.</p>
-<p>Across spaceflight (ISS), altered gravity, simulated galactic cosmic ray (GCR) radiation, and growth in authentic Apollo lunar regolith, splicing regulation is highly active. Intriguingly, retained introns represent the single largest class of differentially spliced events. NMD predictions indicate that these intron-retention events introduce premature termination codons, acting as an unproductive splicing mechanism to downregulate transcript abundance post-transcriptionally.</p>
+<p class="sub">Retained introns are the most frequent class of significant splicing change.</p>
+<p>Across spaceflight (ISS), altered gravity, simulated galactic cosmic ray (GCR) radiation, and growth in Apollo lunar regolith, rMATS detected significant splicing changes in every study (10 to 306 events at FDR &lt; 0.05 and |ΔPSI| &gt; 0.1). Retained introns are the largest class of significant events in 6 of the 7 studies. Whether these intron-retention events introduce premature termination codons and trigger NMD was not tested here: the NMD classification is a frameshift heuristic that counts every retained intron as NMD-sensitive.</p>
 <div class="figure-grid">
 <figure>
 <img src="assets/fig_cross_study_event_types_v4.png" alt="Distribution of alternative splicing classes across studies">
-<figcaption>Distribution of significant alternative splicing events across 7 Arabidopsis studies. Retained introns (RI) represent the dominant event type in all studies.</figcaption>
+<figcaption>Distribution of significant alternative splicing events across 7 Arabidopsis studies. Retained introns (RI) are the largest event class in every study except OSD-37 (SE 4, RI 3).</figcaption>
 </figure>
 <figure>
 <img src="assets/fig_cross_study_recurrence_v4.png" alt="Pairwise gene overlap and recurrence across studies">
@@ -425,11 +425,11 @@
 
 <section id="recurrent-genes">
 <div class="wrap">
-<h2><span class="n">02</span>Core Splicing Biomarkers: AT4G17310</h2>
-<p class="sub">Recurrence analysis identifies robust splicing targets across gravity, radiation, and lunar substrates.</p>
-<p>Comparing significant genes across all studies identified 93 genes significant in 2 or more studies. Most notably, <strong>AT4G17310</strong> is differentially spliced in 4 separate studies spanning fractional gravity, partial gravity, lunar regolith, and galactic cosmic ray radiation—making it the most robust plant spaceflight splicing target known to date. Other key recurrent genes include <strong>SOS4</strong> (pyridoxal kinase involved in salt stress) and <strong>CRK28</strong> (cysteine-rich receptor-like kinase involved in calcium signaling), both significant in three studies.</p>
+<h2><span class="n">02</span>Recurrent Splicing Targets: AT4G17310</h2>
+<p class="sub">Recurrence analysis finds genes significant in several studies across gravity, radiation, and lunar substrates.</p>
+<p>Comparing significant genes across the 7 <em>Arabidopsis</em> studies identified 93 genes significant in 2 or more studies. The most recurrent is <strong>AT4G17310</strong> (an uncharacterized protein in Araport11), significant in 4 of the 7 studies: fractional gravity (OSD-251), altered gravity (OSD-314), lunar regolith (OSD-476) and simulated GCR radiation (OSD-658). Seven further genes are significant in three studies, including <strong>SOS4</strong> (AT5G37850, pyridoxal kinase) and <strong>CRK28</strong> (AT4G21400, cysteine-rich receptor-like kinase 28).</p>
 <div class="disc">
-<strong>AT4G17310 Splicing:</strong> This stress-responsive gene undergoes significant intron retention under multiple distinct extraterrestrial stress profiles, serving as a unified post-transcriptional marker of environmental stress in space biology.
+<strong>AT4G17310 Splicing:</strong> The change is not uniform. The event types are retained intron in OSD-314 (ΔPSI −0.171) and OSD-658 (ΔPSI +0.416), and skipped exon in OSD-251 (ΔPSI −0.155) and OSD-476 (ΔPSI −0.132). The gene is not significant in the three ISS flight-versus-ground datasets (OSD-120, OSD-37, OSD-678).
 </div>
 </div>
 </section>
@@ -438,11 +438,11 @@
 <div class="wrap">
 <h2><span class="n">03</span>Machine Learning: Batch Effects &amp; Generalization</h2>
 <p class="sub">UMAP and tree-based classification reveal that study-specific batch effects dominate biological signals.</p>
-<p>Machine learning classification of the 199-sample × 9,875-gene Percent Spliced In (PSI) matrix achieves a pooled nested 5-fold CV AUC of 0.598 for predicting treatment (stress) versus control. However, 7-study Leave-One-Study-Out Cross-Validation (LOSOCV) performance drops to near-random (mean AUC ~0.41), showing poor cross-study generalization. Unsupervised UMAP embedding reveals that samples cluster almost perfectly by study identity (ARI = 0.995) rather than by treatment status (ARI = -0.002). This represents a critical methodological finding: batch effects overwhelmingly dominate the alternative splicing landscape in public space omics.</p>
+<p>Machine learning classification of the 199-sample × 9,875-gene Percent Spliced In (PSI) matrix achieves a pooled nested 5-fold CV AUC of 0.598 for predicting treatment (stress) versus control. However, 7-study Leave-One-Study-Out Cross-Validation (LOSOCV) performance drops to near or below random (mean AUC across held-out studies: RF 0.49, GBM 0.42, XGBoost 0.41), showing poor cross-study generalization. Unsupervised UMAP embedding reveals that samples cluster almost perfectly by study identity (ARI = 0.995) rather than by treatment status (ARI = -0.002). This represents a critical methodological finding: batch effects overwhelmingly dominate the alternative splicing landscape in public space omics.</p>
 <div class="figure-grid">
 <figure>
 <img src="assets/fig_umap_v4.png" alt="UMAP clustering of splicing profiles">
-<figcaption>UMAP projection of splicing profiles across 199 samples. Perfect clustering by study identity (ARI = 0.995) demonstrates dominant batch effects.</figcaption>
+<figcaption>UMAP projection of splicing profiles across 199 samples. Near-perfect clustering by study identity (ARI = 0.995) demonstrates dominant batch effects.</figcaption>
 </figure>
 <figure>
 <img src="assets/fig_losocv_v4.png" alt="7-study leave-one-study-out classification performance">
@@ -452,7 +452,7 @@
 <div class="figure-grid">
 <figure>
 <img src="assets/fig_nested_kfold_v4.png" alt="Nested k-fold cross-validation performance">
-<figcaption>ROC curve of nested 5-fold cross-validation pooled across studies, showing moderate within-cohort predictive signal (mean AUC = 0.598).</figcaption>
+<figcaption>Per-fold AUC of nested 5-fold cross-validation (Random Forest) on samples pooled across the 7 studies, showing moderate within-cohort predictive signal (mean AUC = 0.598 ± 0.084).</figcaption>
 </figure>
 <figure>
 <img src="assets/fig_shap_v4.png" alt="SHAP feature importance top genes">
@@ -465,13 +465,13 @@
 <section id="pathways">
 <div class="wrap">
 <h2><span class="n">04</span>Ontology &amp; Functional Convergence</h2>
-<p class="sub">Circadian clock splicing is disrupted across all ISS flight studies, while substrates activate stressor-specific pathways.</p>
-<p>Our multi-ontology enrichment analysis identified highly stressor-specific splicing adaptations:</p>
+<p class="sub">Circadian-related GO terms recur in four flight datasets, while other stressors show distinct enrichments.</p>
+<p>GO over-representation of the genes with significant splicing changes (terms with FDR &lt; 0.25 unless stated):</p>
 <ul class="clean">
-  <li><strong>Circadian Clock Disruption:</strong> Regulation of circadian rhythm was enriched in all four flight studies (OSD-314, OSD-120, OSD-37 via <em>RVE1</em>, and OSD-678). This reveals a post-transcriptional layer to the known circadian dysregulation observed in space.</li>
-  <li><strong>Lunar Regolith (OSD-476):</strong> As the most splicing-responsive study (306 significant events), growth in lunar regolith induces extensive splicing alterations in photosynthesis light reactions, mitotic cell cycle, and telomeric regions.</li>
-  <li><strong>Fractional Gravity (OSD-251):</strong> Splicing changes are heavily enriched for superoxide response (FDR=0.001, 488x fold enrichment), reflecting oxidative stress under partial gravity.</li>
-  <li><strong>GCR Radiation (OSD-658):</strong> Enriches for phospholipid metabolism and stress-responsive translation pathways.</li>
+  <li><strong>Circadian terms:</strong> These are enriched in four of the five ISS flight datasets: OSD-314 (FDR 0.032, 2 genes), OSD-120 (FDR 0.097, 2 genes), OSD-37 (FDR 0.091, 1 gene, <em>RVE1</em>) and OSD-678 (FDR 0.008, 4 genes). They are not enriched in OSD-251. OSD-120 (root tips) and OSD-678 (leaves) come from the same CARA flight, so they are not independent experiments.</li>
+  <li><strong>Lunar Regolith (OSD-476):</strong> This study has the most significant events (306). Its top terms include regulation of photosynthesis light reactions, regulation of the mitotic cell cycle and telomeric chromosome region, each with 2 genes at FDR 0.138.</li>
+  <li><strong>Fractional Gravity (OSD-251):</strong> The strongest enrichment is response to superoxide (2 genes, FDR = 0.001, 488x fold enrichment).</li>
+  <li><strong>GCR Radiation (OSD-658):</strong> Top terms include response to herbicide (FDR 0.009), phospholipid metabolic process (FDR 0.013) and regulation of cytoplasmic translational initiation in response to stress (FDR 0.016).</li>
 </ul>
 </div>
 </section>
@@ -837,121 +837,466 @@ const ARAPORT_DETAILS = {
   }
 };
 
+// BEGIN GENERATED STUDIES (tools/build_explorer_data.py)
+// Do not edit by hand; rerun the script.
 const STUDIES = [
   {
-    id: "osd314",
-    name: "OSD-314",
-    stressor: "Altered Gravity (Micro-g / Mars-g)",
-    samples: 17,
-    genes: [
-      { id: "AT3G13060", symbol: "ECT5", filename: "splicegrapher_AT3G13060", description: "YTH domain-containing protein ECT5, reader of m6A RNA methylation, regulating development and stress responses.", recurrent: true },
-      { id: "AT5G66210", symbol: "CPK28", filename: "splicegrapher_AT5G66210", description: "Calcium-dependent protein kinase 28, coordinates growth-defense trade-offs and vascular development.", recurrent: true },
-      { id: "AT5G51460", symbol: "TPPA", filename: "splicegrapher_AT5G51460", description: "Trehalose-phosphate phosphatase A, regulates trehalose-6-phosphate levels and starch metabolism under abiotic stress.", recurrent: false },
-      { id: "AT1G07940", symbol: "YIP1A", filename: "splicegrapher_AT1G07940", description: "Yip1 domain family protein involved in COPII vesicle-mediated transport.", recurrent: false },
-      { id: "AT3G27990", symbol: "PPR", filename: "splicegrapher_AT3G27990", description: "Pentatricopeptide repeat (PPR) superfamily protein, involved in organellar RNA processing.", recurrent: false },
-      { id: "AT4G26600", symbol: "—", filename: "splicegrapher_AT4G26600", description: "Uncharacterized conserved protein of unknown function.", recurrent: false },
-      { id: "AT5G14610", symbol: "UGT", filename: "splicegrapher_AT5G14610", description: "UDP-glucosyl transferase superfamily protein involved in detoxification and secondary metabolism.", recurrent: false },
-      { id: "AT5G63160", symbol: "—", filename: "splicegrapher_AT5G63160", description: "Heavy metal-associated domain-containing protein involved in metal homeostasis.", recurrent: false },
-      { id: "chr3:4182994-4183975", symbol: "chr3 RI Locus", filename: "fig11_splice_graph_RI_chr3_+_4182994-4183975-4182994-4183207-4183293-4183975", description: "Reconstructed splice model of a key retained intron event on Chromosome 3.", recurrent: false }
+    "id": "osd314",
+    "name": "OSD-314",
+    "stressor": "Altered gravity on the ISS (µg and 0.34 g) vs 1 g on Earth · whole seedlings",
+    "samples": 17,
+    "genes": [
+      {
+        "id": "AT3G13060",
+        "symbol": "ECT5",
+        "filename": "splicegrapher_AT3G13060",
+        "description": "Araport11: evolutionarily conserved C-terminal region 5. Significant in OSD-314: RI ΔPSI -0.159 (FDR 6.2e-11). Significant in 2 of 7 studies (OSD-314, OSD-678).",
+        "recurrent": true
+      },
+      {
+        "id": "AT5G66210",
+        "symbol": "CPK28",
+        "filename": "splicegrapher_AT5G66210",
+        "description": "Araport11: calcium-dependent protein kinase 28. Significant in OSD-314: RI ΔPSI +0.142 (FDR 2.8e-09); RI ΔPSI +0.167 (FDR 5.8e-06).",
+        "recurrent": false
+      },
+      {
+        "id": "AT5G51460",
+        "symbol": "ATTPPA",
+        "filename": "splicegrapher_AT5G51460",
+        "description": "Araport11: Haloacid dehalogenase-like hydrolase (HAD) superfamily protein. Significant in OSD-314: A3SS ΔPSI -0.536 (FDR 7.7e-08).",
+        "recurrent": false
+      },
+      {
+        "id": "AT1G07940",
+        "symbol": "—",
+        "filename": "splicegrapher_AT1G07940",
+        "description": "Araport11: GTP binding Elongation factor Tu family protein. Significant in OSD-314: SE ΔPSI -0.659 (FDR 8.9e-11).",
+        "recurrent": false
+      },
+      {
+        "id": "AT3G27990",
+        "symbol": "—",
+        "filename": "splicegrapher_AT3G27990",
+        "description": "Araport11: ncRNA. Significant in OSD-314: RI ΔPSI -0.323 (FDR 2.8e-07); A5SS ΔPSI -0.334 (FDR 7.2e-07).",
+        "recurrent": false
+      },
+      {
+        "id": "AT4G26600",
+        "symbol": "—",
+        "filename": "splicegrapher_AT4G26600",
+        "description": "Araport11: S-adenosyl-L-methionine-dependent methyltransferases superfamily protein. Significant in OSD-314: RI ΔPSI -0.297 (FDR 4.2e-08); RI ΔPSI -0.257 (FDR 4.4e-08); RI ΔPSI -0.291 (FDR 2.8e-07); RI ΔPSI -0.190 (FDR 7.7e-06). Significant in 2 of 7 studies (OSD-120, OSD-314).",
+        "recurrent": true
+      },
+      {
+        "id": "AT5G14610",
+        "symbol": "—",
+        "filename": "splicegrapher_AT5G14610",
+        "description": "Araport11: DEAD box RNA helicase family protein. Significant in OSD-314: RI ΔPSI +0.192 (FDR 7.1e-07). Significant in 2 of 7 studies (OSD-314, OSD-476).",
+        "recurrent": true
+      },
+      {
+        "id": "AT5G63160",
+        "symbol": "BT1",
+        "filename": "splicegrapher_AT5G63160",
+        "description": "Araport11: BTB and TAZ domain protein 1. Significant in OSD-314: RI ΔPSI +0.116 (FDR 4.5e-08).",
+        "recurrent": false
+      },
+      {
+        "id": "chr3:4182994-4183975",
+        "symbol": "ECT5 RI locus",
+        "filename": "fig11_splice_graph_RI_chr3_+_4182994-4183975-4182994-4183207-4183293-4183975",
+        "description": "Splice graph for the RI event chr3:4182994-4183975 in AT3G13060 (ECT5): ΔPSI -0.159, FDR 6.2e-11.",
+        "recurrent": true
+      }
     ]
   },
   {
-    id: "osd120",
-    name: "OSD-120",
-    stressor: "Spaceflight (ISS Roots)",
-    samples: 36,
-    genes: [
-      { id: "AT5G06950", symbol: "PPR", filename: "splicegraph_AT5G06950", description: "Pentatricopeptide repeat (PPR) protein, localized to mitochondria/chloroplasts.", recurrent: false },
-      { id: "AT5G42900", symbol: "bHLH", filename: "splicegraph_AT5G42900", description: "Basic helix-loop-helix (bHLH) DNA-binding superfamily protein, transcription factor.", recurrent: false },
-      { id: "AT5G60120", symbol: "—", filename: "splicegraph_AT5G60120", description: "Uncharacterized space-responsive protein.", recurrent: false },
-      { id: "AT4G26600", symbol: "—", filename: "splicegraph_AT4G26600", description: "Uncharacterized conserved protein.", recurrent: false },
-      { id: "AT1G73930", symbol: "RING", filename: "splicegraph_AT1G73930", description: "RING-type ubiquitin ligase involved in protein degradation pathways under environmental stress.", recurrent: false },
-      { id: "AT4G12790", symbol: "—", filename: "splicegraph_AT4G12790", description: "Conserved protein of unknown function, responsive to gravity stress.", recurrent: false },
-      { id: "AT3G20810", symbol: "ZF", filename: "splicegraph_AT3G20810", description: "Zinc finger CCCH domain-containing protein, potential RNA-binding protein.", recurrent: false }
+    "id": "osd120",
+    "name": "OSD-120",
+    "stressor": "ISS spaceflight vs ground (CARA flight) · root tips",
+    "samples": 36,
+    "genes": [
+      {
+        "id": "AT5G06950",
+        "symbol": "AHBP-1B",
+        "filename": "splicegraph_AT5G06950",
+        "description": "Araport11: bZIP transcription factor family protein. Significant in OSD-120: SE ΔPSI -0.103 (FDR 0.005).",
+        "recurrent": false
+      },
+      {
+        "id": "AT5G42900",
+        "symbol": "COR27",
+        "filename": "splicegraph_AT5G42900",
+        "description": "Araport11: cold regulated protein 27. Significant in OSD-120: A3SS ΔPSI -0.111 (FDR 0.004). Significant in 2 of 7 studies (OSD-120, OSD-678).",
+        "recurrent": true
+      },
+      {
+        "id": "AT5G60120",
+        "symbol": "TOE2",
+        "filename": "splicegraph_AT5G60120",
+        "description": "Araport11: target of early activation tagged (EAT) 2. Significant in OSD-120: A5SS ΔPSI +0.102 (FDR 0.027). Significant in 2 of 7 studies (OSD-120, OSD-678).",
+        "recurrent": true
+      },
+      {
+        "id": "AT4G26600",
+        "symbol": "—",
+        "filename": "splicegraph_AT4G26600",
+        "description": "Araport11: S-adenosyl-L-methionine-dependent methyltransferases superfamily protein. Significant in OSD-120: RI ΔPSI -0.164 (FDR 0.016); RI ΔPSI -0.105 (FDR 0.044). Significant in 2 of 7 studies (OSD-120, OSD-314).",
+        "recurrent": true
+      },
+      {
+        "id": "AT1G73930",
+        "symbol": "—",
+        "filename": "splicegraph_AT1G73930",
+        "description": "Araport11: polarity axis stabilization protein. Significant in OSD-120: RI ΔPSI -0.138 (FDR 0.004). Significant in 2 of 7 studies (OSD-120, OSD-314).",
+        "recurrent": true
+      },
+      {
+        "id": "AT4G12790",
+        "symbol": "—",
+        "filename": "splicegraph_AT4G12790",
+        "description": "Araport11: P-loop containing nucleoside triphosphate hydrolases superfamily protein. Significant in OSD-120: A3SS ΔPSI -0.134 (FDR 0.026). Significant in 2 of 7 studies (OSD-120, OSD-314).",
+        "recurrent": true
+      },
+      {
+        "id": "AT3G20810",
+        "symbol": "JMJD5",
+        "filename": "splicegraph_AT3G20810",
+        "description": "Araport11: 2-oxoglutarate (2OG) and Fe(II)-dependent oxygenase superfamily protein. Significant in OSD-120: A3SS ΔPSI -0.107 (FDR 5.4e-05).",
+        "recurrent": false
+      }
     ]
   },
   {
-    id: "osd37",
-    name: "OSD-37",
-    stressor: "Spaceflight (ISS / 4 Ecotypes)",
-    samples: 56,
-    genes: [
-      { id: "AT5G17300", symbol: "RVE1", filename: "splicegraph_AT5G17300", description: "REVEILLE 1, MYB-like transcription factor that regulates the circadian clock and auxin levels.", recurrent: false },
-      { id: "AT1G07350", symbol: "SR45A", filename: "splicegraph_AT1G07350", description: "Serine/arginine-rich splicing factor 45A, key regulator of alternative splicing under salinity and radiation stress.", recurrent: false },
-      { id: "AT5G23060", symbol: "CAS", filename: "splicegraph_AT5G23060", description: "Calcium-sensing receptor targeting the chloroplast, mediates stomatal closure and stress signaling.", recurrent: false },
-      { id: "AT4G21400", symbol: "CRK28", filename: "splicegraph_AT4G21400", description: "Cysteine-rich receptor-like kinase 28, involved in stress sensing and calcium signalling.", recurrent: true },
-      { id: "AT2G45950", symbol: "GLR3.3", filename: "splicegraph_AT2G45950", description: "Glutamate receptor-like channel 3.3, involved in calcium signaling and systemic wound transmission.", recurrent: false },
-      { id: "AT3G02800", symbol: "PUB19", filename: "splicegraph_AT3G02800", description: "U-box domain-containing protein 19, acts as a negative regulator of ABA-mediated drought stress response.", recurrent: false },
-      { id: "AT4G30850", symbol: "LEA", filename: "splicegraph_AT4G30850", description: "Late embryogenesis abundant (LEA) family protein, protects proteins from denaturation under cellular dehydration.", recurrent: false }
+    "id": "osd37",
+    "name": "OSD-37",
+    "stressor": "ISS spaceflight vs ground, 4 ecotypes · whole seedlings",
+    "samples": 56,
+    "genes": [
+      {
+        "id": "AT5G17300",
+        "symbol": "RVE1",
+        "filename": "splicegraph_AT5G17300",
+        "description": "Araport11: Homeodomain-like superfamily protein. Significant in OSD-37: A5SS ΔPSI -0.110 (FDR 0.035); SE ΔPSI -0.111 (FDR 0.046).",
+        "recurrent": false
+      },
+      {
+        "id": "AT1G07350",
+        "symbol": "SR45a",
+        "filename": "splicegraph_AT1G07350",
+        "description": "Araport11: RNA-binding (RRM/RBD/RNP motifs) family protein. Significant in OSD-37: SE ΔPSI -0.153 (FDR 1.2e-06).",
+        "recurrent": false
+      },
+      {
+        "id": "AT5G23060",
+        "symbol": "CaS",
+        "filename": "splicegraph_AT5G23060",
+        "description": "Araport11: calcium sensing receptor. Significant in OSD-37: RI ΔPSI -0.183 (FDR 1.7e-05).",
+        "recurrent": false
+      },
+      {
+        "id": "AT4G21400",
+        "symbol": "CRK28",
+        "filename": "splicegraph_AT4G21400",
+        "description": "Araport11: cysteine-rich RLK (RECEPTOR-like protein kinase) 28. Significant in OSD-37: RI ΔPSI +0.110 (FDR 0.004). Significant in 3 of 7 studies (OSD-37, OSD-476, OSD-678).",
+        "recurrent": true
+      },
+      {
+        "id": "AT2G45950",
+        "symbol": "SK20",
+        "filename": "splicegraph_AT2G45950",
+        "description": "Araport11: SKP1-like 20. Significant in OSD-37: RI ΔPSI +0.129 (FDR 0.036).",
+        "recurrent": false
+      },
+      {
+        "id": "AT3G02800",
+        "symbol": "PFA-DSP3",
+        "filename": "splicegraph_AT3G02800",
+        "description": "Araport11: Tyrosine phosphatase family protein. Significant in OSD-37: SE ΔPSI -0.128 (FDR 0.019).",
+        "recurrent": false
+      },
+      {
+        "id": "AT4G30850",
+        "symbol": "HHP2",
+        "filename": "splicegraph_AT4G30850",
+        "description": "Araport11: heptahelical transmembrane protein2. Significant in OSD-37: SE ΔPSI -0.234 (FDR 8.9e-08).",
+        "recurrent": false
+      }
     ]
   },
   {
-    id: "osd251",
-    name: "OSD-251",
-    stressor: "Fractional Gravity & Blue Light",
-    samples: 20,
-    genes: [
-      { id: "AT1G10240", symbol: "SDG26", filename: "splicegraph_AT1G10240", description: "SET domain group 26, a histone H3 methyltransferase involved in epigenetic regulation.", recurrent: false },
-      { id: "AT2G05440", symbol: "TOM22", filename: "splicegraph_AT2G05440", description: "Translocase of outer mitochondrial membrane 22-like protein, imports nuclear-encoded proteins.", recurrent: false },
-      { id: "AT2G16940", symbol: "—", filename: "splicegraph_AT2G16940", description: "Uncharacterized protein, highly responsive to blue light and fractional gravity.", recurrent: false },
-      { id: "AT2G33815", symbol: "RING", filename: "splicegraph_AT2G33815", description: "RING/U-box superfamily protein involved in protein ubiquitination.", recurrent: false },
-      { id: "AT2G38920", symbol: "—", filename: "splicegraph_AT2G38920", description: "Uncharacterized conserved protein.", recurrent: false },
-      { id: "AT3G09370", symbol: "PLP-T", filename: "splicegraph_AT3G09370", description: "Pyridoxal phosphate (PLP)-dependent transferase superfamily protein.", recurrent: false },
-      { id: "AT3G20270", symbol: "RPL19B", filename: "splicegraph_AT3G20270", description: "60S ribosomal protein L19-2, essential constituent of the ribosome.", recurrent: false },
-      { id: "AT5G57565", symbol: "—", filename: "splicegraph_AT5G57565", description: "Recurrently spliced target across fractional gravity, partial gravity, and ISS studies.", recurrent: true }
+    "id": "osd251",
+    "name": "OSD-251",
+    "stressor": "Fractional gravity on the ISS (µg–0.57 g vs in-flight 1 g), blue light · seedlings",
+    "samples": 20,
+    "genes": [
+      {
+        "id": "AT1G10240",
+        "symbol": "FRS11",
+        "filename": "splicegraph_AT1G10240",
+        "description": "Araport11: FAR1-related sequence 11. Significant in OSD-251: RI ΔPSI -0.347 (FDR 0.004).",
+        "recurrent": false
+      },
+      {
+        "id": "AT2G05440",
+        "symbol": "GRP9",
+        "filename": "splicegraph_AT2G05440",
+        "description": "Araport11: GLYCINE RICH PROTEIN 9. Significant in OSD-251: A5SS ΔPSI +0.298 (FDR 0.040).",
+        "recurrent": false
+      },
+      {
+        "id": "AT2G16940",
+        "symbol": "—",
+        "filename": "splicegraph_AT2G16940",
+        "description": "Araport11: Splicing factor, CC1-like protein. Significant in OSD-251: SE ΔPSI +0.417 (FDR 5.4e-05).",
+        "recurrent": false
+      },
+      {
+        "id": "AT2G33815",
+        "symbol": "—",
+        "filename": "splicegraph_AT2G33815",
+        "description": "Araport11: ncRNA. Significant in OSD-251: A3SS ΔPSI +0.308 (FDR 0.045). Significant in 2 of 7 studies (OSD-251, OSD-476).",
+        "recurrent": true
+      },
+      {
+        "id": "AT2G38920",
+        "symbol": "—",
+        "filename": "splicegraph_AT2G38920",
+        "description": "Araport11: SPX (SYG1/Pho81/XPR1) domain-containing protein / zinc finger (C3HC4-type RING finger) protein-like protein. Significant in OSD-251: RI ΔPSI +0.336 (FDR 0.025).",
+        "recurrent": false
+      },
+      {
+        "id": "AT3G09370",
+        "symbol": "MYB3R-3",
+        "filename": "splicegraph_AT3G09370",
+        "description": "Araport11: myb domain protein 3r-3. Significant in OSD-251: RI ΔPSI +0.395 (FDR 0.022).",
+        "recurrent": false
+      },
+      {
+        "id": "AT3G20270",
+        "symbol": "—",
+        "filename": "splicegraph_AT3G20270",
+        "description": "Araport11: lipid-binding serum glycoprotein family protein. Significant in OSD-251: SE ΔPSI -0.344 (FDR 0.003).",
+        "recurrent": false
+      },
+      {
+        "id": "AT5G57565",
+        "symbol": "—",
+        "filename": "splicegraph_AT5G57565",
+        "description": "Araport11: Protein kinase superfamily protein. Significant in OSD-251: A5SS ΔPSI +0.218 (FDR 0.011); RI ΔPSI +0.344 (FDR 0.044). Significant in 3 of 7 studies (OSD-251, OSD-314, OSD-678).",
+        "recurrent": true
+      }
     ]
   },
   {
-    id: "osd476",
-    name: "OSD-476",
-    stressor: "Apollo Lunar Regolith",
-    samples: 20,
-    genes: [
-      { id: "AT2G30370", symbol: "ZF", filename: "splicegraph_AT2G30370", description: "C3H-type zinc finger family protein, plays a critical role in stress response.", recurrent: false },
-      { id: "AT1G06710", symbol: "F-box", filename: "splicegraph_AT1G06710", description: "F-box domain-containing protein involved in protein ubiquitination.", recurrent: false },
-      { id: "AT3G03970", symbol: "RCA", filename: "splicegraph_AT3G03970", description: "RuBisCO activase, regulates the activation state of RuBisCO in response to light.", recurrent: false },
-      { id: "AT3G16120", symbol: "Hsp70-2", filename: "splicegraph_AT3G16120", description: "Chloroplast heat shock protein 70-2, acts as a chaperone protecting chloroplast proteins.", recurrent: false },
-      { id: "AT1G62610", symbol: "CHLD", filename: "splicegraph_AT1G62610", description: "Magnesium-protoporphyrin IX monomethyl ester cyclase, subunit of Mg-chelatase in chlorophyll synthesis.", recurrent: false },
-      { id: "AT2G47020", symbol: "—", filename: "splicegraph_AT2G47020", description: "Uncharacterized protein of unknown function.", recurrent: false },
-      { id: "AT3G01980", symbol: "BSP", filename: "splicegraph_AT3G01980", description: "Basic secretory protein (BSP) family protein involved in stress adaptation.", recurrent: false },
-      { id: "AT3G44340", symbol: "IF", filename: "splicegraph_AT3G44340", description: "Chloroplast translation initiation factor, essential for protein synthesis.", recurrent: false }
+    "id": "osd476",
+    "name": "OSD-476",
+    "stressor": "Apollo 11/12/17 regolith vs JSC-1A simulant (ground) · aboveground tissue",
+    "samples": 20,
+    "genes": [
+      {
+        "id": "AT2G30370",
+        "symbol": "CHAL",
+        "filename": "splicegraph_AT2G30370",
+        "description": "Araport11: allergen-like protein. Significant in OSD-476: RI ΔPSI -0.361 (FDR 3.1e-05).",
+        "recurrent": false
+      },
+      {
+        "id": "AT1G06710",
+        "symbol": "—",
+        "filename": "splicegraph_AT1G06710",
+        "description": "Araport11: Tetratricopeptide repeat (TPR)-like superfamily protein. Significant in OSD-476: A5SS ΔPSI +0.377 (FDR 3.6e-05); A3SS ΔPSI +0.243 (FDR 3.9e-05); A3SS ΔPSI +0.140 (FDR 0.013). Significant in 2 of 7 studies (OSD-314, OSD-476).",
+        "recurrent": true
+      },
+      {
+        "id": "AT3G03970",
+        "symbol": "—",
+        "filename": "splicegraph_AT3G03970",
+        "description": "Araport11: ARM repeat superfamily protein. Significant in OSD-476: RI ΔPSI +0.310 (FDR 0.001); RI ΔPSI +0.348 (FDR 0.003); A5SS ΔPSI +0.259 (FDR 0.013). Significant in 2 of 7 studies (OSD-314, OSD-476).",
+        "recurrent": true
+      },
+      {
+        "id": "AT3G16120",
+        "symbol": "—",
+        "filename": "splicegraph_AT3G16120",
+        "description": "Araport11: Dynein light chain type 1 family protein. Significant in OSD-476: RI ΔPSI +0.357 (FDR 0.002).",
+        "recurrent": false
+      },
+      {
+        "id": "AT1G62610",
+        "symbol": "—",
+        "filename": "splicegraph_AT1G62610",
+        "description": "Araport11: NAD(P)-binding Rossmann-fold superfamily protein. Significant in OSD-476: A3SS ΔPSI +0.341 (FDR 0.004).",
+        "recurrent": false
+      },
+      {
+        "id": "AT2G47020",
+        "symbol": "—",
+        "filename": "splicegraph_AT2G47020",
+        "description": "Araport11: Peptide chain release factor 1. Significant in OSD-476: RI ΔPSI +0.475 (FDR 5.8e-13). Significant in 2 of 7 studies (OSD-314, OSD-476).",
+        "recurrent": true
+      },
+      {
+        "id": "AT3G01980",
+        "symbol": "—",
+        "filename": "splicegraph_AT3G01980",
+        "description": "Araport11: NAD(P)-binding Rossmann-fold superfamily protein. Significant in OSD-476: RI ΔPSI +0.344 (FDR 3.7e-14); RI ΔPSI +0.240 (FDR 1.3e-07).",
+        "recurrent": false
+      },
+      {
+        "id": "AT3G44340",
+        "symbol": "CEF",
+        "filename": "splicegraph_AT3G44340",
+        "description": "Araport11: uncharacterized protein. Significant in OSD-476: RI ΔPSI -0.348 (FDR 1.3e-04).",
+        "recurrent": false
+      }
     ]
   },
   {
-    id: "osd658",
-    name: "OSD-658",
-    stressor: "GCR Cosmic Radiation",
-    samples: 14,
-    genes: [
-      { id: "AT4G17310", symbol: "Stress Biomarker", filename: "splicegraph_AT4G17310", description: "Universal spaceflight stress biomarker. Significantly spliced across 4 studies (OSD-251, 314, 476, 658) spanning gravity, regolith, and radiation.", recurrent: true },
-      { id: "AT5G13790", symbol: "PLP-D", filename: "splicegraph_AT5G13790", description: "Phospholipid metabolic enzyme, highly responsive to cosmic radiation.", recurrent: false },
-      { id: "AT4G25990", symbol: "—", filename: "splicegraph_AT4G25990", description: "Uncharacterized stress-responsive protein.", recurrent: false },
-      { id: "AT3G02600", symbol: "Hsp90.5", filename: "splicegraph_AT3G02600", description: "Heat shock protein 90.5, chloroplast molecular chaperone involved in translocation.", recurrent: false },
-      { id: "AT2G17970", symbol: "RBF1", filename: "splicegraph_AT2G17970", description: "Ribosome binding factor 1-like protein, crucial for chloroplast translation.", recurrent: false },
-      { id: "AT3G59410", symbol: "PPR", filename: "splicegraph_AT3G59410", description: "Pentatricopeptide repeat (PPR) superfamily protein.", recurrent: false },
-      { id: "AT5G11630", symbol: "RBP", filename: "splicegraph_AT5G11630", description: "RNA-binding glycine-rich protein, involved in cold and radiation stress response.", recurrent: false },
-      { id: "AT5G37370", symbol: "UBC", filename: "splicegraph_AT5G37370", description: "Ubiquitin-conjugating enzyme E2 family protein.", recurrent: false }
+    "id": "osd658",
+    "name": "OSD-658",
+    "stressor": "Simulated GCR, 40 and 80 cGy vs non-irradiated (ground) · whole seedlings",
+    "samples": 14,
+    "genes": [
+      {
+        "id": "AT4G17310",
+        "symbol": "—",
+        "filename": "splicegraph_AT4G17310",
+        "description": "Araport11: uncharacterized protein. Significant in OSD-658: RI ΔPSI +0.416 (FDR 0.010). Significant in 4 of 7 studies (OSD-251, OSD-314, OSD-476, OSD-658).",
+        "recurrent": true
+      },
+      {
+        "id": "AT5G13790",
+        "symbol": "AGL15",
+        "filename": "splicegraph_AT5G13790",
+        "description": "Araport11: AGAMOUS-like 15. Significant in OSD-658: A3SS ΔPSI -0.485 (FDR 0.002).",
+        "recurrent": false
+      },
+      {
+        "id": "AT4G25990",
+        "symbol": "CIL",
+        "filename": "splicegraph_AT4G25990",
+        "description": "Araport11: CCT motif family protein. Significant in OSD-658: RI ΔPSI +0.476 (FDR 1.1e-05).",
+        "recurrent": false
+      },
+      {
+        "id": "AT3G02600",
+        "symbol": "LPP3",
+        "filename": "splicegraph_AT3G02600",
+        "description": "Araport11: lipid phosphate phosphatase 3. Significant in OSD-658: RI ΔPSI +0.366 (FDR 0.038).",
+        "recurrent": false
+      },
+      {
+        "id": "AT2G17970",
+        "symbol": "—",
+        "filename": "splicegraph_AT2G17970",
+        "description": "Araport11: 2-oxoglutarate (2OG) and Fe(II)-dependent oxygenase superfamily protein. Significant in OSD-658: RI ΔPSI +0.388 (FDR 0.006); RI ΔPSI +0.354 (FDR 0.038).",
+        "recurrent": false
+      },
+      {
+        "id": "AT3G59410",
+        "symbol": "GCN2",
+        "filename": "splicegraph_AT3G59410",
+        "description": "Araport11: protein kinase family protein. Significant in OSD-658: A3SS ΔPSI -0.337 (FDR 0.011).",
+        "recurrent": false
+      },
+      {
+        "id": "AT5G11630",
+        "symbol": "NOXY2",
+        "filename": "splicegraph_AT5G11630",
+        "description": "Araport11: uncharacterized protein. Significant in OSD-658: A5SS ΔPSI +0.345 (FDR 0.012).",
+        "recurrent": false
+      },
+      {
+        "id": "AT5G37370",
+        "symbol": "ATSRL1",
+        "filename": "splicegraph_AT5G37370",
+        "description": "Araport11: PRP38 family protein. Significant in OSD-658: A3SS ΔPSI +0.376 (FDR 0.013). Significant in 2 of 7 studies (OSD-476, OSD-658).",
+        "recurrent": true
+      }
     ]
   },
   {
-    id: "osd678",
-    name: "OSD-678",
-    stressor: "ISS Spaceflight (phyD Mutant)",
-    samples: 36,
-    genes: [
-      { id: "AT1G01060", symbol: "PHYD", filename: "splicegraph_AT1G01060", description: "Phytochrome D, photoreceptor regulating seed germination and flowering time.", recurrent: false },
-      { id: "AT1G09140", symbol: "CCA1-like", filename: "splicegraph_AT1G09140", description: "Circadian clock-regulated protein, similar to CCA1/LHY transcription factors.", recurrent: false },
-      { id: "AT1G28330", symbol: "MYB", filename: "splicegraph_AT1G28330", description: "MYB domain transcription factor involved in stress signaling.", recurrent: false },
-      { id: "AT5G52040", symbol: "Hsp70", filename: "splicegraph_AT5G52040", description: "Heat shock protein 70 family molecular chaperone.", recurrent: false },
-      { id: "AT1G72855", symbol: "ZF", filename: "splicegraph_AT1G72855", description: "Zinc finger CCCH domain-containing protein.", recurrent: false },
-      { id: "AT2G43760", symbol: "HSF", filename: "splicegraph_AT2G43760", description: "Heat shock transcription factor coordinating stress responses.", recurrent: false },
-      { id: "AT2G46270", symbol: "—", filename: "splicegraph_AT2G46270", description: "Splicing factor-related protein.", recurrent: false },
-      { id: "AT3G13060", symbol: "ECT5", filename: "splicegraph_AT3G13060", description: "YTH domain-containing protein ECT5, reader of m6A RNA methylation.", recurrent: true },
-      { id: "AT3G49430", symbol: "RPL19A", filename: "splicegraph_AT3G49430", description: "60S ribosomal protein L19-1, constituent of cytoplasmic ribosomes.", recurrent: false },
-      { id: "AT5G19210", symbol: "LHCB", filename: "splicegraph_AT5G19210", description: "Light-harvesting chlorophyll a/b binding protein.", recurrent: false }
+    "id": "osd678",
+    "name": "OSD-678",
+    "stressor": "ISS spaceflight vs ground (same CARA flight as OSD-120) · leaves",
+    "samples": 36,
+    "genes": [
+      {
+        "id": "AT1G01060",
+        "symbol": "LHY",
+        "filename": "splicegraph_AT1G01060",
+        "description": "Araport11: Homeodomain-like superfamily protein. Significant in OSD-678: A3SS ΔPSI -0.121 (FDR 0.004). Significant in 2 of 7 studies (OSD-314, OSD-678).",
+        "recurrent": true
+      },
+      {
+        "id": "AT1G09140",
+        "symbol": "SR30",
+        "filename": "splicegraph_AT1G09140",
+        "description": "Araport11: SERINE-ARGININE PROTEIN 30. Significant in OSD-678: A3SS ΔPSI +0.119 (FDR 1.0e-08); RI ΔPSI +0.121 (FDR 3.0e-06). Significant in 2 of 7 studies (OSD-314, OSD-678).",
+        "recurrent": true
+      },
+      {
+        "id": "AT1G28330",
+        "symbol": "DYL1",
+        "filename": "splicegraph_AT1G28330",
+        "description": "Araport11: dormancy-associated protein-like 1. Significant in OSD-678: SE ΔPSI -0.175 (FDR 0.0e+00).",
+        "recurrent": false
+      },
+      {
+        "id": "AT5G52040",
+        "symbol": "RS41",
+        "filename": "splicegraph_AT5G52040",
+        "description": "Araport11: RNA-binding (RRM/RBD/RNP motifs) family protein. Significant in OSD-678: SE ΔPSI +0.162 (FDR 0.0e+00); A3SS ΔPSI +0.143 (FDR 0.0e+00); RI ΔPSI -0.190 (FDR 5.8e-06). Significant in 2 of 7 studies (OSD-251, OSD-678).",
+        "recurrent": true
+      },
+      {
+        "id": "AT1G72855",
+        "symbol": "—",
+        "filename": "splicegraph_AT1G72855",
+        "description": "Araport11: ncRNA. Significant in OSD-678: RI ΔPSI -0.338 (FDR 2.4e-12). Significant in 2 of 7 studies (OSD-476, OSD-678).",
+        "recurrent": true
+      },
+      {
+        "id": "AT2G43760",
+        "symbol": "—",
+        "filename": "splicegraph_AT2G43760",
+        "description": "Araport11: molybdopterin biosynthesis MoaE family protein. Significant in OSD-678: A5SS ΔPSI -0.159 (FDR 1.5e-11); A5SS ΔPSI -0.281 (FDR 1.6e-09). Significant in 2 of 7 studies (OSD-476, OSD-678).",
+        "recurrent": true
+      },
+      {
+        "id": "AT2G46270",
+        "symbol": "GBF3",
+        "filename": "splicegraph_AT2G46270",
+        "description": "Araport11: G-box binding factor 3. Significant in OSD-678: A5SS ΔPSI +0.184 (FDR 1.6e-12).",
+        "recurrent": false
+      },
+      {
+        "id": "AT3G13060",
+        "symbol": "ECT5",
+        "filename": "splicegraph_AT3G13060",
+        "description": "Araport11: evolutionarily conserved C-terminal region 5. Significant in OSD-678: RI ΔPSI +0.109 (FDR 0.008). Significant in 2 of 7 studies (OSD-314, OSD-678).",
+        "recurrent": true
+      },
+      {
+        "id": "AT3G49430",
+        "symbol": "SR34a",
+        "filename": "splicegraph_AT3G49430",
+        "description": "Araport11: SER/ARG-rich protein 34A. Significant in OSD-678: RI ΔPSI +0.160 (FDR 3.6e-12); SE ΔPSI +0.158 (FDR 3.8e-07); A3SS ΔPSI +0.190 (FDR 4.0e-07); SE ΔPSI +0.124 (FDR 2.2e-06). Significant in 2 of 7 studies (OSD-476, OSD-678).",
+        "recurrent": true
+      },
+      {
+        "id": "AT5G19210",
+        "symbol": "—",
+        "filename": "splicegraph_AT5G19210",
+        "description": "Araport11: P-loop containing nucleoside triphosphate hydrolases superfamily protein. Significant in OSD-678: RI ΔPSI +0.309 (FDR 1.3e-05).",
+        "recurrent": false
+      }
     ]
   }
 ];
+// END GENERATED STUDIES
 
 let currentStudyIndex = 0;
 let currentGeneIndex = 0;
@@ -1017,7 +1362,7 @@ function updateViewer() {
   
   document.getElementById('gene-details-title').innerHTML = `
     ${gene.symbol !== '—' ? gene.symbol + ' (' + gene.id + ')' : gene.id}
-    ${gene.recurrent ? '<span class="badge-recurrent">Universal Splicing Target</span>' : ''}
+    ${gene.recurrent ? '<span class="badge-recurrent">Recurrent (≥2 studies)</span>' : ''}
   `;
   document.getElementById('gene-details-desc').textContent = gene.description;
   
@@ -1029,26 +1374,8 @@ function updateViewer() {
     document.getElementById('araport-canonical').textContent = details.canonical;
     document.getElementById('araport-isoforms').textContent = details.isoforms;
     
-    let insight = '';
-    if (gene.id === 'AT4G17310') {
-      insight = "<strong>Universal stress biomarker.</strong> Under normal conditions, a 211bp intron (chr4:9685455-9685665) is spliced out (producing coding transcripts like AT4G17310.12/4). Under spaceflight stresses, this intron is retained, introducing a premature termination codon (PTC) which triggers nonsense-mediated decay (NMD) to downregulate the transcripts post-transcriptionally.";
-    } else if (gene.id === 'AT1G07350') {
-      insight = "<strong>Splicing factor feedback.</strong> SR45a is a major regulator of splicing. Spaceflight-induced alternative splicing in its RRM RNA-binding domain alters its splicing activity, initiating a regulatory feedback cascade affecting many other genes.";
-    } else if (gene.id === 'AT5G17300') {
-      insight = "<strong>Circadian clock decoupling.</strong> Splicing alterations in REVEILLE 1 disrupt its homeodomain DNA-binding motif. This alters the plant's endogenous clock system, which is a key conserved response to ISS spaceflight stress.";
-    } else if (gene.id === 'AT5G66210') {
-      insight = "<strong>Calcium signaling disruption.</strong> Intron retention in CPK28 alters its EF-hand calcium-binding motifs. This disrupts calcium-dependent cell signaling cascades and alters developmental trade-offs under gravity changes.";
-    } else if (gene.id === 'AT4G21400') {
-      insight = "<strong>Receptor kinase regulation.</strong> Alternative splicing alters the extracellular domains of CRK28, which regulates stress-sensing receptor kinase activities at the cell membrane.";
-    } else if (gene.id === 'AT5G23060') {
-      insight = "<strong>Chloroplast calcium sensing.</strong> Splicing changes in CAS disrupt calcium sensing in the chloroplast membrane, affecting photosynthesis and stomatal regulation.";
-    } else if (gene.id === 'AT3G13060') {
-      insight = "<strong>RNA methylation reader.</strong> ECT5 reads m6A RNA methylation. Alternative splicing in spaceflight alters its YTH reader domain, affecting transcript stability of downstream target genes.";
-    } else if (gene.id === 'AT5G51460') {
-      insight = "<strong>Trehalose pathway regulation.</strong> Trehalose-phosphate phosphatase A regulates trehalose 6-phosphate (T6P). Splicing alterations affect HAD-like hydrolase domains, modulating starch accumulation during gravitational stress.";
-    } else {
-      insight = `In ARAPORT11, this gene is annotated as a <em>${details.description || 'protein coding gene'}</em>. Alternative splicing changes observed in spaceflight experiments modify the transcript models, typically introducing premature termination codons that alter expression via NMD.`;
-    }
+    // Generated from ARAPORT_DETAILS only; no per-gene interpretation is asserted here.
+    const insight = `In Araport11 (as served by Ensembl Plants), this gene is annotated as <em>${details.description}</em>, with ${details.isoforms} reference isoforms.`;
     document.getElementById('araport-insight').innerHTML = insight;
   } else {
     araportComparisonDiv.style.display = 'none';

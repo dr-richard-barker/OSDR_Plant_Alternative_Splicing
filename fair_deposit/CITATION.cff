@@ -18,10 +18,9 @@ keywords:
   - rMATS
   - NASA OSDR
 preferred-citation:
-  type: article
+  type: unpublished
   title: "Differential alternative splicing in plant spaceflight transcriptomes: a multi-study rMATS analysis with machine learning and ontology integration"
   authors:
     - family-names: Barker
       given-names: Richard
-  journal: "npj Microgravity"
-  year: 2026
+  notes: "Manuscript in preparation"

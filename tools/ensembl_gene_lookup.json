@@ -1,0 +1,464 @@
+{
+ "_source": {
+  "endpoint": "POST https://rest.ensembl.org/lookup/id?species=arabidopsis_thaliana (expand=1)",
+  "retrieved": "2026-10-28",
+  "note": "Trimmed to the fields used by tools/build_explorer_data.py. description has the [Source:...] suffix removed."
+ },
+ "genes": {
+  "AT1G01060": {
+   "display_name": "LHY",
+   "description": "Homeodomain-like superfamily protein",
+   "n_transcripts": 8,
+   "canonical_transcript": "AT1G01060.7",
+   "biotype": "protein_coding"
+  },
+  "AT1G06710": {
+   "display_name": "AT1G06710",
+   "description": "Tetratricopeptide repeat (TPR)-like superfamily protein",
+   "n_transcripts": 19,
+   "canonical_transcript": "AT1G06710.2",
+   "biotype": "protein_coding"
+  },
+  "AT1G07350": {
+   "display_name": "SR45a",
+   "description": "RNA-binding (RRM/RBD/RNP motifs) family protein",
+   "n_transcripts": 6,
+   "canonical_transcript": "AT1G07350.1",
+   "biotype": "protein_coding"
+  },
+  "AT1G07940": {
+   "display_name": "AT1G07940",
+   "description": "GTP binding Elongation factor Tu family protein",
+   "n_transcripts": 4,
+   "canonical_transcript": "AT1G07940.3",
+   "biotype": "protein_coding"
+  },
+  "AT1G09140": {
+   "display_name": "SR30",
+   "description": "SERINE-ARGININE PROTEIN 30",
+   "n_transcripts": 3,
+   "canonical_transcript": "AT1G09140.1",
+   "biotype": "protein_coding"
+  },
+  "AT1G10240": {
+   "display_name": "FRS11",
+   "description": "FAR1-related sequence 11",
+   "n_transcripts": 2,
+   "canonical_transcript": "AT1G10240.2",
+   "biotype": "protein_coding"
+  },
+  "AT1G28330": {
+   "display_name": "DYL1",
+   "description": "dormancy-associated protein-like 1",
+   "n_transcripts": 6,
+   "canonical_transcript": "AT1G28330.3",
+   "biotype": "protein_coding"
+  },
+  "AT1G48360": {
+   "display_name": "AT1G48360",
+   "description": "zinc ion binding/nucleic acid binding/hydrolase",
+   "n_transcripts": 6,
+   "canonical_transcript": "AT1G48360.2",
+   "biotype": "protein_coding"
+  },
+  "AT1G56220": {
+   "display_name": "AT1G56220",
+   "description": "Dormancy/auxin associated family protein",
+   "n_transcripts": 5,
+   "canonical_transcript": "AT1G56220.3",
+   "biotype": "protein_coding"
+  },
+  "AT1G62610": {
+   "display_name": "AT1G62610",
+   "description": "NAD(P)-binding Rossmann-fold superfamily protein",
+   "n_transcripts": 4,
+   "canonical_transcript": "AT1G62610.4",
+   "biotype": "protein_coding"
+  },
+  "AT1G72855": {
+   "display_name": "AT1G72855",
+   "description": "ncRNA",
+   "n_transcripts": 4,
+   "canonical_transcript": "AT1G72855.2",
+   "biotype": "lncRNA"
+  },
+  "AT1G73930": {
+   "display_name": "AT1G73930",
+   "description": "polarity axis stabilization protein",
+   "n_transcripts": 2,
+   "canonical_transcript": "AT1G73930.1",
+   "biotype": "protein_coding"
+  },
+  "AT2G05440": {
+   "display_name": "GRP9",
+   "description": "GLYCINE RICH PROTEIN 9",
+   "n_transcripts": 9,
+   "canonical_transcript": "AT2G05440.2",
+   "biotype": "protein_coding"
+  },
+  "AT2G16940": {
+   "display_name": "AT2G16940",
+   "description": "Splicing factor, CC1-like protein",
+   "n_transcripts": 5,
+   "canonical_transcript": "AT2G16940.2",
+   "biotype": "protein_coding"
+  },
+  "AT2G17970": {
+   "display_name": "AT2G17970",
+   "description": "2-oxoglutarate (2OG) and Fe(II)-dependent oxygenase superfamily protein",
+   "n_transcripts": 10,
+   "canonical_transcript": "AT2G17970.1",
+   "biotype": "protein_coding"
+  },
+  "AT2G20815": {
+   "display_name": "QWRF3",
+   "description": "QWRF motif protein (DUF566)",
+   "n_transcripts": 4,
+   "canonical_transcript": "AT2G20815.3",
+   "biotype": "protein_coding"
+  },
+  "AT2G30370": {
+   "display_name": "CHAL",
+   "description": "allergen-like protein",
+   "n_transcripts": 3,
+   "canonical_transcript": "AT2G30370.1",
+   "biotype": "protein_coding"
+  },
+  "AT2G33815": {
+   "display_name": "AT2G33815",
+   "description": "ncRNA",
+   "n_transcripts": 2,
+   "canonical_transcript": "AT2G33815.2",
+   "biotype": "lncRNA"
+  },
+  "AT2G38920": {
+   "display_name": "AT2G38920",
+   "description": "SPX (SYG1/Pho81/XPR1) domain-containing protein / zinc finger (C3HC4-type RING finger) protein-like protein",
+   "n_transcripts": 6,
+   "canonical_transcript": "AT2G38920.1",
+   "biotype": "protein_coding"
+  },
+  "AT2G43760": {
+   "display_name": "AT2G43760",
+   "description": "molybdopterin biosynthesis MoaE family protein",
+   "n_transcripts": 3,
+   "canonical_transcript": "AT2G43760.1",
+   "biotype": "protein_coding"
+  },
+  "AT2G45950": {
+   "display_name": "SK20",
+   "description": "SKP1-like 20",
+   "n_transcripts": 5,
+   "canonical_transcript": "AT2G45950.2",
+   "biotype": "protein_coding"
+  },
+  "AT2G46270": {
+   "display_name": "GBF3",
+   "description": "G-box binding factor 3",
+   "n_transcripts": 4,
+   "canonical_transcript": "AT2G46270.1",
+   "biotype": "protein_coding"
+  },
+  "AT2G47020": {
+   "display_name": "AT2G47020",
+   "description": "Peptide chain release factor 1",
+   "n_transcripts": 5,
+   "canonical_transcript": "AT2G47020.3",
+   "biotype": "protein_coding"
+  },
+  "AT3G01980": {
+   "display_name": "AT3G01980",
+   "description": "NAD(P)-binding Rossmann-fold superfamily protein",
+   "n_transcripts": 6,
+   "canonical_transcript": "AT3G01980.3",
+   "biotype": "protein_coding"
+  },
+  "AT3G02600": {
+   "display_name": "LPP3",
+   "description": "lipid phosphate phosphatase 3",
+   "n_transcripts": 12,
+   "canonical_transcript": "AT3G02600.1",
+   "biotype": "protein_coding"
+  },
+  "AT3G02800": {
+   "display_name": "PFA-DSP3",
+   "description": "Tyrosine phosphatase family protein",
+   "n_transcripts": 1,
+   "canonical_transcript": "AT3G02800.1",
+   "biotype": "protein_coding"
+  },
+  "AT3G03970": {
+   "display_name": "AT3G03970",
+   "description": "ARM repeat superfamily protein",
+   "n_transcripts": 6,
+   "canonical_transcript": "AT3G03970.6",
+   "biotype": "protein_coding"
+  },
+  "AT3G09370": {
+   "display_name": "MYB3R-3",
+   "description": "myb domain protein 3r-3",
+   "n_transcripts": 3,
+   "canonical_transcript": "AT3G09370.3",
+   "biotype": "protein_coding"
+  },
+  "AT3G13060": {
+   "display_name": "ECT5",
+   "description": "evolutionarily conserved C-terminal region 5",
+   "n_transcripts": 6,
+   "canonical_transcript": "AT3G13060.2",
+   "biotype": "protein_coding"
+  },
+  "AT3G15620": {
+   "display_name": "UVR3",
+   "description": "DNA photolyase family protein",
+   "n_transcripts": 2,
+   "canonical_transcript": "AT3G15620.1",
+   "biotype": "protein_coding"
+  },
+  "AT3G16120": {
+   "display_name": "AT3G16120",
+   "description": "Dynein light chain type 1 family protein",
+   "n_transcripts": 2,
+   "canonical_transcript": "AT3G16120.1",
+   "biotype": "protein_coding"
+  },
+  "AT3G20270": {
+   "display_name": "AT3G20270",
+   "description": "lipid-binding serum glycoprotein family protein",
+   "n_transcripts": 6,
+   "canonical_transcript": "AT3G20270.3",
+   "biotype": "protein_coding"
+  },
+  "AT3G20810": {
+   "display_name": "JMJD5",
+   "description": "2-oxoglutarate (2OG) and Fe(II)-dependent oxygenase superfamily protein",
+   "n_transcripts": 5,
+   "canonical_transcript": "AT3G20810.2",
+   "biotype": "protein_coding"
+  },
+  "AT3G27990": {
+   "display_name": "AT3G27990",
+   "description": "ncRNA",
+   "n_transcripts": 4,
+   "canonical_transcript": "AT3G27990.2",
+   "biotype": "lncRNA"
+  },
+  "AT3G44340": {
+   "display_name": "CEF",
+   "description": "uncharacterized protein",
+   "n_transcripts": 5,
+   "canonical_transcript": "AT3G44340.3",
+   "biotype": "protein_coding"
+  },
+  "AT3G49430": {
+   "display_name": "SR34a",
+   "description": "SER/ARG-rich protein 34A",
+   "n_transcripts": 7,
+   "canonical_transcript": "AT3G49430.4",
+   "biotype": "protein_coding"
+  },
+  "AT3G59410": {
+   "display_name": "GCN2",
+   "description": "protein kinase family protein",
+   "n_transcripts": 5,
+   "canonical_transcript": "AT3G59410.2",
+   "biotype": "protein_coding"
+  },
+  "AT3G62190": {
+   "display_name": "AT3G62190",
+   "description": "Chaperone DnaJ-domain superfamily protein",
+   "n_transcripts": 4,
+   "canonical_transcript": "AT3G62190.1",
+   "biotype": "protein_coding"
+  },
+  "AT4G12790": {
+   "display_name": "AT4G12790",
+   "description": "P-loop containing nucleoside triphosphate hydrolases superfamily protein",
+   "n_transcripts": 6,
+   "canonical_transcript": "AT4G12790.6",
+   "biotype": "protein_coding"
+  },
+  "AT4G16250": {
+   "display_name": "PHYD",
+   "description": "phytochrome D",
+   "n_transcripts": 1,
+   "canonical_transcript": "AT4G16250.1",
+   "biotype": "protein_coding"
+  },
+  "AT4G16660": {
+   "display_name": "AT4G16660",
+   "description": "heat shock protein 70 (Hsp 70) family protein",
+   "n_transcripts": 2,
+   "canonical_transcript": "AT4G16660.2",
+   "biotype": "protein_coding"
+  },
+  "AT4G17310": {
+   "display_name": "AT4G17310",
+   "description": "uncharacterized protein",
+   "n_transcripts": 17,
+   "canonical_transcript": "AT4G17310.3",
+   "biotype": "protein_coding"
+  },
+  "AT4G21400": {
+   "display_name": "CRK28",
+   "description": "cysteine-rich RLK (RECEPTOR-like protein kinase) 28",
+   "n_transcripts": 8,
+   "canonical_transcript": "AT4G21400.1",
+   "biotype": "protein_coding"
+  },
+  "AT4G25990": {
+   "display_name": "CIL",
+   "description": "CCT motif family protein",
+   "n_transcripts": 3,
+   "canonical_transcript": "AT4G25990.2",
+   "biotype": "protein_coding"
+  },
+  "AT4G26600": {
+   "display_name": "AT4G26600",
+   "description": "S-adenosyl-L-methionine-dependent methyltransferases superfamily protein",
+   "n_transcripts": 8,
+   "canonical_transcript": "AT4G26600.5",
+   "biotype": "protein_coding"
+  },
+  "AT4G30850": {
+   "display_name": "HHP2",
+   "description": "heptahelical transmembrane protein2",
+   "n_transcripts": 2,
+   "canonical_transcript": "AT4G30850.2",
+   "biotype": "protein_coding"
+  },
+  "AT5G01770": {
+   "display_name": "RAPTOR2",
+   "description": "regulatory-associated protein of TOR 2 (RAPTOR2)",
+   "n_transcripts": 5,
+   "canonical_transcript": "AT5G01770.1",
+   "biotype": "protein_coding"
+  },
+  "AT5G06950": {
+   "display_name": "AHBP-1B",
+   "description": "bZIP transcription factor family protein",
+   "n_transcripts": 5,
+   "canonical_transcript": "AT5G06950.5",
+   "biotype": "protein_coding"
+  },
+  "AT5G11630": {
+   "display_name": "NOXY2",
+   "description": "uncharacterized protein",
+   "n_transcripts": 3,
+   "canonical_transcript": "AT5G11630.1",
+   "biotype": "protein_coding"
+  },
+  "AT5G13790": {
+   "display_name": "AGL15",
+   "description": "AGAMOUS-like 15",
+   "n_transcripts": 2,
+   "canonical_transcript": "AT5G13790.2",
+   "biotype": "protein_coding"
+  },
+  "AT5G14610": {
+   "display_name": "AT5G14610",
+   "description": "DEAD box RNA helicase family protein",
+   "n_transcripts": 7,
+   "canonical_transcript": "AT5G14610.1",
+   "biotype": "protein_coding"
+  },
+  "AT5G17300": {
+   "display_name": "RVE1",
+   "description": "Homeodomain-like superfamily protein",
+   "n_transcripts": 2,
+   "canonical_transcript": "AT5G17300.1",
+   "biotype": "protein_coding"
+  },
+  "AT5G18245": {
+   "display_name": "AT5G18245",
+   "description": "ncRNA",
+   "n_transcripts": 8,
+   "canonical_transcript": "AT5G18245.6",
+   "biotype": "lncRNA"
+  },
+  "AT5G19210": {
+   "display_name": "AT5G19210",
+   "description": "P-loop containing nucleoside triphosphate hydrolases superfamily protein",
+   "n_transcripts": 3,
+   "canonical_transcript": "AT5G19210.2",
+   "biotype": "protein_coding"
+  },
+  "AT5G23060": {
+   "display_name": "CaS",
+   "description": "calcium sensing receptor",
+   "n_transcripts": 2,
+   "canonical_transcript": "AT5G23060.1",
+   "biotype": "protein_coding"
+  },
+  "AT5G37370": {
+   "display_name": "ATSRL1",
+   "description": "PRP38 family protein",
+   "n_transcripts": 12,
+   "canonical_transcript": "AT5G37370.1",
+   "biotype": "protein_coding"
+  },
+  "AT5G37850": {
+   "display_name": "SOS4",
+   "description": "pfkB-like carbohydrate kinase family protein",
+   "n_transcripts": 4,
+   "canonical_transcript": "AT5G37850.1",
+   "biotype": "protein_coding"
+  },
+  "AT5G42900": {
+   "display_name": "COR27",
+   "description": "cold regulated protein 27",
+   "n_transcripts": 3,
+   "canonical_transcript": "AT5G42900.2",
+   "biotype": "protein_coding"
+  },
+  "AT5G51460": {
+   "display_name": "ATTPPA",
+   "description": "Haloacid dehalogenase-like hydrolase (HAD) superfamily protein",
+   "n_transcripts": 5,
+   "canonical_transcript": "AT5G51460.3",
+   "biotype": "protein_coding"
+  },
+  "AT5G52040": {
+   "display_name": "RS41",
+   "description": "RNA-binding (RRM/RBD/RNP motifs) family protein",
+   "n_transcripts": 7,
+   "canonical_transcript": "AT5G52040.2",
+   "biotype": "protein_coding"
+  },
+  "AT5G57565": {
+   "display_name": "AT5G57565",
+   "description": "Protein kinase superfamily protein",
+   "n_transcripts": 7,
+   "canonical_transcript": "AT5G57565.4",
+   "biotype": "protein_coding"
+  },
+  "AT5G60120": {
+   "display_name": "TOE2",
+   "description": "target of early activation tagged (EAT) 2",
+   "n_transcripts": 6,
+   "canonical_transcript": "AT5G60120.2",
+   "biotype": "protein_coding"
+  },
+  "AT5G63160": {
+   "display_name": "BT1",
+   "description": "BTB and TAZ domain protein 1",
+   "n_transcripts": 3,
+   "canonical_transcript": "AT5G63160.1",
+   "biotype": "protein_coding"
+  },
+  "AT5G64460": {
+   "display_name": "AT5G64460",
+   "description": "Phosphoglycerate mutase family protein",
+   "n_transcripts": 11,
+   "canonical_transcript": "AT5G64460.2",
+   "biotype": "protein_coding"
+  },
+  "AT5G66210": {
+   "display_name": "CPK28",
+   "description": "calcium-dependent protein kinase 28",
+   "n_transcripts": 6,
+   "canonical_transcript": "AT5G66210.1",
+   "biotype": "protein_coding"
+  }
+ }
+}
