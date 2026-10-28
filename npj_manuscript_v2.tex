@@ -51,7 +51,7 @@ Here we present a multi-study analysis of differential alternative splicing in p
 
 \subsection{Study Selection and Data Acquisition}
 
-Plant RNA-seq studies were enumerated from the NASA OSDR Biological Data API (BDAPI v2, \url{https://visualization.osdr.nasa.gov/biodata/api/v2}). We identified 58 plant RNA-seq studies, of which 54 were \textit{Arabidopsis thaliana}. For this proof-of-concept analysis, we selected 8 studies (7 \textit{Arabidopsis thaliana}, 1 \textit{Brassica rapa}) representing diverse spaceflight-relevant conditions (Table~\ref{tab:studies}).
+Plant RNA-seq studies were enumerated from the NASA OSDR Biological Data API (BDAPI v2, \url{https://visualization.osdr.nasa.gov/biodata/api/v2}). We identified 58 plant RNA-seq studies, of which 54 were \textit{Arabidopsis thaliana} (TODO: not reproduced by any file in this repository). For this proof-of-concept analysis, we selected 8 studies (7 \textit{Arabidopsis thaliana}, 1 \textit{Brassica rapa}) representing diverse spaceflight-relevant conditions (Table~\ref{tab:studies}).
 
 All BAM files were aligned to Ensembl Plants release 48 references (TAIR10 for \textit{Arabidopsis}, Brapa\_1.0 for \textit{Brassica}), matching the GeneLab RCP (GL-DPPD-7101-E) exactly, ensuring coordinate compatibility without re-alignment. OSDR records OSD-314 as a single-end library (50\,bp) and the other six \textit{Arabidopsis} studies as paired-end. For OSD-120, the coordinate-sorted BAMs used here were reported to lack mate-pair flags (flag=16, is\_paired=False), so OSD-120 was also run in single-end mode (\texttt{-t single}); read type was auto-detected with pysam (\TODO{the BAM flag inspection is not recorded in this repository}).
 
@@ -108,7 +108,7 @@ Three complementary ML analyses were performed:
 
 \subsection{Ontology Enrichment Analysis}
 
-Over-representation analysis (ORA) was performed using Fisher's exact test with Benjamini-Hochberg FDR correction for Gene Ontology (MF/BP/CC, 251,290 annotations from TAIR/UniProt-GOA) and MapMan bins (24 bins, 11,793 genes mapped via GO-derived mapping). Plant Ontology and Trait Ontology enrichment modules were implemented but could not be run due to the lack of publicly available \textit{Arabidopsis} gene-to-PO and gene-to-TO annotation files.
+Over-representation analysis (ORA) was performed using Fisher's exact test with Benjamini-Hochberg FDR correction for Gene Ontology (MF/BP/CC, 251,290 annotations from TAIR/UniProt-GOA) and MapMan bins (24 bins, 11,793 genes mapped via GO-derived mapping; TODO: the annotation files behind these totals are not in this repository). Plant Ontology and Trait Ontology enrichment modules were implemented but could not be run due to the lack of publicly available \textit{Arabidopsis} gene-to-PO and gene-to-TO annotation files.
 
 \subsection{SpliceGrapher Visualization}
 
@@ -169,7 +169,7 @@ Of the 161 significant events in OSD-314, 138 (86\%) were classified as potentia
 
 \subsection{GO Enrichment Implicates Circadian, Light, and Stress Pathways}
 
-Gene Ontology over-representation analysis of the 144 unique genes with significant AS events (background: 60,985 annotated genes) returned 392 GO terms, of which 114 had $p < 0.05$ and 201 had FDR $< 0.25$. The top enriched terms include several with direct relevance to spaceflight conditions (Table~\ref{tab:go_enrichment}).
+Gene Ontology over-representation analysis of the 144 unique genes with significant AS events (background: 60,985 annotated genes; TODO: background file not in this repository) returned 392 GO terms, of which 114 had $p < 0.05$ and 201 had FDR $< 0.25$. The top enriched terms include several with direct relevance to spaceflight conditions (Table~\ref{tab:go_enrichment}).
 
 \begin{table}[h]
 \centering

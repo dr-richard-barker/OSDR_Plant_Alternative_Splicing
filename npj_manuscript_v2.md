@@ -30,7 +30,7 @@ Here we present a multi-study analysis of differential alternative splicing in p
 
 ### Study Selection and Data Acquisition
 
-Plant RNA-seq studies were enumerated from the NASA OSDR Biological Data API (BDAPI v2, https://visualization.osdr.nasa.gov/biodata/api/v2). We identified 58 plant RNA-seq studies, of which 54 were Arabidopsis thaliana. For this proof-of-concept analysis, we selected 8 studies (7 Arabidopsis thaliana, 1 Brassica rapa) representing diverse spaceflight-relevant conditions (Table 1).
+Plant RNA-seq studies were enumerated from the NASA OSDR Biological Data API (BDAPI v2, https://visualization.osdr.nasa.gov/biodata/api/v2). We identified 58 plant RNA-seq studies, of which 54 were Arabidopsis thaliana (TODO: not reproduced by any file in this repository). For this proof-of-concept analysis, we selected 8 studies (7 Arabidopsis thaliana, 1 Brassica rapa) representing diverse spaceflight-relevant conditions (Table 1).
 
 **Table 1.** Proof-of-concept studies selected for analysis.
 
@@ -89,8 +89,8 @@ Three complementary ML analyses were performed:
 
 Over-representation analysis (ORA) was performed using Fisher's exact test with Benjamini-Hochberg FDR correction. GO and MapMan enrichment were run; Plant Ontology and Trait Ontology enrichment could not be run (see Limitations), and no PO/TO output is in this repository:
 
-- **Gene Ontology (GO):** Molecular Function, Biological Process, Cellular Component (251,290 annotations from TAIR/UniProt-GOA)
-- **MapMan bins:** Plant-specific functional categories (24 bins, 11,793 genes mapped via GO-derived mapping)
+- **Gene Ontology (GO):** Molecular Function, Biological Process, Cellular Component (251,290 annotations from TAIR/UniProt-GOA; TODO: annotation file not in this repository)
+- **MapMan bins:** Plant-specific functional categories (24 bins, 11,793 genes mapped via GO-derived mapping; TODO: mapping file not in this repository)
 
 A cross-ontology network was built connecting enriched terms from different ontologies via shared genes, enabling identification of multi-ontology functional convergence. **[TODO: no producing code or output in this repository]**
 
@@ -154,7 +154,7 @@ Unsupervised UMAP clustering of the 4,307-feature PSI matrix (after KNN imputati
 
 ### GO Enrichment Implicates Circadian, Light, and Stress Pathways
 
-Gene Ontology over-representation analysis of the 144 unique genes with significant AS events (background: 60,985 annotated genes) returned 392 GO terms, of which 114 had p < 0.05 and 201 had FDR < 0.25. The top enriched terms (Table 4) include several with direct relevance to spaceflight conditions:
+Gene Ontology over-representation analysis of the 144 unique genes with significant AS events (background: 60,985 annotated genes; TODO: background file not in this repository) returned 392 GO terms, of which 114 had p < 0.05 and 201 had FDR < 0.25. The top enriched terms (Table 4) include several with direct relevance to spaceflight conditions:
 
 **Table 4.** Top enriched GO terms for genes with significant AS in OSD-314
 
